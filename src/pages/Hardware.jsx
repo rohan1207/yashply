@@ -80,7 +80,7 @@ export default function Hardware() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-5 lg:grid-cols-4 lg:gap-6">
             {hardwareCatalogue.map((item, i) => (
               <CatalogueCard
                 key={item.slug}
@@ -148,7 +148,7 @@ export default function Hardware() {
             <div className="grid lg:grid-cols-12">
               <div className="relative min-h-[12rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-[26rem]">
                 <img
-                  src={images.craftsman}
+                  src={images.hardwareHero}
                   alt="Hardware guidance at the Pune yard"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

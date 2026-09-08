@@ -29,7 +29,7 @@ export default function PlywoodHome() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {cards.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.05}>
               <CatalogueCard
@@ -40,6 +40,13 @@ export default function PlywoodHome() {
               />
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-6 flex justify-end sm:mt-8">
+          <Link to="/plywood" className="btn-ghost w-fit">
+            View All
+            <ArrowUpRight size={15} />
+          </Link>
         </div>
       </div>
     </section>

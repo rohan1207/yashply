@@ -94,7 +94,7 @@ export default function Brands() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-5 lg:grid-cols-3">
             {hardwareBrands.map((brand, i) => (
               <motion.article
                 key={brand.name}
@@ -103,29 +103,31 @@ export default function Brands() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.55, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
-                className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem]"
+                className="group flex h-full flex-col overflow-hidden rounded-[0.9rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem]"
               >
-                <div className="flex aspect-[16/10] items-center justify-center bg-[#F7F5F2] px-8 transition group-hover:bg-white">
+                <div className="flex aspect-square items-center justify-center bg-[#F7F5F2] px-4 transition group-hover:bg-white sm:aspect-[16/10] sm:px-8">
                   <img
                     src={brand.src}
                     alt={brand.name}
-                    className="max-h-14 max-w-[70%] object-contain sm:max-h-16"
+                    className="max-h-10 max-w-[75%] object-contain sm:max-h-16 sm:max-w-[70%]"
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-1 flex-col px-5 py-6 sm:px-6 sm:py-7">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red">
+                <div className="flex flex-1 flex-col px-2.5 py-3.5 sm:px-6 sm:py-7">
+                  <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-yp-red sm:text-[10px] sm:tracking-[0.16em]">
                     Brand
                   </p>
-                  <h3 className="mt-2 font-display text-[1.25rem] leading-tight tracking-tight sm:text-[1.4rem]">
+                  <h3 className="mt-1.5 font-display text-[0.95rem] leading-tight tracking-tight sm:mt-2 sm:text-[1.4rem]">
                     {brand.name}
                   </h3>
                   {brand.focus ? (
-                    <p className="mt-3 text-sm leading-relaxed text-yp-mist">{brand.focus}</p>
+                    <p className="mt-2 hidden text-sm leading-relaxed text-yp-mist sm:mt-3 sm:block">
+                      {brand.focus}
+                    </p>
                   ) : null}
                   <Link
                     to={`/quote?product=${encodeURIComponent(brand.name)}`}
-                    className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition group-hover:text-yp-red"
+                    className="mt-auto inline-flex items-center gap-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-yp-espresso transition group-hover:text-yp-red sm:gap-1.5 sm:pt-6 sm:text-[12px] sm:tracking-[0.14em]"
                   >
                     Enquire
                     <ArrowUpRight
@@ -167,7 +169,7 @@ export default function Brands() {
             <div className="grid lg:grid-cols-12">
               <div className="relative min-h-[12rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-[26rem]">
                 <img
-                  src={images.craftsman}
+                  src={images.hardwareHero}
                   alt="Brand guidance at Yash Ply & Hardware"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

@@ -12,7 +12,7 @@ export default function FinalCTA() {
             <div className="grid lg:grid-cols-12">
               <div className="relative min-h-[12.5rem] sm:min-h-[20rem] lg:col-span-5 lg:min-h-[28rem]">
                 <img
-                  src={images.workshop}
+                  src={images.about}
                   alt="Yash Ply & Hardware materials yard"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

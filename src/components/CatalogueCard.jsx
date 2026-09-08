@@ -52,58 +52,68 @@ export default function CatalogueCard({
           src={image}
           alt={name}
           className="h-full w-full object-contain transition duration-700 ease-out group-hover:scale-[1.02]"
+          loading="lazy"
         />
       </div>
 
-      <div className="flex flex-1 flex-col px-5 pb-6 pt-6 sm:px-6 sm:pb-7 sm:pt-7">
-        <h3 className="font-display text-[1.15rem] leading-[1.2] tracking-tight text-yp-espresso sm:text-[1.35rem]">
+      <div className="flex flex-1 flex-col px-2.5 pb-3.5 pt-3 sm:px-6 sm:pb-7 sm:pt-7">
+        <h3 className="font-display text-[0.92rem] leading-[1.2] tracking-tight text-yp-espresso sm:text-[1.35rem]">
           {name}
         </h3>
 
         {(grade || available || bestFor) && (
-          <dl className="mt-5 space-y-4 border-t border-yp-line/80 pt-5">
+          <dl className="mt-2.5 space-y-2.5 border-t border-yp-line/80 pt-2.5 sm:mt-5 sm:space-y-4 sm:pt-5">
             {grade ? (
               <div>
-                <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red">
+                <dt className="text-[8px] font-semibold uppercase tracking-[0.14em] text-yp-red sm:text-[10px] sm:tracking-[0.16em]">
                   Grade
                 </dt>
-                <dd className="mt-1.5 text-sm text-yp-espresso/85">{grade}</dd>
+                <dd className="mt-0.5 text-[11px] leading-snug text-yp-espresso/85 sm:mt-1.5 sm:text-sm">
+                  {grade}
+                </dd>
               </div>
             ) : null}
 
             {available ? (
               <div>
-                <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red">
+                <dt className="text-[8px] font-semibold uppercase tracking-[0.14em] text-yp-red sm:text-[10px] sm:tracking-[0.16em]">
                   Available
                 </dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-yp-espresso/85">{available}</dd>
+                <dd className="mt-0.5 text-[11px] leading-snug text-yp-espresso/85 sm:mt-1.5 sm:text-sm sm:leading-relaxed">
+                  {available}
+                </dd>
               </div>
             ) : null}
 
             {bestFor ? (
               <div>
-                <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red">
+                <dt className="text-[8px] font-semibold uppercase tracking-[0.14em] text-yp-red sm:text-[10px] sm:tracking-[0.16em]">
                   Best for
                 </dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-yp-espresso/85">{bestFor}</dd>
+                <dd className="mt-0.5 text-[11px] leading-snug text-yp-espresso/85 sm:mt-1.5 sm:text-sm sm:leading-relaxed">
+                  {bestFor}
+                </dd>
               </div>
             ) : null}
           </dl>
         )}
 
-        <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition group-hover:text-yp-red">
+        <span className="mt-auto inline-flex items-center gap-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-yp-espresso transition group-hover:text-yp-red sm:gap-1.5 sm:pt-6 sm:text-[12px] sm:tracking-[0.14em]">
           {cta}
           <ArrowUpRight
+            size={12}
+            className="sm:hidden"
+          />
+          <ArrowUpRight
             size={14}
-            className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            className="hidden transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:inline"
           />
         </span>
       </div>
     </>
   );
 
-  const shell =
-    `group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem] ${className}`;
+  const shell = `group flex h-full flex-col overflow-hidden rounded-[0.9rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem] ${className}`;
 
   return (
     <motion.article
@@ -115,7 +125,12 @@ export default function CatalogueCard({
       className="h-full scroll-mt-[calc(var(--header-h)+1.25rem)]"
     >
       {to.startsWith("http") || to.startsWith("tel:") || to.startsWith("mailto:") ? (
-        <a href={to} className={shell} target={to.startsWith("http") ? "_blank" : undefined} rel={to.startsWith("http") ? "noreferrer" : undefined}>
+        <a
+          href={to}
+          className={shell}
+          target={to.startsWith("http") ? "_blank" : undefined}
+          rel={to.startsWith("http") ? "noreferrer" : undefined}
+        >
           {body}
         </a>
       ) : (

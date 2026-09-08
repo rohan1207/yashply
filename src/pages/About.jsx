@@ -33,13 +33,13 @@ const founders = [
     name: "Customer Desk",
     role: "Yard & Sales",
     bio: "The team Pune projects call when grade and fittings need to match the room. We help homeowners, architects, contractors and carpenters choose right, and keep yard and delivery honest to the promise.",
-    image: images.portrait,
+    image: images.about,
   },
   {
     name: "Founding Leadership",
     role: "Founder / Manufacturing",
     bio: "Yashply was built on mill discipline, timber selection, press quality and stamps you can verify. Full founder name, designation and photograph will be published once confirmed.",
-    image: images.craftsman,
+    image: images.plywoodHero,
   },
 ];
 
@@ -126,7 +126,7 @@ export default function About() {
         className="relative isolate flex min-h-[100svh] overflow-hidden bg-yp-espresso text-yp-ivory"
       >
         <motion.img
-          src={images.workshop}
+          src={images.about}
           alt="Yash Ply & Hardware yard"
           style={{ y: imgY, x: tilt.x, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"
@@ -297,7 +297,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+          <div className="mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
             {whyPoints.map((item, i) => (
               <WhyCard key={item.title} item={item} i={i} />
             ))}
@@ -333,7 +333,7 @@ export default function About() {
             </div>
             <div className="relative min-h-[12rem] sm:min-h-[16rem] lg:col-span-5 lg:min-h-full">
               <img
-                src={images.stack}
+                src={images.plywoodHero}
                 alt="Ready stock at Yash Ply & Hardware"
                 className="absolute inset-0 h-full w-full object-cover"
               />

@@ -164,7 +164,7 @@ export default function Plywood() {
                 ))}
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-2">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-6 xl:grid-cols-2">
                 {plywoodCatalogue.map((product, i) => (
                   <CatalogueCard
                     key={product.slug}

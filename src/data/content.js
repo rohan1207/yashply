@@ -42,33 +42,37 @@ export const nav = [
  { label: "Contact us", href: "/contact" },
 ];
 
-const img = (id, w = 1600) =>
- `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
 export const images = {
- hero: img("photo-1600585154340-be6161a56a0c", 2000),
- heroAlt: img("photo-1600210492493-0946911123ea", 2000),
- workshop: img("photo-1504148455328-c376907d081c", 1600),
- grain: img("photo-1416879595882-3373a0480b5b", 1400),
- layers: img("photo-1581858726788-75bc0f6a952d", 1400),
- walnut: img("photo-1600566753190-17f0baa2a6c3", 1400),
- kitchen: img("photo-1556912173-46c336c7fd55", 1600),
- kitchen2: img("photo-1600489000022-c2086d91d9ca", 1600),
- bedroom: img("photo-1616486338812-3dadae4b4ace", 1600),
- living: img("photo-1618221195710-dd6b41faaea6", 1600),
- office: img("photo-1497366216548-37526070297c", 1600),
- wardrobe: img("photo-1558997519-83ea9252cd60", 1600),
- dining: img("photo-1617806118233-18e1de3ddd5a", 1600),
- wet: img("photo-1552321554-5fefe8c9ef14", 1600),
- commercial: img("photo-1497366811353-6870744d04b2", 1600),
- craftsman: img("photo-1589939705384-5185137a7f0f", 1400),
- ambassador: img("photo-1589939705384-5185137a7f0f", 1200),
- timber: img("photo-1441974231531-c6227db76b6e", 1400),
- stack: img("photo-1560184897-ae75f418493e", 1600),
- minimal: img("photo-1600607687939-ce8a6c25118c", 1600),
- door: img("photo-1505693416388-ac5ce068fe85", 1400),
- portrait: img("photo-1560250097-0b93528c311a", 900),
- heroPoster: img("photo-1600489000022-c2086d91d9ca", 1400),
+  hero: "/plywood_page_hero.png",
+  heroAlt: "/about_component_image.png",
+  workshop: "/plywood_page_hero.png",
+  grain: "/calibrated_ply.png",
+  layers: "/redcore_bwp_ply.png",
+  walnut: "/redcore_ply.png",
+  kitchen: "/about_component_image.png",
+  kitchen2: "/alt_gurjan_ply.png",
+  bedroom: "/blockboard_double_core_pine.png",
+  living: "/about_component_image.png",
+  office: "/calibrated_ply.png",
+  wardrobe: "/blockboard_hardcore.png",
+  dining: "/rubber_packaging_ply.png",
+  wet: "/redcore_bwp_ply.png",
+  commercial: "/shuttering_ply.png",
+  craftsman: "/truck_floring_ply.png",
+  ambassador: "/hardware_page_hero.png",
+  timber: "/alt_gurjan_ply.png",
+  stack: "/products/plywood.png",
+  minimal: "/calibrated_ply.png",
+  door: "/blockboard_hardcore.png",
+  portrait: "/products/hardware.png",
+  heroPoster: "/plywood_page_hero.png",
+  hinges: "/hinges.png",
+  channels: "/telescopic_channels.png",
+  sliding: "/sliding_window_fittings.png",
+  hardware: "/products/hardware.png",
+  hardwareHero: "/hardware_page_hero.png",
+  plywoodHero: "/plywood_page_hero.png",
+  about: "/about_component_image.png",
 };
 
 export const trustBar = [
@@ -89,8 +93,8 @@ export const products = [
  "The workhorse sheet for dry interiors, wardrobes, partitions, furniture carcasses and panelling where moisture is controlled.",
  description:
  "Yashply commercial plywood is pressed from selected hardwood cores, calibrated for a true face, and thoroughly treated against borers and termites. Built for carpenters who nailing, routing and edge-banding every day, the sheet will not split or open at the nail.",
- image: images.stack,
- gallery: [images.stack, images.wardrobe, images.living, images.office],
+ image: "/alt_gurjan_ply.png",
+ gallery: ["/alt_gurjan_ply.png", "/calibrated_ply.png", "/about_component_image.png", "/products/plywood.png"],
  thicknesses: ["6 mm", "9 mm", "12 mm", "16 mm", "18 mm", "19 mm"],
  sizes: ["8 × 4 ft", "7 × 4 ft", "6 × 3 ft"],
  applications: ["Wardrobes", "TV units", "Partitions", "Furniture carcass", "Wall panelling"],
@@ -114,8 +118,8 @@ export const products = [
  "The Pune default. Resists kitchen steam, seasonal humidity and occasional wetness without the cost of full marine grade.",
  description:
  "Maharashtra kitchens and monsoon months punish ordinary MR sheets. Yashply BWR is bonded for boiling-water resistance, making it the honest choice for modular kitchens, vanity carcasses and homes that breathe humidity eight months a year. Tailor-made for Pune’s climate, not a generic north-India spec.",
- image: images.kitchen,
- gallery: [images.kitchen, images.kitchen2, images.layers, images.dining],
+ image: "/redcore_ply.png",
+ gallery: ["/redcore_ply.png", "/about_component_image.png", "/redcore_bwp_ply.png", "/alt_gurjan_ply.png"],
  thicknesses: ["12 mm", "16 mm", "18 mm", "19 mm"],
  sizes: ["8 × 4 ft", "7 × 4 ft"],
  applications: ["Modular kitchens", "Vanities", "Utility rooms", "Balcony furniture"],
@@ -139,8 +143,8 @@ export const products = [
  "True boiling-waterproof plywood for wet cores, coastal projects and anywhere a carpenter cannot afford a callback.",
  description:
  "Yashply BWP (IS 710) is our flagship marine-grade sheet, phenolic bonded, boil-proof, and built for bathrooms, kitchen wet walls, exterior-adjacent joinery and commercial wet areas. 25 years of quality control sit behind every press. If it is going near water, this is the sheet.",
- image: images.layers,
- gallery: [images.layers, images.wet, images.craftsman, images.kitchen2],
+ image: "/redcore_bwp_ply.png",
+ gallery: ["/redcore_bwp_ply.png", "/redcore_ply.png", "/truck_floring_ply.png", "/alt_gurjan_ply.png"],
  thicknesses: ["6 mm", "9 mm", "12 mm", "16 mm", "18 mm", "19 mm", "25 mm"],
  sizes: ["8 × 4 ft", "7 × 4 ft"],
  applications: ["Bathrooms", "Kitchen wet walls", "Boat & wet labs", "Exterior-adjacent joinery"],
@@ -164,8 +168,8 @@ export const products = [
  "Solid-wood stave core with boiling-waterproof faces. The board for shutters, tables and long wardrobe doors that must stay true.",
  description:
  "Where plywood can telegraph or feel heavy, Yashply BWP block board uses kiln-dried wooden battens sandwiched between waterproof plywood faces. Ideal for large shutters and tabletops, lighter than equivalent ply, more stable across monsoon swings.",
- image: images.walnut,
- gallery: [images.walnut, images.dining, images.door, images.wardrobe],
+ image: "/blockboard_hardcore.png",
+ gallery: ["/blockboard_hardcore.png", "/blockboard_double_core_pine.png", "/rubber_packaging_ply.png", "/calibrated_ply.png"],
  thicknesses: ["16 mm", "19 mm", "25 mm"],
  sizes: ["8 × 4 ft", "7 × 4 ft"],
  applications: ["Wardrobe shutters", "Tabletops", "Partition doors", "Shelving spans"],
@@ -189,8 +193,8 @@ export const products = [
  "Moisture-resistant block board for dry interiors, an economical, carpenter-friendly sheet for doors and furniture lids.",
  description:
  "Same stave-core construction as our BWP board, specified for dry rooms. Perfect when the project needs shutter stability without marine-grade spend. Still fully treated against borers and termites, still nailing-safe.",
- image: images.door,
- gallery: [images.door, images.bedroom, images.grain, images.living],
+ image: "/blockboard_double_core_pine.png",
+ gallery: ["/blockboard_double_core_pine.png", "/blockboard_hardcore.png", "/calibrated_ply.png", "/about_component_image.png"],
  thicknesses: ["16 mm", "19 mm", "25 mm"],
  sizes: ["8 × 4 ft", "7 × 4 ft"],
  applications: ["Internal doors", "Study tables", "Loft shutters", "Partition frames"],
@@ -214,8 +218,8 @@ export const products = [
  "Factory-pressed flush doors with hardwood frames and block-board or plywood infill, ready for laminate, veneer or paint.",
  description:
  "A door that stays square is a door that never gets a complaint call. Yashply flush doors are framed in hardwood, filled with seasoned core, and faced for a flat, paint-ready or laminate-ready surface. Available in standard and custom sizes for Pune projects.",
- image: images.minimal,
- gallery: [images.minimal, images.door, images.living, images.bedroom],
+ image: "/calibrated_ply.png",
+ gallery: ["/calibrated_ply.png", "/blockboard_hardcore.png", "/about_component_image.png", "/blockboard_double_core_pine.png"],
  thicknesses: ["30 mm", "32 mm", "35 mm"],
  sizes: ["6'6\" × 2'6\"", "7' × 3'", "Custom"],
  applications: ["Bedrooms", "Offices", "Hotels", "Apartments"],
@@ -408,12 +412,12 @@ export const inspiration = [
 ];
 
 export const textures = [
- { name: "Walnut", image: images.walnut },
- { name: "Oak grain", image: images.grain },
- { name: "Ply layers", image: images.layers },
- { name: "Warm timber", image: images.timber },
- { name: "Crafted core", image: images.craftsman },
- { name: "Stone-calm", image: images.minimal },
+ { name: "Alt Gurjan", image: "/alt_gurjan_ply.png" },
+ { name: "Redcore", image: "/redcore_ply.png" },
+ { name: "Redcore BWP", image: "/redcore_bwp_ply.png" },
+ { name: "Calibrated", image: "/calibrated_ply.png" },
+ { name: "Blockboard", image: "/blockboard_hardcore.png" },
+ { name: "Shuttering", image: "/shuttering_ply.png" },
 ];
 
 export const testimonials = [
@@ -667,18 +671,22 @@ export const homeQuality = [
 ];
 
 export const gallery = [
- { src: images.kitchen, caption: "Kitchen carcass, BWR" },
- { src: images.kitchen2, caption: "Warm timber kitchen" },
- { src: images.bedroom, caption: "Bedroom joinery" },
- { src: images.wardrobe, caption: "Wardrobe shutters" },
- { src: images.living, caption: "Living panelling" },
- { src: images.office, caption: "Workspace" },
- { src: images.layers, caption: "Marine layers" },
- { src: images.grain, caption: "Natural grain" },
- { src: images.walnut, caption: "Walnut tone" },
- { src: images.workshop, caption: "The yard" },
- { src: images.craftsman, caption: "Making" },
- { src: images.minimal, caption: "Quiet interiors" },
+ { src: "/alt_gurjan_ply.png", caption: "Alt Gurjan commercial ply" },
+ { src: "/redcore_ply.png", caption: "Redcore ply" },
+ { src: "/redcore_bwp_ply.png", caption: "Redcore BWP" },
+ { src: "/calibrated_ply.png", caption: "Calibrated ply" },
+ { src: "/blockboard_double_core_pine.png", caption: "Double core pine blockboard" },
+ { src: "/blockboard_hardcore.png", caption: "Hardwood blockboard" },
+ { src: "/rubber_packaging_ply.png", caption: "Rubber packaging ply" },
+ { src: "/shuttering_ply.png", caption: "Shuttering ply" },
+ { src: "/truck_floring_ply.png", caption: "Truck flooring ply" },
+ { src: "/chequered_ply.png", caption: "Chequered plywood" },
+ { src: "/about_component_image.png", caption: "Materials & interiors" },
+ { src: "/plywood_page_hero.png", caption: "Plywood range" },
+ { src: "/hinges.png", caption: "Hinges" },
+ { src: "/telescopic_channels.png", caption: "Telescopic channels" },
+ { src: "/sliding_window_fittings.png", caption: "Sliding fittings" },
+ { src: "/hardware_page_hero.png", caption: "Hardware range" },
 ];
 
 /** Client plywood catalogue — Yash Ply & Hardware */

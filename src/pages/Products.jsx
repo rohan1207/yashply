@@ -248,7 +248,7 @@ export default function Products() {
  {f.label}
  </h2>
  </div>
- <div className="yp-container grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+ <div className="yp-container grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
  {rows.map((p, i) => (
  <CatalogueCard key={p.slug} product={p} index={i} href={`/products/${p.slug}`} />
  ))}

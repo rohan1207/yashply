@@ -267,7 +267,7 @@ export default function Quote() {
         className="relative isolate flex min-h-[72svh] overflow-hidden bg-yp-espresso text-yp-ivory sm:min-h-[78svh]"
       >
         <motion.img
-          src={images.workshop}
+          src={images.plywoodHero}
           alt="Yash Ply & Hardware yard"
           style={{ y: imgY, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"

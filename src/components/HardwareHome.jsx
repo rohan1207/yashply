@@ -27,7 +27,7 @@ export default function HardwareHome() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {hardwareItems.map((item, i) => (
             <Reveal key={item.slug} delay={i * 0.05}>
               <CatalogueCard
@@ -41,6 +41,13 @@ export default function HardwareHome() {
               />
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-6 flex justify-end sm:mt-8">
+          <Link to="/hardware" className="btn-ghost w-fit">
+            View All
+            <ArrowUpRight size={15} />
+          </Link>
         </div>
       </div>
     </section>

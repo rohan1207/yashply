@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Facebook, Instagram, Linkedin } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, MapPin, Phone } from "lucide-react";
 import Logo from "./Logo";
 import { site } from "../data/content";
 
@@ -47,50 +47,161 @@ const socialItems = [
   },
 ];
 
+function SocialRow({ className = "" }) {
+  return (
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      {socialItems.map((item) => {
+        const Icon = item.icon;
+        const cls =
+          "flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition hover:border-yp-brass/60 hover:text-yp-brass";
+        if (
+          item.external ||
+          item.href.startsWith("http") ||
+          item.href.startsWith("mailto:") ||
+          item.href.startsWith("tel:")
+        ) {
+          return (
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+              className={cls}
+              aria-label={item.label}
+            >
+              <Icon size={16} strokeWidth={1.6} />
+            </a>
+          );
+        }
+        return (
+          <Link key={item.label} to={item.href} className={cls} aria-label={item.label}>
+            <Icon size={16} strokeWidth={1.6} />
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-yp-espresso pb-[calc(4.75rem+env(safe-area-inset-bottom))] text-yp-ivory lg:pb-0">
       <div className="grain-overlay opacity-[0.06]" />
-      <div className="yp-container relative py-12 sm:py-16 lg:py-20 lg:pb-10">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <div className="yp-container relative py-10 sm:py-16 lg:py-20 lg:pb-10">
+        {/* ——— Mobile layout ——— */}
+        <div className="space-y-8 lg:hidden">
+          <div className="text-center">
+            <div className="flex justify-center">
+              <Logo />
+            </div>
+            <p className="mt-3 font-display text-xl tracking-tight text-white">
+              Yash Ply &amp; Hardware
+            </p>
+            <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-white/50">
+              Plywood, hardware and materials for spaces built with purpose.
+            </p>
+            <SocialRow className="mt-5 justify-center" />
+          </div>
+
+          <div className="rounded-2xl border border-yp-brass/45 bg-white/[0.04] p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-yp-brass">
+              Next step
+            </p>
+            <p className="mt-2 font-display text-xl leading-snug text-white">
+              Ready to share your requirement?
+            </p>
+            <Link
+              to="/quote"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-yp-red px-5 py-3.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-white"
+            >
+              Get a Quote
+              <ArrowUpRight size={15} />
+            </Link>
+          </div>
+
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+              Quick Links
+            </p>
+            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5 text-[14px] text-white/70">
+              {quickLinks.map((l) => (
+                <li key={l.href}>
+                  <Link to={l.href} className="block py-0.5 transition active:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="border-t border-white/10 pt-6">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+              Contact
+            </p>
+            <ul className="mt-4 space-y-4">
+              <li>
+                <a
+                  href={site.phoneHref}
+                  className="flex items-start gap-3 text-white/80 transition active:text-white"
+                >
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-yp-brass">
+                    <Phone size={15} strokeWidth={1.7} />
+                  </span>
+                  <span>
+                    <span className="block text-[14px] font-medium text-white">{site.phone}</span>
+                    <span className="mt-0.5 block text-[11px] text-white/35">Main</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.salesPhoneHref}
+                  className="flex items-start gap-3 text-white/80 transition active:text-white"
+                >
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-yp-brass">
+                    <Phone size={15} strokeWidth={1.7} />
+                  </span>
+                  <span>
+                    <span className="block text-[14px] font-medium text-white">{site.salesPhone}</span>
+                    <span className="mt-0.5 block text-[11px] text-white/35">Sales</span>
+                  </span>
+                </a>
+              </li>
+              {site.email ? (
+                <li>
+                  <a href={site.emailHref} className="break-all text-[14px] text-white/70">
+                    {site.email}
+                  </a>
+                </li>
+              ) : null}
+              <li className="flex items-start gap-3 text-[13px] leading-relaxed text-white/60">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-yp-brass">
+                  <MapPin size={15} strokeWidth={1.7} />
+                </span>
+                <span>
+                  {site.address.line1}
+                  <br />
+                  {site.address.city}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* ——— Desktop layout ——— */}
+        <div className="hidden gap-12 lg:grid lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo />
-            <p className="mt-4 font-display text-lg tracking-tight text-white sm:text-xl">
+            <p className="mt-4 font-display text-xl tracking-tight text-white">
               Yash Ply &amp; Hardware
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/55">
               Plywood, hardware and materials for spaces built with purpose.
             </p>
-
-            <div className="mt-6 flex items-center gap-2.5">
-              {socialItems.map((item) => {
-                const Icon = item.icon;
-                const cls =
-                  "flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition hover:border-yp-brass/60 hover:text-yp-brass";
-                if (item.external || item.href.startsWith("http") || item.href.startsWith("mailto:") || item.href.startsWith("tel:")) {
-                  return (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                      className={cls}
-                      aria-label={item.label}
-                    >
-                      <Icon size={16} strokeWidth={1.6} />
-                    </a>
-                  );
-                }
-                return (
-                  <Link key={item.label} to={item.href} className={cls} aria-label={item.label}>
-                    <Icon size={16} strokeWidth={1.6} />
-                  </Link>
-                );
-              })}
-            </div>
+            <SocialRow className="mt-6" />
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:col-span-5 lg:gap-10">
+          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-5">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
                 Quick Links
@@ -140,14 +251,14 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="relative h-full overflow-hidden rounded-[1.25rem] border border-yp-brass/50 bg-white/[0.03] p-5 sm:p-6">
+            <div className="relative h-full overflow-hidden rounded-[1.25rem] border border-yp-brass/50 bg-white/[0.03] p-6">
               <div className="pointer-events-none absolute inset-2 rounded-[0.9rem] border border-yp-brass/25" />
               <div className="relative flex h-full flex-col justify-between gap-6">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-yp-brass">
                     Next step
                   </p>
-                  <p className="mt-3 font-display text-xl leading-snug text-white sm:text-2xl">
+                  <p className="mt-3 font-display text-2xl leading-snug text-white">
                     Ready to share your requirement?
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white/50">
@@ -166,14 +277,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-7 sm:mt-14">
-          <p className="text-center text-xs text-white/40">
+        <div className="mt-10 border-t border-white/10 pt-6 sm:mt-14 sm:pt-7">
+          <p className="text-center text-[11px] text-white/40 sm:text-xs">
             © {new Date().getFullYear()} Yash Ply &amp; Hardware. All Rights Reserved.
           </p>
-          <p className="mt-3 text-center text-[11px] tracking-wide text-white/30">
+          <p className="mt-2.5 text-center text-[10px] tracking-wide text-white/30 sm:mt-3 sm:text-[11px]">
             Designed &amp; developed by : TheSocialKollab
           </p>
-          <div className="mt-4 flex justify-center gap-5 text-[11px] text-white/35">
+          <div className="mt-3.5 flex justify-center gap-5 text-[11px] text-white/35 sm:mt-4">
             <Link to="/privacy" className="hover:text-white/70">
               Privacy
             </Link>

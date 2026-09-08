@@ -161,7 +161,7 @@ export default function Contact() {
         className="relative isolate flex min-h-[78svh] overflow-hidden bg-yp-espresso text-yp-ivory sm:min-h-[88svh]"
       >
         <motion.img
-          src={images.workshop}
+          src={images.about}
           alt="Yash Ply & Hardware yard"
           style={{ y: imgY, x: tilt.x, scale: 1.06 }}
           className="absolute inset-0 h-full w-full object-cover"
@@ -242,7 +242,7 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-4 lg:grid-cols-3">
             {details.map((item, i) => (
               <DetailCard key={item.id} item={item} index={i} />
             ))}
@@ -295,7 +295,7 @@ export default function Contact() {
             <div className="grid lg:grid-cols-12">
               <div className="relative min-h-[12rem] sm:min-h-[16rem] lg:col-span-5 lg:min-h-[24rem]">
                 <img
-                  src={images.craftsman}
+                  src={images.hardware}
                   alt="Sales guidance at Yash Ply & Hardware"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

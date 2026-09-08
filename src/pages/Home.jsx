@@ -14,10 +14,10 @@ import GuidesHome from "../components/GuidesHome";
 import QuoteForm from "../components/QuoteForm";
 import {
   audiences,
-  images,
   inspiration,
   site,
 } from "../data/content";
+import HeroVideo from "../components/HeroVideo";
 
 export default function Home() {
   return (
@@ -28,17 +28,7 @@ export default function Home() {
       />
 
       <section className="relative isolate min-h-[100svh] overflow-hidden bg-yp-espresso text-white">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          src="/hero.mp4"
-          poster={images.hero}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden
-        />
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-black/70" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.45)_100%)]" />
 
@@ -132,7 +122,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-2.5 sm:mt-8 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 lg:grid-cols-4">
             {audiences.map((a) => (
               <Reveal key={a.title}>
                 <Link

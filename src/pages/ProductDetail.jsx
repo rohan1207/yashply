@@ -199,11 +199,9 @@ export default function ProductDetail() {
           <p className="eyebrow">Also in the yard</p>
           <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">Other grades on the floor.</h2>
         </div>
-        <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:px-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-12 xl:grid-cols-3">
+        <div className="yp-container mt-8 grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-3">
           {related.slice(0, 3).map((p, i) => (
-            <div key={p.slug} className="w-[78vw] max-w-sm shrink-0 snap-start lg:w-auto">
-              <CatalogueCard product={p} index={i} href={`/products/${p.slug}`} />
-            </div>
+            <CatalogueCard key={p.slug} product={p} index={i} href={`/products/${p.slug}`} />
           ))}
         </div>
       </section>

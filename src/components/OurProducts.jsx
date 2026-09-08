@@ -38,13 +38,13 @@ function CategoryCard({ item, index, inView, reduceMotion }) {
  delay: 0.08 + index * 0.1,
  ease: [0.22, 1, 0.36, 1],
  }}
- className="group relative flex flex-col"
+ className="group relative flex h-full flex-col"
  >
  <Link
  to={item.href}
- className="relative mx-auto flex w-full max-w-[22rem] flex-col items-center outline-none"
+ className="relative mx-auto flex h-full w-full max-w-[22rem] flex-col items-center outline-none"
  >
- <div className="relative flex h-[13.5rem] w-full items-end justify-center sm:h-[17.5rem] lg:h-[19rem]">
+ <div className="relative flex h-[11rem] w-full shrink-0 items-end justify-center sm:h-[17.5rem] lg:h-[19rem]">
  {/* soft floor glow, sells the floating cutout */}
  <div
  aria-hidden
@@ -80,14 +80,14 @@ function CategoryCard({ item, index, inView, reduceMotion }) {
  />
  </div>
 
- <div className="mt-7 w-full text-center sm:mt-8">
- <h3 className="font-display text-2xl tracking-tight text-yp-espresso sm:text-[1.75rem]">
+ <div className="mt-5 flex w-full flex-1 flex-col text-center sm:mt-8">
+ <h3 className="font-display text-lg tracking-tight text-yp-espresso sm:text-[1.75rem]">
  {item.title}
  </h3>
- <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-yp-mist sm:text-[15px]">
+ <p className="mx-auto mt-2 max-w-sm text-[12px] leading-relaxed text-yp-mist sm:mt-3 sm:text-[15px]">
  {item.text}
  </p>
- <span className="btn-ghost mt-6 inline-flex">
+ <span className="btn-ghost mt-auto inline-flex self-center pt-4 sm:pt-6">
  {item.cta}
  <ArrowUpRight
  size={15}
@@ -128,7 +128,7 @@ export default function OurProducts() {
  </h2>
  </motion.div>
 
- <div className="mt-10 grid gap-10 sm:mt-16 sm:gap-14 lg:mt-18 lg:grid-cols-2 lg:gap-10 xl:gap-16">
+ <div className="mt-10 grid grid-cols-2 items-stretch gap-2.5 sm:mt-16 sm:gap-14 lg:mt-18 lg:grid-cols-2 lg:gap-10 xl:gap-16">
  {categories.map((item, i) => (
  <CategoryCard
  key={item.id}
