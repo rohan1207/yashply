@@ -244,95 +244,28 @@ export const hardwareItems = [
  name: "Hinges",
  eyebrow: "Soft-close & concealed",
  summary: "Cabinet and wardrobe hinges from leading brands, smooth close, lasting alignment.",
- image: images.kitchen,
+ image: "/hinges.png",
  },
  {
  slug: "telescopic-channels",
  name: "Telescopic Channels",
  eyebrow: "Drawer systems",
  summary: "Full-extension runners and channels built for everyday kitchen and furniture use.",
- image: images.office,
+ image: "/telescopic_channels.png",
  },
  {
  slug: "sliding-fittings",
  name: "Sliding Wardrobe Fittings",
  eyebrow: "Wardrobe systems",
  summary: "Rollers, tracks and kits for sliding wardrobes that stay quiet and true.",
- image: images.wardrobe,
+ image: "/sliding_window_fittings.png",
  },
  {
  slug: "handles-locks",
  name: "Handles & Locks",
  eyebrow: "Finishing hardware",
  summary: "Handles, locks and complementary fittings to complete the furniture and door set.",
- image: images.door,
- },
-];
-
-export const productMega = [
- {
- title: "Plywood",
- href: "/products#plywood",
- image: images.stack,
- items: [
- { label: "Commercial · IS 303", href: "/products/commercial-plywood", image: images.stack },
- { label: "Water Resistant · BWR", href: "/products/bwr-plywood", image: images.kitchen },
- { label: "Waterproof · IS 710", href: "/products/bwp-plywood", image: images.layers },
- { label: "Made to order", href: "/contact", image: images.workshop },
- ],
- },
- {
- title: "Block Boards",
- href: "/products#boards",
- image: images.walnut,
- items: [
- { label: "BWP Block Board", href: "/products/bwp-block-board", image: images.walnut },
- { label: "MR Block Board", href: "/products/mr-block-board", image: images.door },
- { label: "For lofts & shutters", href: "/inspiration/wardrobes", image: images.wardrobe },
- ],
- },
- {
- title: "Doors",
- href: "/products/flush-doors",
- image: images.minimal,
- items: [
- { label: "Flush Doors", href: "/products/flush-doors", image: images.minimal },
- { label: "Site-ready sizes", href: "/contact", image: images.door },
- { label: "Hardware-ready", href: "/products/flush-doors", image: images.bedroom },
- ],
- },
- {
- title: "By room",
- href: "/inspiration",
- image: images.living,
- items: [
- { label: "Modular kitchens", href: "/inspiration/modular-kitchens", image: images.kitchen },
- { label: "Wardrobes & lofts", href: "/inspiration/wardrobes", image: images.wardrobe },
- { label: "Living & media walls", href: "/inspiration/living", image: images.living },
- { label: "Baths & wet cores", href: "/inspiration/wet-areas", image: images.wet },
- ],
- },
- {
- title: "Yashply Tools",
- href: "/calculator",
- image: images.workshop,
- items: [
- { label: "Sheet calculator", href: "/calculator", image: images.kitchen2 },
- { label: "Buying guides", href: "/guides", image: images.grain },
- { label: "Quality & ISI", href: "/quality", image: images.layers },
- { label: "FAQs", href: "/faq", image: images.office },
- ],
- },
- {
- title: "More",
- href: "/gallery",
- image: images.timber,
- items: [
- { label: "Gallery", href: "/gallery", image: images.timber },
- { label: "Services", href: "/professionals", image: images.office },
- { label: "About us", href: "/about", image: images.craftsman },
- { label: "Contact the yard", href: "/contact", image: images.workshop },
- ],
+ image: "/products/hardware.png",
  },
 ];
 
@@ -756,8 +689,8 @@ export const plywoodCatalogue = [
  grade: "Silver Grade",
  sizes: ["8 × 4", "7 × 4"],
  thicknesses: ["18 mm", "12 mm", "8 mm", "6 mm"],
- image: images.stack,
- edge: images.layers,
+ image: "/alt_gurjan_ply.png",
+ edge: "/alt_gurjan_ply.png",
  },
  {
  slug: "redcore-ply",
@@ -765,8 +698,8 @@ export const plywoodCatalogue = [
  grade: "Gold Grade",
  sizes: ["8 × 4", "7 × 4"],
  thicknesses: ["18 mm", "12 mm", "8 mm", "6 mm"],
- image: images.walnut,
- edge: images.grain,
+ image: "/redcore_ply.png",
+ edge: "/redcore_ply.png",
  },
  {
  slug: "redcore-bwp-ply",
@@ -774,8 +707,8 @@ export const plywoodCatalogue = [
  grade: "Platinum Grade",
  sizes: ["8 × 4", "7 × 4"],
  thicknesses: ["18 mm", "12 mm", "8 mm", "6 mm"],
- image: images.layers,
- edge: images.wet,
+ image: "/redcore_bwp_ply.png",
+ edge: "/redcore_bwp_ply.png",
  },
  {
  slug: "rubber-packaging-ply",
@@ -783,8 +716,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4"],
  thicknesses: ["17 mm", "14 mm", "10 mm", "6.5 mm"],
- image: images.timber,
- edge: images.stack,
+ image: "/rubber_packaging_ply.png",
+ edge: "/rubber_packaging_ply.png",
  },
  {
  slug: "calibrated-ply",
@@ -792,8 +725,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4"],
  thicknesses: ["16 mm"],
- image: images.minimal,
- edge: images.layers,
+ image: "/calibrated_ply.png",
+ edge: "/calibrated_ply.png",
  },
  {
  slug: "truck-flooring-ply",
@@ -801,8 +734,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4"],
  thicknesses: ["25 mm", "18 mm", "16 mm", "12 mm"],
- image: images.workshop,
- edge: images.craftsman,
+ image: "/truck_floring_ply.png",
+ edge: "/truck_floring_ply.png",
  },
  {
  slug: "blockboard-double-core-pine",
@@ -810,8 +743,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4", "7 × 4", "7 × 3", "6 × 3"],
  thicknesses: ["25 mm", "19 mm"],
- image: images.wardrobe,
- edge: images.timber,
+ image: "/blockboard_double_core_pine.png",
+ edge: "/blockboard_double_core_pine.png",
  },
  {
  slug: "blockboard-hardwood",
@@ -819,8 +752,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4", "7 × 4"],
  thicknesses: ["25 mm"],
- image: images.door,
- edge: images.stack,
+ image: "/blockboard_hardcore.png",
+ edge: "/blockboard_hardcore.png",
  },
  {
  slug: "shuttering-ply-red-film",
@@ -828,8 +761,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4"],
  thicknesses: ["12 mm — 24 kg, 30 kg, 34 kg", "18 mm — 45 kg"],
- image: images.commercial,
- edge: images.workshop,
+ image: "/shuttering_ply.png",
+ edge: "/shuttering_ply.png",
  },
  {
  slug: "chequered-plywood",
@@ -837,8 +770,8 @@ export const plywoodCatalogue = [
  grade: null,
  sizes: ["8 × 4"],
  thicknesses: ["12 mm — 30 kg"],
- image: images.office,
- edge: images.layers,
+ image: "/chequered_ply.png",
+ edge: "/chequered_ply.png",
  },
 ];
 
@@ -847,33 +780,73 @@ export const hardwareCatalogue = [
  slug: "hinges",
  name: "Hinges",
  text: "Soft-close and concealed cabinet hinges from leading brands.",
- image: images.kitchen,
+ image: "/hinges.png",
  },
  {
  slug: "telescopic-channels",
  name: "Telescopic Channels",
  text: "Full-extension runners built for everyday drawers and kitchens.",
- image: images.office,
+ image: "/telescopic_channels.png",
  },
  {
  slug: "sliding-wardrobe-fittings",
  name: "Sliding Wardrobe Fittings",
  text: "Rollers, tracks and kits for quiet, true sliding wardrobes.",
- image: images.wardrobe,
+ image: "/sliding_window_fittings.png",
  },
  {
  slug: "and-more",
  name: "And More",
  text: "Handles, locks, connectors and specialised fittings. Ask the yard for the full range.",
- image: images.door,
+ image: "/products/hardware.png",
  highlight: true,
  },
 ];
 
 export const hardwareBrands = [
- { name: "Hettich", src: "/brands/hettich.svg" },
- { name: "Häfele", src: "/brands/hafele.svg" },
- { name: "EBCO", src: "/brands/ebco.png" },
- { name: "Blum", src: "/brands/blum.svg" },
- { name: "Godrej", src: "/brands/godrej.svg" },
+  {
+    name: "Hettich",
+    src: "/brands/hettich.svg",
+    focus: "Hinges, drawers and sliding systems",
+  },
+  {
+    name: "Häfele",
+    src: "/brands/hafele.svg",
+    focus: "Furniture fittings and architectural hardware",
+  },
+  {
+    name: "EBCO",
+    src: "/brands/ebco.png",
+    focus: "Channels, connectors and everyday fittings",
+  },
+  {
+    name: "Blum",
+    src: "/brands/blum.svg",
+    focus: "Motion technology for kitchens and cabinets",
+  },
+  {
+    name: "Godrej",
+    src: "/brands/godrej.svg",
+    focus: "Locks, handles and security hardware",
+  },
+  {
+    name: "Ozone",
+    src: "/brands/ozone.png",
+    focus: "Architectural glass and door hardware",
+  },
+  {
+    name: "Dorset",
+    src: "/brands/dorset.svg",
+    focus: "Locks, handles and door controls",
+  },
+  {
+    name: "Grass",
+    src: "/brands/grass.svg",
+    focus: "Drawer systems and cabinet fittings",
+  },
+  {
+    name: "Enox",
+    src: "/brands/enox.png",
+    focus: "Glass hardware and complementary fittings",
+  },
 ];

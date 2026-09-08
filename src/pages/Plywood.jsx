@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
 import CatalogueCard from "../components/CatalogueCard";
-import { images, plywoodCatalogue } from "../data/content";
+import { plywoodCatalogue } from "../data/content";
 
 export default function Plywood() {
   const heroRef = useRef(null);
@@ -50,7 +50,7 @@ export default function Plywood() {
         className="relative isolate flex min-h-[88svh] overflow-hidden bg-yp-espresso text-yp-ivory sm:min-h-[92svh]"
       >
         <motion.img
-          src={images.stack}
+          src="/plywood_page_hero.png"
           alt="Plywood range at Yash Ply & Hardware"
           style={{ y: imgY, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"

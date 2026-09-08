@@ -4,14 +4,9 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
-import CatalogueCard from "../components/CatalogueCard";
-import {
-  hardwareBrands,
-  hardwareCatalogue,
-  images,
-} from "../data/content";
+import { hardwareBrands, images } from "../data/content";
 
-export default function Hardware() {
+export default function Brands() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -24,8 +19,8 @@ export default function Hardware() {
   return (
     <>
       <SEO
-        title="Hardware"
-        description="Hardware that completes the build. Hinges, channels, sliding fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and others at Yash Ply & Hardware."
+        title="Brands"
+        description="Hardware brands stocked at Yash Ply & Hardware, Pune — Hettich, Häfele, EBCO, Blum, Godrej, Ozone, Dorset, Grass, Enox and more."
       />
 
       <section
@@ -34,7 +29,7 @@ export default function Hardware() {
       >
         <motion.img
           src="/hardware_page_hero.png"
-          alt="Hardware fittings at Yash Ply & Hardware"
+          alt="Hardware brands at Yash Ply & Hardware"
           style={{ y: imgY, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -46,50 +41,100 @@ export default function Hardware() {
           className="relative z-10 mx-auto flex w-full max-w-site flex-col justify-end px-5 pb-16 pt-[calc(var(--header-h)+3rem)] sm:px-8 lg:px-12"
         >
           <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-yp-copper sm:text-[14px]">
-            Hardware
+            Brands
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.2rem)] font-medium leading-[1.02] tracking-tight">
-            Hardware That Completes the Build.
+            Leading Names. Extensive Choice.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            From everyday furniture hardware to specialised fittings, Yash Ply & Hardware offers a
-            wide range of products from leading brands.
+            We stock hardware from trusted brands so the fitting can match the sheet — under one
+            roof in Pune.
           </p>
           <a
-            href="#categories"
+            href="#brands"
             className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
           >
-            Explore categories
+            Browse brands
             <ArrowDown size={14} className="animate-bounce" />
           </a>
         </motion.div>
       </section>
 
-      <section id="categories" className="yp-section scroll-mt-[var(--header-h)]">
+      <div className="overflow-hidden border-y border-yp-line bg-yp-ivory py-3.5">
+        <div className="flex w-max animate-[voice-marquee_32s_linear_infinite] gap-8 pr-8 hover:[animation-play-state:paused]">
+          {[0, 1].map((copy) => (
+            <p
+              key={copy}
+              className="flex gap-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-yp-espresso/50"
+              aria-hidden={copy === 1 || undefined}
+            >
+              {hardwareBrands.map((b) => (
+                <span key={`${copy}-${b.name}`} className="inline-flex items-center gap-8">
+                  {b.name}
+                  <span className="text-yp-red">·</span>
+                </span>
+              ))}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      <section id="brands" className="yp-section scroll-mt-[var(--header-h)]">
         <div className="yp-container">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="eyebrow">Common Categories</p>
+              <p className="eyebrow">Our Partners</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                A sample of what the yard stocks.
+                Brands we deal in every day.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                These are the categories we highlight most often. The actual hardware range is much
-                larger. Tell us what you need and we will map it to the right brand and fitting.
+                From kitchen motion systems to locks and glass hardware — ask the yard for the
+                exact series and finish you need.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-            {hardwareCatalogue.map((item, i) => (
-              <CatalogueCard
-                key={item.slug}
-                id={item.slug}
-                product={{ name: item.name, image: item.image }}
-                index={i}
-                href={`/quote?product=${encodeURIComponent(item.name)}`}
-                cta="View Details"
-              />
+          <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            {hardwareBrands.map((brand, i) => (
+              <motion.article
+                key={brand.name}
+                id={brand.name.toLowerCase().replace(/ä/g, "a")}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8%" }}
+                transition={{ duration: 0.55, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem]"
+              >
+                <div className="flex aspect-[16/10] items-center justify-center bg-[#F7F5F2] px-8 transition group-hover:bg-white">
+                  <img
+                    src={brand.src}
+                    alt={brand.name}
+                    className="max-h-14 max-w-[70%] object-contain sm:max-h-16"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col px-5 py-6 sm:px-6 sm:py-7">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red">
+                    Brand
+                  </p>
+                  <h3 className="mt-2 font-display text-[1.25rem] leading-tight tracking-tight sm:text-[1.4rem]">
+                    {brand.name}
+                  </h3>
+                  {brand.focus ? (
+                    <p className="mt-3 text-sm leading-relaxed text-yp-mist">{brand.focus}</p>
+                  ) : null}
+                  <Link
+                    to={`/quote?product=${encodeURIComponent(brand.name)}`}
+                    className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition group-hover:text-yp-red"
+                  >
+                    Enquire
+                    <ArrowUpRight
+                      size={14}
+                      className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </Link>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
@@ -98,47 +143,21 @@ export default function Hardware() {
       <section className="border-y border-yp-line bg-[#F7F5F2] yp-section">
         <div className="yp-container">
           <Reveal>
-            <div id="brands" className="mx-auto max-w-2xl scroll-mt-[var(--header-h)] text-center">
-              <p className="eyebrow">Brands</p>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow">Hardware</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                Leading names. Extensive choice.
+                Need a category, not only a brand?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                We deal in hardware from Hettich, Häfele, EBCO, Blum, Godrej and more, so the
-                fitting can match the sheet under one roof.
+                Browse hinges, channels, sliding fittings and more — then we map the right brand to
+                your job.
               </p>
+              <Link to="/hardware" className="btn-ghost mt-8 inline-flex">
+                View Hardware
+                <ArrowUpRight size={15} />
+              </Link>
             </div>
           </Reveal>
-
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
-            {hardwareBrands.map((brand, i) => (
-              <motion.div
-                key={brand.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-8%" }}
-                transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -4 }}
-                className="flex h-24 items-center justify-center rounded-[1.15rem] border border-yp-line bg-white px-4 transition hover:border-yp-espresso/20 hover:shadow-soft sm:h-28 sm:rounded-[1.35rem]"
-              >
-                <img
-                  src={brand.src}
-                  alt={brand.name}
-                  className="max-h-9 max-w-full object-contain sm:max-h-11"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link
-              to="/brands"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition hover:text-yp-red"
-            >
-              View all brands
-              <ArrowUpRight size={14} />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -149,7 +168,7 @@ export default function Hardware() {
               <div className="relative min-h-[12rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-[26rem]">
                 <img
                   src={images.craftsman}
-                  alt="Hardware guidance at the Pune yard"
+                  alt="Brand guidance at Yash Ply & Hardware"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-yp-espresso/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-yp-espresso/25" />
@@ -158,13 +177,14 @@ export default function Hardware() {
                 <div className="pointer-events-none absolute inset-4 rounded-[1rem] border border-yp-brass/40 sm:inset-6 sm:rounded-[1.25rem]" />
                 <div className="relative flex h-full flex-col justify-center px-6 py-12 sm:px-12 sm:py-16 lg:px-14">
                   <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-yp-brass">
-                    Hardware desk
+                    Sales desk
                   </p>
                   <h2 className="mt-3 max-w-[18ch] font-display text-[clamp(1.65rem,4.5vw,2.85rem)] font-medium leading-[1.1] text-yp-ivory">
-                    Looking for a specific hardware product?
+                    Looking for a specific brand or series?
                   </h2>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:text-[15px]">
-                    Tell us what you need and our team will help you find it.
+                    Tell us the fitting and finish. We will check stock and options at the Pune
+                    yard.
                   </p>
                   <div className="mt-8">
                     <Link

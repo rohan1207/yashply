@@ -47,11 +47,11 @@ export default function CatalogueCard({
 
   const body = (
     <>
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#EDE9E4]">
+      <div className="relative aspect-square overflow-hidden bg-[#F3F0EC]">
         <img
           src={image}
           alt={name}
-          className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+          className="h-full w-full object-contain transition duration-700 ease-out group-hover:scale-[1.02]"
         />
       </div>
 

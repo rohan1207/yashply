@@ -8,7 +8,7 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Plywood", href: "/plywood" },
   { label: "Hardware", href: "/hardware" },
-  { label: "Brands", href: "/hardware#brands" },
+  { label: "Brands", href: "/brands" },
   { label: "Get a Quote", href: "/quote" },
   { label: "Contact Us", href: "/contact" },
 ];

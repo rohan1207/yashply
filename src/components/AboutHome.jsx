@@ -8,7 +8,6 @@ import {
  useInView,
  useReducedMotion,
 } from "framer-motion";
-import { images } from "../data/content";
 
 const facts = [
  {
@@ -153,8 +152,8 @@ export default function AboutHome() {
  className="relative overflow-hidden rounded-[1.25rem]"
  >
  <motion.img
- src={images.workshop}
- alt="Yash Ply & Hardware yard"
+ src="/about_component_image.png"
+ alt="Yash Ply & Hardware materials and interiors"
  style={reduceMotion ? undefined : { y: imgY, scale: imgScale }}
  className="aspect-[16/11] w-full object-cover sm:aspect-[5/4] lg:aspect-[16/12]"
  animate={{

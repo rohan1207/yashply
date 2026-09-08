@@ -15,7 +15,7 @@ import { hardwareCatalogue, plywoodCatalogue, site } from "../data/content";
 
 const plywoodLinks = [
   { label: "All plywood", href: "/plywood", meta: "Full product range" },
-  ...plywoodCatalogue.slice(0, 5).map((p) => ({
+  ...plywoodCatalogue.map((p) => ({
     label: p.name,
     href: `/plywood#${p.slug}`,
     meta: p.grade || p.sizes.join(" · "),
@@ -129,29 +129,8 @@ export default function Navbar() {
             to="/quality"
             className="hidden shrink-0 rounded-full bg-yp-red px-4 py-1.5 text-[11px] font-bold text-white md:inline-flex"
           >
-            ISI Total Cover
+            ISI Certified
           </Link>
-
-          <div className="relative hidden md:block">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 rounded-full border border-yp-line px-3 py-1.5 text-[12px] font-semibold"
-              onMouseEnter={() => setMega("consumer")}
-              onMouseLeave={() => setMega(null)}
-            >
-              Consumer <ChevronDown size={14} />
-            </button>
-            <div onMouseEnter={() => setMega("consumer")} onMouseLeave={() => setMega(null)}>
-              <Mega
-                open={mega === "consumer"}
-                items={[
-                  { href: "/", label: "Homeowner", meta: "Buy the right grade once" },
-                  { href: "/professionals", label: "Architect / ID", meta: "Spec-ready lots" },
-                  { href: "/professionals", label: "Contractor", meta: "Volume & delivery" },
-                ]}
-              />
-            </div>
-          </div>
 
           <div className="hidden flex-1 lg:block">
             <HeaderSearch />
@@ -180,6 +159,9 @@ export default function Navbar() {
       <div className="relative hidden lg:block" onMouseLeave={closeCollection}>
         <div className="yp-container flex h-12 items-center justify-between gap-6">
           <nav className="flex items-center gap-6 xl:gap-7">
+            <NavLink to="/" end className={linkClass} onMouseEnter={() => setMega(null)}>
+              Home
+            </NavLink>
             <NavLink to="/about" className={linkClass} onMouseEnter={() => setMega(null)}>
               About us
             </NavLink>
@@ -220,6 +202,9 @@ export default function Navbar() {
               </NavLink>
               <Mega open={mega === "hardware"} items={hardwareLinks} />
             </div>
+            <NavLink to="/brands" className={linkClass} onMouseEnter={() => setMega(null)}>
+              Brands
+            </NavLink>
             <div
               className="relative"
               onMouseEnter={() => setMega("contact")}
@@ -299,7 +284,15 @@ export default function Navbar() {
                 >
                   Hardware
                 </Link>
+                <Link
+                  to="/brands"
+                  className="rounded-xl px-2 py-3 text-lg font-medium"
+                  onClick={() => setOpen(false)}
+                >
+                  Brands
+                </Link>
                 {[
+                  { label: "Home", href: "/" },
                   { label: "About us", href: "/about" },
                   { label: "Inspiration", href: "/inspiration" },
                   { label: "Quality", href: "/quality" },

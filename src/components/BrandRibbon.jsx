@@ -1,14 +1,6 @@
-const brands = [
-  { name: "Hettich", src: "/brands/hettich.svg" },
-  { name: "Häfele", src: "/brands/hafele.svg" },
-  { name: "EBCO", src: "/brands/ebco.png" },
-  { name: "Blum", src: "/brands/blum.svg" },
-  { name: "Godrej", src: "/brands/godrej.svg" },
-  { name: "Ozone", src: "/brands/ozone.png" },
-  { name: "Dorset", src: "/brands/dorset.svg" },
-  { name: "Grass", src: "/brands/grass.svg" },
-  { name: "Enox", src: "/brands/enox.png" },
-];
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import { hardwareBrands } from "../data/content";
 
 function BrandMark({ brand }) {
   return (
@@ -33,13 +25,10 @@ function Track({ hidden }) {
       className="flex items-center gap-2 pr-2 sm:gap-3 sm:pr-3"
       aria-hidden={hidden || undefined}
     >
-      {brands.map((brand) => (
+      {hardwareBrands.map((brand) => (
         <div key={brand.name} className="flex items-center gap-2 sm:gap-3">
           <BrandMark brand={brand} />
-          <span
-            aria-hidden
-            className="h-1 w-1 shrink-0 rounded-full bg-yp-espresso/20"
-          />
+          <span aria-hidden className="h-1 w-1 shrink-0 rounded-full bg-yp-espresso/20" />
         </div>
       ))}
     </div>
@@ -55,9 +44,16 @@ export default function BrandRibbon() {
           Leading Brands. Extensive Choice.
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-          We deal in a wide range of hardware products from leading brands including
-          Hettich, Häfele, EBCO, Blum, Godrej and more.
+          We deal in a wide range of hardware products from leading brands including Hettich,
+          Häfele, EBCO, Blum, Godrej and more.
         </p>
+        <Link
+          to="/brands"
+          className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition hover:text-yp-red"
+        >
+          View all brands
+          <ArrowUpRight size={14} />
+        </Link>
       </div>
 
       <div className="brand-marquee mt-8 sm:mt-12">
