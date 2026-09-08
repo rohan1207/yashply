@@ -105,7 +105,7 @@ export default function Brands() {
                 transition={{ duration: 0.55, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
                 className="group flex h-full flex-col overflow-hidden rounded-[0.9rem] border border-yp-line bg-white transition duration-300 hover:border-yp-espresso/25 sm:rounded-[1.5rem]"
               >
-                <div className="flex aspect-square items-center justify-center bg-[#F7F5F2] px-4 transition group-hover:bg-white sm:aspect-[16/10] sm:px-8">
+                <div className="flex aspect-square items-center justify-center bg-yp-sand px-4 transition group-hover:bg-white sm:aspect-[16/10] sm:px-8">
                   <img
                     src={brand.src}
                     alt={brand.name}
@@ -142,7 +142,7 @@ export default function Brands() {
         </div>
       </section>
 
-      <section className="border-y border-yp-line bg-[#F7F5F2] yp-section">
+      <section className="border-y border-yp-line bg-yp-sand yp-section">
         <div className="yp-container">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">

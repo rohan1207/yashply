@@ -250,7 +250,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section id="reach" className="border-y border-yp-line bg-[#F7F5F2] yp-section scroll-mt-[var(--header-h)]">
+      <section id="reach" className="border-y border-yp-line bg-yp-sand yp-section scroll-mt-[var(--header-h)]">
         <div className="yp-container">
           <Reveal>
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">

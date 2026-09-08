@@ -15,13 +15,13 @@ const items = [
     label: "Enquire",
     icon: PenLine,
     to: "/quote",
-    tone: "bg-yp-red text-white shadow-[0_8px_20px_rgba(227,6,19,0.28)]",
+    tone: "bg-yp-gold text-yp-espresso shadow-[0_8px_20px_rgba(228,168,35,0.32)]",
   },
   {
     label: "Call",
     icon: Phone,
     href: site.phoneHref,
-    tone: "bg-yp-espresso text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)]",
+    tone: "bg-yp-espresso text-yp-gold shadow-[0_8px_20px_rgba(12,22,35,0.28)]",
   },
   {
     label: "WhatsApp",
@@ -54,7 +54,7 @@ export default function FloatingDock() {
           </>
         );
         const cls =
-          "group flex items-center rounded-full bg-white/95 p-1 shadow-[0_10px_28px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.05] backdrop-blur-xl transition duration-300 hover:bg-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yp-red/40 lg:hover:-translate-x-0.5";
+          "group flex items-center rounded-full bg-white/95 p-1 shadow-[0_10px_28px_rgba(12,22,35,0.12)] ring-1 ring-yp-espresso/[0.06] backdrop-blur-xl transition duration-300 hover:bg-white hover:shadow-[0_16px_40px_rgba(12,22,35,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yp-gold/50 lg:hover:-translate-x-0.5";
 
         if (item.to) {
           return (

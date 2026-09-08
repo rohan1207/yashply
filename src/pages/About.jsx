@@ -219,7 +219,7 @@ export default function About() {
       </section>
 
       {/* Snapshot strip — Century / LTR blend, real yard numbers */}
-      <section className="border-y border-yp-line bg-[#F7F5F2] py-10 sm:py-14">
+      <section className="border-y border-yp-line bg-yp-sand py-10 sm:py-14">
         <div className="yp-container grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
           {[
             { k: "25+", v: "Years of manufacturing & QC" },

@@ -42,7 +42,7 @@ export default function PlywoodHome() {
           ))}
         </div>
 
-        <div className="mt-6 flex justify-end sm:mt-8">
+        <div className="mt-6 flex justify-center sm:mt-8">
           <Link to="/plywood" className="btn-ghost w-fit">
             View All
             <ArrowUpRight size={15} />

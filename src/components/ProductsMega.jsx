@@ -60,9 +60,9 @@ export default function ProductsMega({ onNavigate }) {
         ))}
       </div>
 
-      {/* Soft wash — readable type without heavy dark cards */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/25" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+      {/* Soft wash — navy + gold readable type */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-yp-espresso/70 via-yp-espresso/45 to-yp-espresso/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-yp-espresso/55 via-transparent to-yp-espresso/25" />
 
       <div className="relative z-10 flex h-full flex-col">
         <div className="yp-container grid flex-1 grid-cols-1 content-start gap-10 pt-10 lg:grid-cols-12 lg:gap-12 lg:pt-12 xl:gap-16">
@@ -152,15 +152,17 @@ export default function ProductsMega({ onNavigate }) {
   );
 }
 
-export function ProductsMobileList({ onNavigate }) {
+export function ProductsMobileList({ onNavigate, dark = false }) {
   const [open, setOpen] = useState(false);
   const [colOpen, setColOpen] = useState(0);
 
   return (
-    <div className="border-b border-yp-line">
+    <div className={dark ? "border-b border-white/10" : "border-b border-yp-line"}>
       <button
         type="button"
-        className="flex w-full items-center justify-between py-3 text-lg font-medium"
+        className={`flex w-full items-center justify-between py-3 text-lg font-medium ${
+          dark ? "text-white" : "text-yp-espresso"
+        }`}
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
       >
@@ -172,26 +174,39 @@ export function ProductsMobileList({ onNavigate }) {
           {productsMegaColumns.map((col, ci) => {
             const expanded = colOpen === ci;
             return (
-              <div key={col.title} className="overflow-hidden rounded-xl bg-yp-sand/70">
+              <div
+                key={col.title}
+                className={`overflow-hidden rounded-xl ${
+                  dark ? "bg-white/[0.06]" : "bg-yp-sand/70"
+                }`}
+              >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between px-3 py-3 text-left text-[15px] font-semibold"
+                  className={`flex w-full items-center justify-between px-3 py-3 text-left text-[15px] font-semibold ${
+                    dark ? "text-white" : "text-yp-espresso"
+                  }`}
                   onClick={() => setColOpen(expanded ? -1 : ci)}
                   aria-expanded={expanded}
                 >
                   {col.title}
                   <ChevronDown
                     size={16}
-                    className={`shrink-0 text-yp-mist transition ${expanded ? "rotate-180" : ""}`}
+                    className={`shrink-0 transition ${
+                      expanded ? "rotate-180" : ""
+                    } ${dark ? "text-white/45" : "text-yp-mist"}`}
                   />
                 </button>
                 {expanded && (
-                  <ul className="border-t border-yp-line px-3 pb-2">
+                  <ul
+                    className={`px-3 pb-2 ${
+                      dark ? "border-t border-white/10" : "border-t border-yp-line"
+                    }`}
+                  >
                     <li>
                       <Link
                         to={col.href}
                         onClick={onNavigate}
-                        className="block py-2.5 text-sm font-semibold text-yp-red"
+                        className="block py-2.5 text-sm font-semibold text-yp-gold"
                       >
                         View all {col.title}
                       </Link>
@@ -201,7 +216,11 @@ export function ProductsMobileList({ onNavigate }) {
                         <Link
                           to={row.href}
                           onClick={onNavigate}
-                          className="block border-t border-yp-line/80 py-2.5 text-[15px] text-yp-espresso"
+                          className={`block py-2.5 text-[15px] ${
+                            dark
+                              ? "border-t border-white/10 text-white/80"
+                              : "border-t border-yp-line/80 text-yp-espresso"
+                          }`}
                         >
                           {row.label}
                         </Link>

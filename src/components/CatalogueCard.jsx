@@ -47,7 +47,7 @@ export default function CatalogueCard({
 
   const body = (
     <>
-      <div className="relative aspect-square overflow-hidden bg-[#F3F0EC]">
+      <div className="relative aspect-square overflow-hidden bg-yp-sand">
         <img
           src={image}
           alt={name}

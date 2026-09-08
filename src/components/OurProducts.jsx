@@ -80,18 +80,19 @@ function CategoryCard({ item, index, inView, reduceMotion }) {
  />
  </div>
 
- <div className="mt-5 flex w-full flex-1 flex-col text-center sm:mt-8">
+ <div className="mt-6 flex w-full flex-1 flex-col items-center text-center sm:mt-10">
  <h3 className="font-display text-lg tracking-tight text-yp-espresso sm:text-[1.75rem]">
  {item.title}
  </h3>
- <p className="mx-auto mt-2 max-w-sm text-[12px] leading-relaxed text-yp-mist sm:mt-3 sm:text-[15px]">
+ <p className="mx-auto mt-3 max-w-sm text-[12px] leading-relaxed text-yp-mist sm:mt-4 sm:text-[15px]">
  {item.text}
  </p>
- <span className="btn-ghost mt-auto inline-flex self-center pt-4 sm:pt-6">
- {item.cta}
+ <span className="btn-ghost mt-6 inline-flex shrink-0 items-center justify-center self-center sm:mt-8">
+ <span className="leading-none">{item.cta}</span>
  <ArrowUpRight
  size={15}
- className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+ className="shrink-0 transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+ aria-hidden
  />
  </span>
  </div>
@@ -108,7 +109,7 @@ export default function OurProducts() {
  return (
  <section
  ref={ref}
- className="relative overflow-hidden border-b border-yp-line bg-[#F7F5F2] py-12 sm:py-20 lg:py-24"
+ className="relative overflow-hidden border-b border-yp-line bg-yp-sand py-12 sm:py-20 lg:py-24"
  >
  <div
  aria-hidden

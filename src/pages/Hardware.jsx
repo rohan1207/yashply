@@ -95,7 +95,7 @@ export default function Hardware() {
         </div>
       </section>
 
-      <section className="border-y border-yp-line bg-[#F7F5F2] yp-section">
+      <section className="border-y border-yp-line bg-yp-sand yp-section">
         <div className="yp-container">
           <Reveal>
             <div id="brands" className="mx-auto max-w-2xl scroll-mt-[var(--header-h)] text-center">

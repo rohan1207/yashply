@@ -6,7 +6,7 @@ import { hardwareItems } from "../data/content";
 
 export default function HardwareHome() {
   return (
-    <section className="border-b border-yp-line bg-[#F7F5F2] py-12 sm:py-20 lg:py-24">
+    <section className="border-b border-yp-line bg-yp-sand py-12 sm:py-20 lg:py-24">
       <div className="yp-container">
         <Reveal>
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end md:gap-6">
@@ -43,7 +43,7 @@ export default function HardwareHome() {
           ))}
         </div>
 
-        <div className="mt-6 flex justify-end sm:mt-8">
+        <div className="mt-6 flex justify-center sm:mt-8">
           <Link to="/hardware" className="btn-ghost w-fit">
             View All
             <ArrowUpRight size={15} />

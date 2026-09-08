@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --yp-espresso: #1a1a1a;
+  --yp-espresso: #0c1623;
   --yp-cream: #ffffff;
-  --yp-copper: #e30613;
-  --header-h: 3.5rem;
+  --yp-copper: #e4a823;
+  --yp-gold: #e4a823;
+  --header-h: 4.25rem;
   color-scheme: light;
 }
 
 @media (min-width: 1024px) {
   :root {
-    --header-h: calc(4.25rem + 3rem + 1px);
+    --header-h: calc(5rem + 3rem + 1px);
   }
 }
 
@@ -43,7 +44,7 @@ body {
 }
 
 ::selection {
-  background: rgba(227, 6, 19, 0.18);
+  background: rgba(228, 168, 35, 0.28);
   color: var(--yp-espresso);
 }
 
@@ -86,12 +87,12 @@ a {
 }
 
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-[12px] font-semibold leading-none transition-all duration-300 sm:px-5 sm:text-[13px];
+  @apply inline-flex h-10 items-center justify-center gap-2 rounded-full px-5 text-[12px] font-semibold leading-none transition-all duration-300 sm:h-11 sm:px-6 sm:text-[13px];
 }
 
 .btn-primary {
-  @apply btn bg-yp-red text-white hover:bg-yp-bronze;
-  box-shadow: 0 10px 28px rgba(227, 6, 19, 0.22);
+  @apply btn bg-yp-gold text-yp-espresso hover:bg-yp-bronze hover:text-yp-espresso;
+  box-shadow: 0 10px 28px rgba(228, 168, 35, 0.28);
 }
 
 .btn-primary:hover {
@@ -99,16 +100,39 @@ a {
 }
 
 .btn-copper {
-  @apply btn bg-yp-red text-white hover:bg-yp-bronze;
-  box-shadow: 0 10px 28px rgba(227, 6, 19, 0.22);
+  @apply btn bg-yp-gold text-yp-espresso hover:bg-yp-bronze hover:text-yp-espresso;
+  box-shadow: 0 10px 28px rgba(228, 168, 35, 0.28);
 }
 
 .btn-ghost {
-  @apply btn border border-yp-espresso/15 bg-transparent text-yp-espresso hover:border-yp-espresso hover:bg-yp-espresso hover:text-yp-ivory;
+  @apply btn relative isolate overflow-hidden border border-yp-espresso bg-yp-espresso text-yp-gold;
 }
 
 .btn-ghost-light {
-  @apply btn border border-white/25 text-yp-ivory hover:bg-white hover:text-yp-espresso;
+  @apply btn relative isolate overflow-hidden border border-yp-gold bg-yp-gold text-yp-espresso;
+}
+
+.btn-ghost::after,
+.btn-ghost-light::after {
+  content: "";
+  position: absolute;
+  inset: -20% -40%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 60%
+  );
+  transform: translateX(-85%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.btn-ghost:hover::after,
+.btn-ghost-light:hover::after {
+  transform: translateX(85%);
 }
 
 .hero-cta {
@@ -116,7 +140,7 @@ a {
 }
 
 .hero-cta-solid {
-  @apply hero-cta relative isolate overflow-hidden bg-yp-red text-white;
+  @apply hero-cta relative isolate overflow-hidden bg-yp-gold text-yp-espresso;
 }
 
 .hero-cta-solid::after {
@@ -127,7 +151,7 @@ a {
     105deg,
     transparent 40%,
     rgba(255, 255, 255, 0.08) 45%,
-    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.5) 50%,
     rgba(255, 255, 255, 0.08) 55%,
     transparent 60%
   );
@@ -141,7 +165,7 @@ a {
 }
 
 .hero-cta-line {
-  @apply hero-cta border border-white/55 text-white hover:border-white hover:bg-white hover:text-yp-espresso;
+  @apply hero-cta border border-white/55 text-white hover:border-yp-gold hover:bg-yp-gold hover:text-yp-espresso;
 }
 
 .grain-overlay {
@@ -175,7 +199,7 @@ select {
 }
 
 .products-mega-scrim {
-  background: rgba(11, 13, 18, 0.82);
+  background: rgba(12, 22, 35, 0.78);
 }
 
 .why-copy {
@@ -210,7 +234,7 @@ select {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(20, 17, 14, 0.28);
+  background: rgba(12, 22, 35, 0.28);
   border-radius: 8px;
 }
 

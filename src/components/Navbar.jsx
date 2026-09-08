@@ -46,16 +46,17 @@ function Mega({ items, open }) {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 6 }}
-          className="absolute left-0 top-full z-50 w-[520px] rounded-b-xl border border-t-0 border-yp-line bg-white p-3 shadow-float"
+          className="absolute left-0 top-full z-50 w-[520px] rounded-b-xl border border-t-0 border-white/10 bg-yp-espresso p-3 shadow-float"
         >
           <div className="grid grid-cols-2 gap-1">
             {items.map((item) => {
               const external = /^(https?:|tel:|mailto:)/.test(item.href);
-              const cls = "rounded-lg p-3 transition hover:bg-yp-sand";
+              const cls =
+                "rounded-lg p-3 text-white transition hover:bg-white/[0.06]";
               const inner = (
                 <>
                   <p className="text-sm font-semibold">{item.label}</p>
-                  <p className="mt-0.5 text-xs text-yp-mist">{item.meta}</p>
+                  <p className="mt-0.5 text-xs text-white/45">{item.meta}</p>
                 </>
               );
               return external ? (
@@ -115,38 +116,39 @@ export default function Navbar() {
   }, [mega]);
 
   const linkClass = ({ isActive }) =>
-    `inline-flex items-center gap-1 py-3 text-[13px] font-semibold ${
-      isActive ? "text-yp-red" : "text-yp-espresso hover:text-yp-red"
+    `inline-flex items-center gap-1 py-3 text-[13px] font-semibold transition ${
+      isActive ? "text-yp-gold" : "text-white/90 hover:text-yp-gold"
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-soft">
-      <div className="border-b border-yp-line">
-        <div className="yp-container flex h-14 min-w-0 items-center gap-2 sm:gap-3 lg:h-[4.25rem] lg:gap-4">
-          <Logo compact={open} />
-
-          <Link
-            to="/quality"
-            className="hidden shrink-0 rounded-full bg-yp-red px-4 py-1.5 text-[11px] font-bold text-white md:inline-flex"
-          >
-            ISI Certified
-          </Link>
-
-          <div className="hidden flex-1 lg:block">
-            <HeaderSearch />
+    <header className="fixed inset-x-0 top-0 z-50 bg-yp-espresso text-white shadow-[0_8px_28px_rgba(8,16,24,0.35)]">
+      <div className="border-b border-white/10">
+        <div className="yp-container grid h-[4.25rem] min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 sm:gap-3 lg:h-[5rem] lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-4">
+          <div className="flex min-w-0 items-center gap-2 justify-self-start sm:gap-3">
+            <Logo compact={open} />
+            <Link
+              to="/quality"
+              className="hidden shrink-0 rounded-full border border-yp-gold/40 bg-yp-gold/10 px-4 py-1.5 text-[11px] font-bold text-yp-gold md:inline-flex"
+            >
+              ISI Certified
+            </Link>
           </div>
 
-          <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <div className="col-start-2 hidden w-[min(34rem,42vw)] justify-self-center lg:block">
+            <HeaderSearch dark />
+          </div>
+
+          <div className="flex items-center justify-self-end gap-2 sm:gap-3 max-lg:col-start-2 lg:col-start-3">
             <Link
               to="/quote"
-              className="inline-flex h-9 shrink-0 items-center justify-center rounded-full bg-yp-red px-3.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(227,6,19,0.22)] transition hover:bg-yp-bronze sm:h-10 sm:px-5 sm:text-[12px] sm:tracking-[0.16em]"
+              className="inline-flex h-9 shrink-0 items-center justify-center rounded-full bg-yp-gold px-3.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-yp-espresso shadow-[0_8px_20px_rgba(228,168,35,0.28)] transition hover:bg-yp-bronze sm:h-10 sm:px-5 sm:text-[12px] sm:tracking-[0.16em]"
             >
               <span className="sm:hidden">Quote</span>
               <span className="hidden sm:inline">Get a Quote</span>
             </Link>
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-md border border-yp-line lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
             >
@@ -169,13 +171,18 @@ export default function Navbar() {
               <NavLink
                 to="/products"
                 className={({ isActive }) =>
-                  `inline-flex items-center gap-1 py-3 text-[13px] font-semibold ${
-                    isActive || mega === "collection" ? "text-yp-red" : "text-yp-espresso hover:text-yp-red"
+                  `inline-flex items-center gap-1 py-3 text-[13px] font-semibold transition ${
+                    isActive || mega === "collection"
+                      ? "text-yp-gold"
+                      : "text-white/90 hover:text-yp-gold"
                   }`
                 }
               >
                 Products{" "}
-                <ChevronDown size={13} className={`transition ${mega === "collection" ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  size={13}
+                  className={`transition ${mega === "collection" ? "rotate-180" : ""}`}
+                />
               </NavLink>
             </div>
             <div
@@ -220,9 +227,6 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3 text-[13px]">
-            <Link to="/quote" className="text-yp-espresso" aria-label="Get a Quote">
-              <Menu size={18} />
-            </Link>
             <a
               href={site.whatsapp}
               target="_blank"
@@ -232,9 +236,12 @@ export default function Navbar() {
             >
               <MessageCircle size={15} />
             </a>
-            <span className="h-5 w-px bg-yp-line" />
-            <p className="hidden xl:block text-yp-mist">Dial Customer Care</p>
-            <a href={site.phoneHref} className="flex items-center gap-1.5 font-bold text-yp-red">
+            <span className="h-5 w-px bg-white/15" />
+            <p className="hidden text-white/45 xl:block">Dial Customer Care</p>
+            <a
+              href={site.phoneHref}
+              className="flex items-center gap-1.5 font-bold text-yp-gold transition hover:text-white"
+            >
               <Phone size={14} />
               {site.phone}
             </a>
@@ -248,7 +255,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-x-0 bottom-0 top-[calc(var(--header-h)-2px)] z-[45] bg-[#0b0d12]"
+              className="fixed inset-x-0 bottom-0 top-[calc(var(--header-h)-2px)] z-[45] bg-yp-espresso"
               onMouseEnter={openCollection}
               onMouseLeave={closeCollection}
             >
@@ -264,29 +271,29 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="max-h-[calc(100svh-3.5rem)] overflow-y-auto overflow-x-hidden border-t border-yp-line bg-white lg:hidden"
+            className="max-h-[calc(100svh-3.5rem)] overflow-y-auto overflow-x-hidden border-t border-white/10 bg-yp-espresso lg:hidden"
           >
             <div className="yp-container space-y-4 py-5">
-              <HeaderSearch />
-              <div className="flex flex-col">
-                <ProductsMobileList onNavigate={() => setOpen(false)} />
+              <HeaderSearch dark />
+              <div className="flex flex-col text-white">
+                <ProductsMobileList onNavigate={() => setOpen(false)} dark />
                 <Link
                   to="/plywood"
-                  className="rounded-xl px-2 py-3 text-lg font-medium"
+                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
                   onClick={() => setOpen(false)}
                 >
                   Plywood
                 </Link>
                 <Link
                   to="/hardware"
-                  className="rounded-xl px-2 py-3 text-lg font-medium"
+                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
                   onClick={() => setOpen(false)}
                 >
                   Hardware
                 </Link>
                 <Link
                   to="/brands"
-                  className="rounded-xl px-2 py-3 text-lg font-medium"
+                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
                   onClick={() => setOpen(false)}
                 >
                   Brands
@@ -302,14 +309,17 @@ export default function Navbar() {
                   <Link
                     key={l.href}
                     to={l.href}
-                    className="rounded-xl px-2 py-3 text-lg font-medium"
+                    className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
                     onClick={() => setOpen(false)}
                   >
                     {l.label}
                   </Link>
                 ))}
               </div>
-              <a href={site.phoneHref} className="flex items-center gap-2 text-sm font-bold text-yp-red">
+              <a
+                href={site.phoneHref}
+                className="flex items-center gap-2 text-sm font-bold text-yp-gold"
+              >
                 <Phone size={16} /> {site.phone}
               </a>
               <Link to="/quote" className="btn-copper w-full text-center" onClick={() => setOpen(false)}>

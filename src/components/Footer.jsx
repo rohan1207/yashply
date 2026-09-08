@@ -112,7 +112,7 @@ export default function Footer() {
             </p>
             <Link
               to="/quote"
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-yp-red px-5 py-3.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-white"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-yp-gold px-5 py-3.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso"
             >
               Get a Quote
               <ArrowUpRight size={15} />

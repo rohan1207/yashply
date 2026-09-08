@@ -259,7 +259,7 @@ export default function Products() {
 
  <section
  id="hardware"
- className="scroll-mt-[calc(var(--header-h)+3.75rem)] border-y border-yp-line bg-[#F7F5F2] py-12 sm:py-20"
+ className="scroll-mt-[calc(var(--header-h)+3.75rem)] border-y border-yp-line bg-yp-sand py-12 sm:py-20"
  >
  <div className="yp-container grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
  <div className="lg:col-span-5">

@@ -100,7 +100,7 @@ function GetQuoteForm({ defaultProduct = "" }) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="rounded-[1.35rem] border border-yp-brass/45 bg-[#F7F5F2] px-6 py-12 text-center sm:rounded-[1.75rem] sm:px-10 sm:py-16"
+        className="rounded-[1.35rem] border border-yp-brass/45 bg-yp-sand px-6 py-12 text-center sm:rounded-[1.75rem] sm:px-10 sm:py-16"
       >
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-yp-espresso text-yp-brass">
           <CheckCircle2 size={28} strokeWidth={1.5} />
@@ -224,7 +224,7 @@ function GetQuoteForm({ defaultProduct = "" }) {
       <div className="pt-1">
         <button
           type="submit"
-          className="group relative inline-flex h-12 w-full items-center justify-center rounded-full bg-yp-red px-8 text-[12px] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-yp-bronze sm:h-[3.25rem] sm:w-auto sm:min-w-[14rem] sm:text-[13px]"
+          className="group relative inline-flex h-12 w-full items-center justify-center rounded-full bg-yp-gold px-8 text-[12px] font-semibold uppercase tracking-[0.16em] text-yp-espresso transition hover:bg-yp-bronze sm:h-[3.25rem] sm:w-auto sm:min-w-[14rem] sm:text-[13px]"
         >
           <span
             aria-hidden

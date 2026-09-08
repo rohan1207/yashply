@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Mic, Search, X } from "lucide-react";
 import { guides, inspiration, products } from "../data/content";
 
-export default function HeaderSearch() {
+export default function HeaderSearch({ dark = false }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const wrap = useRef(null);
@@ -41,9 +41,15 @@ export default function HeaderSearch() {
   };
 
   return (
-    <div ref={wrap} className="relative w-full max-w-xl">
-      <label className="flex items-center gap-2 rounded-full border border-yp-line bg-yp-sand px-4 py-2.5">
-        <Search size={16} className="shrink-0 text-yp-stone" />
+    <div ref={wrap} className="relative w-full">
+      <label
+        className={`flex items-center gap-2 rounded-full px-4 py-2.5 ${
+          dark
+            ? "border border-white/15 bg-white/[0.06]"
+            : "border border-yp-line bg-yp-sand"
+        }`}
+      >
+        <Search size={16} className={`shrink-0 ${dark ? "text-white/45" : "text-yp-stone"}`} />
         <input
           value={q}
           onChange={(e) => {
@@ -52,15 +58,19 @@ export default function HeaderSearch() {
           }}
           onFocus={() => setOpen(true)}
           placeholder="What are you looking for?"
-          className="w-full bg-transparent text-sm outline-none placeholder:text-yp-stone/70"
+          className={`w-full bg-transparent text-sm outline-none ${
+            dark
+              ? "text-white placeholder:text-white/40"
+              : "placeholder:text-yp-stone/70"
+          }`}
         />
         {q && (
           <button type="button" onClick={() => setQ("")} aria-label="Clear search">
-            <X size={14} className="text-yp-stone" />
+            <X size={14} className={dark ? "text-white/50" : "text-yp-stone"} />
           </button>
         )}
-        <span className="h-5 w-px bg-yp-line" />
-        <Mic size={16} className="shrink-0 text-yp-stone" aria-hidden />
+        <span className={`h-5 w-px ${dark ? "bg-white/15" : "bg-yp-line"}`} />
+        <Mic size={16} className={`shrink-0 ${dark ? "text-white/40" : "text-yp-stone"}`} aria-hidden />
       </label>
       {open && results.length > 0 && (
         <ul className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-yp-line bg-white py-2 shadow-float">
@@ -71,7 +81,7 @@ export default function HeaderSearch() {
                 onClick={() => go(r.href)}
                 className="flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left hover:bg-yp-sand/60"
               >
-                <span className="text-sm font-medium">{r.label}</span>
+                <span className="text-sm font-medium text-yp-espresso">{r.label}</span>
                 <span className="text-[11px] uppercase tracking-[0.12em] text-yp-stone">{r.meta}</span>
               </button>
             </li>
