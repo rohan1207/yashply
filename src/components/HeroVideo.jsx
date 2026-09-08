@@ -1,44 +1,83 @@
-import { useEffect, useRef, useState } from "react";
-import { images } from "../data/content";
+import { useEffect, useRef } from "react";
 
-/** Home hero background video — forced autoplay for mobile Safari / Chrome */
+/**
+ * Home hero background video.
+ * Mobile Safari/Chrome need muted + playsInline + an explicit play() retry loop.
+ */
 export default function HeroVideo() {
   const ref = useRef(null);
-  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    const tryPlay = async () => {
+    let cancelled = false;
+    let retryTimer = 0;
+
+    // Critical for iOS: attributes must exist on the element, not only React props.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "true");
+    video.setAttribute("autoplay", "");
+
+    const playNow = async () => {
+      if (cancelled || !video) return;
+      if (!video.paused && !video.ended) return;
+
       try {
-        video.defaultMuted = true;
         video.muted = true;
-        video.setAttribute("muted", "");
-        video.playsInline = true;
-        const p = video.play();
-        if (p && typeof p.then === "function") await p;
-        setPlaying(true);
+        video.volume = 0;
+        const result = video.play();
+        if (result && typeof result.then === "function") await result;
       } catch {
-        /* autoplay may still fail in rare cases; poster stays */
+        if (cancelled) return;
+        retryTimer = window.setTimeout(playNow, 200);
       }
     };
 
-    tryPlay();
-
-    const onVis = () => {
-      if (document.visibilityState === "visible") tryPlay();
+    const onPause = () => {
+      // Keep looping while the page is visible — do not stay stopped.
+      if (cancelled) return;
+      if (document.visibilityState === "visible") playNow();
     };
-    const onTouch = () => tryPlay();
 
-    document.addEventListener("visibilitychange", onVis);
-    window.addEventListener("touchstart", onTouch, { once: true, passive: true });
-    window.addEventListener("click", onTouch, { once: true });
+    const onVisible = () => {
+      if (document.visibilityState === "visible") playNow();
+    };
+
+    playNow();
+    video.addEventListener("loadedmetadata", playNow);
+    video.addEventListener("loadeddata", playNow);
+    video.addEventListener("canplay", playNow);
+    video.addEventListener("canplaythrough", playNow);
+    video.addEventListener("pause", onPause);
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("pageshow", playNow);
+    window.addEventListener("focus", playNow);
+
+    // After preloader (~1.1s) and a few more tries while the page settles.
+    const kick1 = window.setTimeout(playNow, 400);
+    const kick2 = window.setTimeout(playNow, 1200);
+    const kick3 = window.setTimeout(playNow, 2000);
 
     return () => {
-      document.removeEventListener("visibilitychange", onVis);
-      window.removeEventListener("touchstart", onTouch);
-      window.removeEventListener("click", onTouch);
+      cancelled = true;
+      window.clearTimeout(retryTimer);
+      window.clearTimeout(kick1);
+      window.clearTimeout(kick2);
+      window.clearTimeout(kick3);
+      video.removeEventListener("loadedmetadata", playNow);
+      video.removeEventListener("loadeddata", playNow);
+      video.removeEventListener("canplay", playNow);
+      video.removeEventListener("canplaythrough", playNow);
+      video.removeEventListener("pause", onPause);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("pageshow", playNow);
+      window.removeEventListener("focus", playNow);
     };
   }, []);
 
@@ -47,20 +86,13 @@ export default function HeroVideo() {
       ref={ref}
       className="absolute inset-0 h-full w-full object-cover"
       src="/hero.mp4"
-      poster={playing ? undefined : images.hero}
       autoPlay
       muted
       loop
       playsInline
       preload="auto"
       disablePictureInPicture
-      disableRemotePlayback
-      onPlaying={() => setPlaying(true)}
-      onLoadedData={() => {
-        const video = ref.current;
-        if (!video) return;
-        video.play().then(() => setPlaying(true)).catch(() => {});
-      }}
+      controls={false}
       aria-hidden
     />
   );
