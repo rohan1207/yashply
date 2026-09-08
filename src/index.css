@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --yp-espresso: #1a1a1a;
+  --yp-cream: #ffffff;
+  --yp-copper: #e30613;
+  --header-h: 3.5rem;
+  color-scheme: light;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: calc(4.25rem + 3rem + 1px);
+  }
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--yp-cream);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--yp-espresso);
+  background: var(--yp-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(227, 6, 19, 0.18);
+  color: var(--yp-espresso);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.font-display {
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.yp-container {
+  @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12;
+}
+
+.yp-section {
+  @apply py-12 sm:py-16 md:py-20 lg:py-32;
+}
+
+.eyebrow {
+  @apply text-[13px] font-semibold uppercase tracking-[0.14em] text-yp-red sm:text-[14px] sm:tracking-[0.16em] lg:text-[15px] lg:tracking-[0.18em];
+}
+
+.display {
+  @apply font-display font-medium tracking-[-0.03em] text-yp-espresso;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-[12px] font-semibold leading-none transition-all duration-300 sm:px-5 sm:text-[13px];
+}
+
+.btn-primary {
+  @apply btn bg-yp-red text-white hover:bg-yp-bronze;
+  box-shadow: 0 10px 28px rgba(227, 6, 19, 0.22);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-copper {
+  @apply btn bg-yp-red text-white hover:bg-yp-bronze;
+  box-shadow: 0 10px 28px rgba(227, 6, 19, 0.22);
+}
+
+.btn-ghost {
+  @apply btn border border-yp-espresso/15 bg-transparent text-yp-espresso hover:border-yp-espresso hover:bg-yp-espresso hover:text-yp-ivory;
+}
+
+.btn-ghost-light {
+  @apply btn border border-white/25 text-yp-ivory hover:bg-white hover:text-yp-espresso;
+}
+
+.hero-cta {
+  @apply inline-flex h-11 min-w-0 items-center justify-center rounded-full px-6 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors duration-300 sm:h-12 sm:min-w-[11rem] sm:px-8 sm:text-[12px] sm:tracking-[0.18em];
+}
+
+.hero-cta-solid {
+  @apply hero-cta relative isolate overflow-hidden bg-yp-red text-white;
+}
+
+.hero-cta-solid::after {
+  content: "";
+  position: absolute;
+  inset: -20% -40%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 60%
+  );
+  transform: translateX(-80%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+}
+
+.hero-cta-solid:hover::after {
+  transform: translateX(80%);
+}
+
+.hero-cta-line {
+  @apply hero-cta border border-white/55 text-white hover:border-white hover:bg-white hover:text-yp-espresso;
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.img-cover {
+  @apply h-full w-full object-cover;
+}
+
+.img-zoom {
+  @apply img-cover transition-transform duration-[1.4s] ease-out;
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.field {
+  @apply w-full rounded-xl border border-yp-espresso/10 bg-white/70 px-3.5 py-3 text-sm text-yp-espresso outline-none transition placeholder:text-yp-stone/80 focus:border-yp-timber focus:bg-white sm:rounded-2xl sm:px-4 sm:py-3.5;
+}
+
+.products-mega-scrim {
+  background: rgba(11, 13, 18, 0.82);
+}
+
+.why-copy {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-copy-open {
+  grid-template-rows: 1fr;
+}
+
+/* Mobile polish: prevent horizontal bleed, tidy touch targets */
+@media (max-width: 1023px) {
+  .yp-container {
+    @apply px-4 sm:px-6;
+  }
+
+  .voice-marquee,
+  .brand-marquee {
+    mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--yp-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 17, 14, 0.28);
+  border-radius: 8px;
+}
+
+@keyframes voice-marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.voice-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+
+.voice-track {
+  animation: voice-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.voice-marquee:hover .voice-track,
+.voice-marquee:focus-within .voice-track {
+  animation-play-state: paused;
+}
+
+.brand-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.brand-track {
+  animation: brand-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee:hover .brand-track,
+.brand-marquee:focus-within .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-logo {
+  opacity: 0.92;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.brand-marquee:hover .brand-logo {
+  opacity: 0.75;
+}
+
+.brand-logo:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .voice-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .voice-marquee {
+    mask-image: none;
+    overflow-x: auto;
+  }
+
+  .brand-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .brand-marquee {
+    mask-image: none;
+    overflow-x: auto;
+  }
+}
