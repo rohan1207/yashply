@@ -82,6 +82,60 @@ function Mega({ items, open }) {
   );
 }
 
+function MobileAccordion({ label, items, onNavigate }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="border-b border-white/10">
+      <button
+        type="button"
+        className="flex w-full items-center justify-between py-3 text-lg font-medium text-white"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+      >
+        {label}
+        <ChevronDown size={18} className={`transition ${expanded ? "rotate-180" : ""}`} />
+      </button>
+      {expanded && (
+        <ul className="space-y-0.5 pb-3">
+          {items.map((item) => {
+            const external = /^(https?:|tel:|mailto:)/.test(item.href);
+            const cls =
+              "block rounded-lg px-3 py-2.5 text-[15px] text-white/80 transition hover:bg-white/[0.06]";
+            const body = (
+              <>
+                <span className="font-medium text-white">{item.label}</span>
+                {item.meta ? (
+                  <span className="mt-0.5 block text-xs text-white/40">{item.meta}</span>
+                ) : null}
+              </>
+            );
+            return (
+              <li key={`${item.label}-${item.href}`}>
+                {external ? (
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                    className={cls}
+                    onClick={onNavigate}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <Link to={item.href} className={cls} onClick={onNavigate}>
+                    {body}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(null);
@@ -275,53 +329,63 @@ export default function Navbar() {
           >
             <div className="yp-container space-y-4 py-5">
               <HeaderSearch dark />
-              <div className="flex flex-col text-white">
+              <nav className="flex flex-col text-white">
+                <Link
+                  to="/"
+                  className="border-b border-white/10 py-3 text-lg font-medium text-white/90"
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className="border-b border-white/10 py-3 text-lg font-medium text-white/90"
+                  onClick={() => setOpen(false)}
+                >
+                  About us
+                </Link>
                 <ProductsMobileList onNavigate={() => setOpen(false)} dark />
-                <Link
-                  to="/plywood"
-                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
-                  onClick={() => setOpen(false)}
-                >
-                  Plywood
-                </Link>
-                <Link
-                  to="/hardware"
-                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
-                  onClick={() => setOpen(false)}
-                >
-                  Hardware
-                </Link>
+                <MobileAccordion
+                  label="Plywood"
+                  items={plywoodLinks}
+                  onNavigate={() => setOpen(false)}
+                />
+                <MobileAccordion
+                  label="Hardware"
+                  items={hardwareLinks}
+                  onNavigate={() => setOpen(false)}
+                />
                 <Link
                   to="/brands"
-                  className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
+                  className="border-b border-white/10 py-3 text-lg font-medium text-white/90"
                   onClick={() => setOpen(false)}
                 >
                   Brands
                 </Link>
-                {[
-                  { label: "Home", href: "/" },
-                  { label: "About us", href: "/about" },
-                  { label: "Inspiration", href: "/inspiration" },
-                  { label: "Quality", href: "/quality" },
-                  { label: "Guides", href: "/guides" },
-                  { label: "Contact us", href: "/contact" },
-                ].map((l) => (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    className="rounded-xl px-2 py-3 text-lg font-medium text-white/90"
-                    onClick={() => setOpen(false)}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
+                <MobileAccordion
+                  label="Contact Us"
+                  items={contactLinks}
+                  onNavigate={() => setOpen(false)}
+                />
+              </nav>
+
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle size={16} />
+                </a>
+                <a
+                  href={site.phoneHref}
+                  className="flex items-center gap-2 text-sm font-bold text-yp-gold"
+                >
+                  <Phone size={16} /> {site.phone}
+                </a>
               </div>
-              <a
-                href={site.phoneHref}
-                className="flex items-center gap-2 text-sm font-bold text-yp-gold"
-              >
-                <Phone size={16} /> {site.phone}
-              </a>
               <Link to="/quote" className="btn-copper w-full text-center" onClick={() => setOpen(false)}>
                 Get a Quote
               </Link>
