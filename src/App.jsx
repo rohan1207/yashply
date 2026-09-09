@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Plywood from "./pages/Plywood";
 import Hardware from "./pages/Hardware";
+import CatalogueDetail from "./pages/CatalogueDetail";
 import Brands from "./pages/Brands";
 import Inspiration from "./pages/Inspiration";
 import InspirationDetail from "./pages/InspirationDetail";
@@ -30,7 +31,9 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/plywood" element={<Plywood />} />
+        <Route path="/plywood/:slug" element={<CatalogueDetail />} />
         <Route path="/hardware" element={<Hardware />} />
+        <Route path="/hardware/:slug" element={<CatalogueDetail />} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/quote" element={<Quote />} />
         <Route path="/inspiration" element={<Inspiration />} />

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mic, Search, X } from "lucide-react";
-import { guides, inspiration, products } from "../data/content";
+import { guides, hardwareCatalogue, inspiration, plywoodCatalogue, products } from "../data/content";
 
 export default function HeaderSearch({ dark = false }) {
   const [q, setQ] = useState("");
@@ -12,8 +12,22 @@ export default function HeaderSearch({ dark = false }) {
   const results = useMemo(() => {
     const s = q.trim().toLowerCase();
     if (s.length < 1) return [];
-    const hit = (t) => t.toLowerCase().includes(s);
+    const hit = (t) => t && String(t).toLowerCase().includes(s);
     return [
+      ...plywoodCatalogue
+        .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary))
+        .map((p) => ({
+          href: `/plywood/${p.slug}`,
+          label: p.name,
+          meta: p.grade || "Plywood",
+        })),
+      ...hardwareCatalogue
+        .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary))
+        .map((p) => ({
+          href: `/hardware/${p.slug}`,
+          label: p.name,
+          meta: "Hardware",
+        })),
       ...products
         .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary))
         .map((p) => ({ href: `/products/${p.slug}`, label: p.name, meta: p.grade })),
@@ -23,7 +37,7 @@ export default function HeaderSearch({ dark = false }) {
       ...guides
         .filter((g) => hit(g.title) || hit(g.excerpt))
         .map((g) => ({ href: `/guides/${g.slug}`, label: g.title, meta: g.category })),
-    ].slice(0, 7);
+    ].slice(0, 8);
   }, [q]);
 
   useEffect(() => {

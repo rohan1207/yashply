@@ -12,7 +12,7 @@ export const productsMegaColumns = [
     multiCol: true,
     items: plywoodCatalogue.map((p) => ({
       label: p.name,
-      href: `/plywood#${p.slug}`,
+      href: `/plywood/${p.slug}`,
       image: p.image,
       meta: p.grade || null,
     })),
@@ -24,7 +24,7 @@ export const productsMegaColumns = [
     multiCol: false,
     items: hardwareCatalogue.map((h) => ({
       label: h.name,
-      href: `/hardware#${h.slug}`,
+      href: `/hardware/${h.slug}`,
       image: h.image,
       meta: null,
     })),

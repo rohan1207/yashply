@@ -17,7 +17,7 @@ const plywoodLinks = [
   { label: "All plywood", href: "/plywood", meta: "Full product range" },
   ...plywoodCatalogue.map((p) => ({
     label: p.name,
-    href: `/plywood#${p.slug}`,
+    href: `/plywood/${p.slug}`,
     meta: p.grade || p.sizes.join(" · "),
   })),
 ];
@@ -26,7 +26,7 @@ const hardwareLinks = [
   { label: "All hardware", href: "/hardware", meta: "Categories & brands" },
   ...hardwareCatalogue.map((item) => ({
     label: item.name,
-    href: `/hardware#${item.slug}`,
+    href: `/hardware/${item.slug}`,
     meta: item.highlight ? "Full yard range" : "Popular category",
   })),
 ];

@@ -85,9 +85,9 @@ export default function Hardware() {
               <CatalogueCard
                 key={item.slug}
                 id={item.slug}
-                product={{ name: item.name, image: item.image }}
+                product={item}
                 index={i}
-                href={`/quote?product=${encodeURIComponent(item.name)}`}
+                href={`/hardware/${item.slug}`}
                 cta="View Details"
               />
             ))}

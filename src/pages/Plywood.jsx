@@ -171,7 +171,7 @@ export default function Plywood() {
                     id={product.slug}
                     product={product}
                     index={i}
-                    href={`/quote?product=${encodeURIComponent(product.name)}`}
+                    href={`/plywood/${product.slug}`}
                     cta="View Details"
                   />
                 ))}

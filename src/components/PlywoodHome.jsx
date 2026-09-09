@@ -35,7 +35,7 @@ export default function PlywoodHome() {
               <CatalogueCard
                 product={p}
                 index={i}
-                href={`/plywood#${p.slug}`}
+                href={`/plywood/${p.slug}`}
                 cta="View Details"
               />
             </Reveal>

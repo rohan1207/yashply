@@ -36,7 +36,7 @@ export default function HardwareHome() {
                   image: item.image,
                 }}
                 index={i}
-                href={`/hardware#${item.slug}`}
+                href={`/hardware/${item.slug}`}
                 cta="View Details"
               />
             </Reveal>
