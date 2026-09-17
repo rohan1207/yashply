@@ -11,14 +11,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import HeaderSearch from "./HeaderSearch";
 import ProductsMega, { ProductsMobileList } from "./ProductsMega";
-import { hardwareCatalogue, plywoodCatalogue, site } from "../data/content";
+import { hardwareCatalogue, laminatesCatalogue, plywoodCatalogue, site, veneersCatalogue } from "../data/content";
 
 const plywoodLinks = [
   { label: "All plywood", href: "/plywood", meta: "Full product range" },
   ...plywoodCatalogue.map((p) => ({
     label: p.name,
     href: `/plywood/${p.slug}`,
-    meta: p.grade || p.sizes.join(" · "),
+    meta: p.grade || (p.sizes || []).join(" · "),
   })),
 ];
 
@@ -31,8 +31,27 @@ const hardwareLinks = [
   })),
 ];
 
+const laminateLinks = [
+  { label: "All laminates", href: "/laminates", meta: "Types & finishes" },
+  ...laminatesCatalogue.map((item) => ({
+    label: item.name,
+    href: `/laminates/${item.slug}`,
+    meta: item.grade || "Laminate type",
+  })),
+];
+
+const veneerLinks = [
+  { label: "All veneers", href: "/veneers", meta: "Natural & reconstituted" },
+  ...veneersCatalogue.map((item) => ({
+    label: item.name,
+    href: `/veneers/${item.slug}`,
+    meta: item.grade || "Veneer type",
+  })),
+];
+
 const contactLinks = [
-  { label: "Get a Quote", href: "/quote", meta: "Share your requirement" },
+  { label: "Get a Quote", href: "/quote", meta: "General requirement" },
+  { label: "Help Me Choose", href: "/contact", meta: "Talk through the room" },
   { label: "Call", href: site.phoneHref, meta: site.phone },
   { label: "WhatsApp", href: site.whatsapp, meta: "Chat with the yard" },
   { label: "Visit us", href: "/contact#reach", meta: "Address & hours" },
@@ -263,6 +282,30 @@ export default function Navbar() {
               </NavLink>
               <Mega open={mega === "hardware"} items={hardwareLinks} />
             </div>
+            <div
+              className="relative"
+              onMouseEnter={() => setMega("laminates")}
+              onMouseLeave={() => {
+                if (mega === "laminates") setMega(null);
+              }}
+            >
+              <NavLink to="/laminates" className={linkClass}>
+                Laminates <ChevronDown size={13} />
+              </NavLink>
+              <Mega open={mega === "laminates"} items={laminateLinks} />
+            </div>
+            <div
+              className="relative"
+              onMouseEnter={() => setMega("veneers")}
+              onMouseLeave={() => {
+                if (mega === "veneers") setMega(null);
+              }}
+            >
+              <NavLink to="/veneers" className={linkClass}>
+                Veneers <ChevronDown size={13} />
+              </NavLink>
+              <Mega open={mega === "veneers"} items={veneerLinks} />
+            </div>
             <NavLink to="/brands" className={linkClass} onMouseEnter={() => setMega(null)}>
               Brands
             </NavLink>
@@ -353,6 +396,16 @@ export default function Navbar() {
                 <MobileAccordion
                   label="Hardware"
                   items={hardwareLinks}
+                  onNavigate={() => setOpen(false)}
+                />
+                <MobileAccordion
+                  label="Laminates"
+                  items={laminateLinks}
+                  onNavigate={() => setOpen(false)}
+                />
+                <MobileAccordion
+                  label="Veneers"
+                  items={veneerLinks}
                   onNavigate={() => setOpen(false)}
                 />
                 <Link

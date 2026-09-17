@@ -10,21 +10,21 @@ import {
 } from "framer-motion";
 
 const facts = [
- {
- n: "01",
- title: "Plywood",
- text: "ISI 303 & 710 grades for kitchens, wet cores and dry joinery.",
- },
- {
- n: "02",
- title: "Hardware",
- text: "Leading brands under one roof, fittings that match the sheet.",
- },
- {
- n: "03",
- title: "Pune yard",
- text: "Walk the pile. Ready stock, clear stamps, honest mapping to the room.",
- },
+  {
+    n: "01",
+    title: "Since 1998",
+    text: "Good materials, reliable service and customers who trust us year after year.",
+  },
+  {
+    n: "02",
+    title: "Two generations",
+    text: "Started by Mr. Pankaj Pancholi. Led since 2017 by MD Mr. Yash Pancholi.",
+  },
+  {
+    n: "03",
+    title: "Always there",
+    text: "Fast delivery, quick help and honest respect for every customer.",
+  },
 ];
 
 function FactCard({ fact, open, onOpen }) {
@@ -99,16 +99,15 @@ export default function AboutHome() {
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
  >
- <p className="eyebrow">About Yash Ply &amp; Hardware</p>
+ <p className="eyebrow">About Yash Ply</p>
  <h2 className="mt-3 font-display text-[1.85rem] leading-[1.12] sm:text-3xl lg:text-4xl">
- The Right Materials.
- <br className="hidden sm:block" /> Under One Roof.
+ Trusted Since 1998.
+ <br className="hidden sm:block" /> Built on Relationships.
  </h2>
  <p className="mt-4 max-w-xl text-sm leading-relaxed text-yp-mist sm:text-[15px]">
- Yash Ply &amp; Hardware offers a wide range of plywood and hardware solutions for
- furniture, interiors, construction and other applications. With a broad product
- selection across plywood and leading hardware brands, we help customers find materials
- suited to their requirements.
+ Since 1998, Yash Ply has meant good materials and reliable service. From plywood and laminates
+ to hardware and veneers, two generations keep the same promise, on-time delivery, quick help
+ and honest relationships with every customer.
  </p>
 
  <div className="mt-6 grid gap-2.5 sm:grid-cols-3">
@@ -128,7 +127,7 @@ export default function AboutHome() {
  transition={{ type: "spring", stiffness: 400, damping: 28 }}
  >
  <Link to="/about" className="btn-ghost group w-full sm:w-auto">
- Know More About Us
+ About Us
  <ArrowUpRight
  size={15}
  className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

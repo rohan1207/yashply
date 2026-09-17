@@ -13,11 +13,11 @@ export default function GuidesHome() {
           <div>
             <p className="eyebrow">Quality</p>
             <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-              Built to the stamp.
+              Quality you can check.
             </h2>
           </div>
           <Link to="/quality" className="btn-ghost w-fit">
-            Our quality
+            Our quality standards
             <ArrowUpRight size={16} />
           </Link>
         </div>

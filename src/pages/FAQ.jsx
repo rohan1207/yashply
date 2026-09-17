@@ -85,7 +85,7 @@ export default function FAQ() {
  <span className="text-yp-red">·</span>
  <span>ISI 303 & 710</span>
  <span className="text-yp-red">·</span>
- <span>3,000–4,000 sheets</span>
+ <span>3,000-4,000 sheets</span>
  <span className="text-yp-red">·</span>
  <span>Doorstep delivery</span>
  <span className="text-yp-red">·</span>

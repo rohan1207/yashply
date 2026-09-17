@@ -13,15 +13,15 @@ export default function HardwareHome() {
             <div className="max-w-2xl">
               <p className="eyebrow">Hardware</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-[1.12] tracking-tight sm:text-3xl lg:text-4xl">
-                Precision in Every Detail.
+                Fittings That Work Every Day.
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-yp-mist sm:mt-4 sm:text-[15px]">
-                From hinges and telescopic channels to sliding wardrobe fittings and more, find
-                hardware solutions from leading brands under one roof.
+                Hinges, drawer channels, sliding wardrobe fittings and more, from trusted brands,
+                all under one roof.
               </p>
             </div>
             <Link to="/hardware" className="btn-ghost w-fit shrink-0">
-              View Hardware
+              Explore Hardware
               <ArrowUpRight size={15} />
             </Link>
           </div>
@@ -45,7 +45,7 @@ export default function HardwareHome() {
 
         <div className="mt-6 flex justify-center sm:mt-8">
           <Link to="/hardware" className="btn-ghost w-fit">
-            View All
+            Explore Hardware
             <ArrowUpRight size={15} />
           </Link>
         </div>

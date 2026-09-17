@@ -32,7 +32,7 @@ const tracks = [
  kicker: "Programme",
  title: "Contractors & builders",
  text: "Volume without theatre. Ready stock so a programme does not stall. Delivery that respects a crane slot. Speak to our sales team for project rates.",
- points: ["3,000–4,000 sheets on the floor", "Staged delivery across Pune", "One grade language for BOQ and site"],
+ points: ["3,000-4,000 sheets on the floor", "Staged delivery across Pune", "One grade language for BOQ and site"],
  image: images.commercial,
  },
  {
@@ -60,7 +60,7 @@ const vows = [
  },
  {
  title: "Stock before theatre",
- text: "3,000–4,000 sheets on the floor so a programme does not wait on a mill in another state.",
+ text: "3,000-4,000 sheets on the floor so a programme does not wait on a mill in another state.",
  },
  {
  title: "The stamp on the sheet",

@@ -1,8 +1,8 @@
 export const site = {
  name: "Yashply",
  legal: "Yash Ply & Hardware",
- tagline: "Plywood, hardware and materials for spaces built with purpose.",
- short: "Quality plywood and hardware from Pune, for furniture, interiors and specialised applications.",
+ tagline: "Plywood, hardware, laminates and veneers for your home and projects.",
+ short: "Quality plywood, hardware, laminates and veneers in Pune. ISI certified sheets, ready stock and friendly service since 1998.",
  phone: "+91 93710 40971",
  phoneHref: "tel:+919371040971",
  salesPhone: "+91 20 2644 3040",
@@ -11,7 +11,7 @@ export const site = {
  email: "",
  emailHref: "",
  contactPerson: "Our sales team",
- hours: "Mon – Sat · 9:00 AM – 7:00 PM",
+ hours: "Mon - Sat · 9:00 AM - 7:00 PM",
  hoursSunday: "Sunday · By appointment",
  address: {
  line1: "86, New Timber Market, Near Ladkat Petrol Pump, Bhavani Peth",
@@ -25,10 +25,10 @@ export const site = {
  linkedin: "",
  },
  stats: [
- { value: "25+", label: "Years in manufacturing & QC" },
- { value: "4,000", label: "Sheets in ready stock" },
+ { value: "25+", label: "Years of experience" },
+ { value: "4,000", label: "Sheets ready in stock" },
  { value: "ISI", label: "303 & 710 certified" },
- { value: "30%", label: "More value vs same grade" },
+ { value: "30%", label: "Better value vs same grade" },
  ],
 };
 
@@ -44,20 +44,25 @@ export const nav = [
 
 export const images = {
   hero: "/plywood_page_hero.png",
-  heroAlt: "/about_component_image.png",
+  heroAlt: "/redcore_ply.png",
   workshop: "/plywood_page_hero.png",
   grain: "/calibrated_ply.png",
   layers: "/redcore_bwp_ply.png",
   walnut: "/redcore_ply.png",
-  kitchen: "/about_component_image.png",
+  kitchen: "/modular_kitchen.png",
   kitchen2: "/alt_gurjan_ply.png",
-  bedroom: "/blockboard_double_core_pine.png",
+  bedroom: "/wardrobes_lofts.png",
   living: "/about_component_image.png",
-  office: "/calibrated_ply.png",
-  wardrobe: "/blockboard_hardcore.png",
+  office: "/office_studios.png",
+  wardrobe: "/wardrobes_lofts.png",
   dining: "/rubber_packaging_ply.png",
-  wet: "/redcore_bwp_ply.png",
-  commercial: "/shuttering_ply.png",
+  wet: "/baths_wet_cores.png",
+  commercial: "/hospitality.png",
+  hospitality: "/hospitality.png",
+  modularKitchen: "/modular_kitchen.png",
+  wardrobesLofts: "/wardrobes_lofts.png",
+  bathsWetCores: "/baths_wet_cores.png",
+  officeStudios: "/office_studios.png",
   craftsman: "/truck_floring_ply.png",
   ambassador: "/hardware_page_hero.png",
   timber: "/alt_gurjan_ply.png",
@@ -69,17 +74,19 @@ export const images = {
   hinges: "/hinges.png",
   channels: "/telescopic_channels.png",
   sliding: "/sliding_window_fittings.png",
-  hardware: "/products/hardware.png",
+  hardware: "/hinges.png",
   hardwareHero: "/hardware_page_hero.png",
   plywoodHero: "/plywood_page_hero.png",
+  laminatesHero: "/woodgrains_laminate.png",
+  veneersHero: "/natural_veneers.png",
   about: "/about_component_image.png",
 };
 
 export const trustBar = [
- { title: "ISI 303 & 710", text: "Certified grades" },
- { title: "Ready stock", text: "3,000–4,000 sheets" },
- { title: "Borer & termite", text: "Treated every sheet" },
- { title: "Doorstep delivery", text: "Pune to your site" },
+  { title: "Since 1998", text: "Trusted for two generations" },
+  { title: "Four product lines", text: "Plywood, hardware, laminates, veneers" },
+  { title: "Pune yard", text: "See the sheet before you buy" },
+  { title: "Home delivery", text: "We deliver on time" },
 ];
 
 export const products = [
@@ -242,34 +249,34 @@ export const plywoodFeatured = [
  "bwp-block-board",
 ];
 
-/** Home hardware teaser — kept in sync with hardwareCatalogue slugs */
+/** Home hardware teaser, kept in sync with hardwareCatalogue slugs */
 export const hardwareItems = [
   {
     slug: "hinges",
     name: "Hinges",
     eyebrow: "Soft-close & concealed",
-    summary: "Cabinet and wardrobe hinges from leading brands, smooth close, lasting alignment.",
+    summary: "Cabinet and wardrobe hinges from top brands, smooth close, long life.",
     image: "/hinges.png",
   },
   {
     slug: "telescopic-channels",
     name: "Telescopic Channels",
     eyebrow: "Drawer systems",
-    summary: "Full-extension runners and channels built for everyday kitchen and furniture use.",
+    summary: "Full-extension drawer channels for kitchens and furniture.",
     image: "/telescopic_channels.png",
   },
   {
     slug: "sliding-wardrobe-fittings",
     name: "Sliding Wardrobe Fittings",
     eyebrow: "Wardrobe systems",
-    summary: "Rollers, tracks and kits for sliding wardrobes that stay quiet and true.",
+    summary: "Tracks, rollers and kits for quiet, smooth sliding wardrobes.",
     image: "/sliding_window_fittings.png",
   },
   {
     slug: "and-more",
     name: "And More",
     eyebrow: "Full hardware range",
-    summary: "Handles, locks, connectors and specialised fittings. Ask the yard for the full range.",
+    summary: "Handles, locks, connectors and more. Ask us for the full list.",
     image: "/products/hardware.png",
   },
 ];
@@ -283,7 +290,7 @@ export const process = [
  {
  n: "02",
  title: "Select",
- text: "Walk the yard at the Pune yard. Check faces, edges, stamps. 3,000–4,000 sheets sit ready so you are not waiting on a mill.",
+ text: "Walk the yard at the Pune yard. Check faces, edges, stamps. 3,000-4,000 sheets sit ready so you are not waiting on a mill.",
  },
  {
  n: "03",
@@ -300,36 +307,84 @@ export const process = [
 export const why = [
  {
  title: "Ready stock",
- text: "3,000 to 4,000 sheets on the floor. Kitchens and site programmes do not pause for mill lead times.",
+ text: "3,000 to 4,000 sheets ready in our yard. You don’t wait for the factory when your work is urgent.",
  },
  {
  title: "ISI 303 & 710",
- text: "Certified commercial and boiling-waterproof grades. Stamps you can show a consultant without flinching.",
+ text: "ISI certified commercial and waterproof plywood. You can check the stamp on every sheet.",
  },
  {
- title: "25 years of QC",
- text: "Manufacturing and quality control in the same hands. We know what a bad core looks like, and we do not ship it.",
+ title: "25 years of quality",
+ text: "We know good plywood from bad plywood. We only sell sheets we trust.",
  },
  {
- title: "Pune-spec",
- text: "Pressed and stocked for Maharashtra humidity, not a generic catalogue. Local climate is a specification, not a footnote.",
+ title: "Made for Pune weather",
+ text: "Our stock suits Maharashtra humidity and monsoon, not a random catalogue from elsewhere.",
  },
  {
- title: "Borer & termite",
- text: "Every sheet is thoroughly treated. The invisible work that shows up five years later, or never does.",
+ title: "Borer & termite treated",
+ text: "Every sheet is treated against borers and termites so your furniture lasts longer.",
  },
  {
- title: "Nailing integrity",
- text: "Will not break or open while nailing. Carpenters notice. That is why they come back.",
+ title: "Strong for nailing",
+ text: "Sheets do not crack or open while nailing. Carpenters notice, and they come back.",
  },
  {
- title: "Doorstep delivery",
- text: "From New Timber Market, Pune to your site. We treat a sheet like furniture, not cargo.",
+ title: "Home delivery",
+ text: "From New Timber Market, Pune to your site. Careful handling, no broken corners.",
  },
  {
- title: "Honest value",
- text: "About 30% more accessible than the same quality elsewhere, without thinning the core or the glue line.",
+ title: "Fair prices",
+ text: "About 30% better value for the same quality, without cutting corners on the sheet.",
  },
+];
+
+export const applications = [
+  {
+    slug: "modular-kitchens",
+    title: "Modular kitchens",
+    label: "Kitchen",
+    image: "/modular_kitchen.png",
+    text: "Waterproof plywood, laminates and soft-close fittings for strong kitchen cabinets.",
+    href: "/inspiration/modular-kitchens",
+    products: "Plywood · Laminates · Hardware",
+  },
+  {
+    slug: "wardrobes-lofts",
+    title: "Wardrobes & lofts",
+    label: "Bedroom",
+    image: "/wardrobes_lofts.png",
+    text: "Strong plywood, tall doors, sliding fittings and finishes that stay looking good.",
+    href: "/inspiration/wardrobes",
+    products: "Plywood · Blockboard · Hardware",
+  },
+  {
+    slug: "baths-wet-cores",
+    title: "Bathrooms & wet areas",
+    label: "Wet areas",
+    image: "/baths_wet_cores.png",
+    text: "BWP waterproof plywood and the right laminate for bathroom cabinets and wet walls.",
+    href: "/inspiration/wet-areas",
+    products: "BWP Plywood · Laminates",
+  },
+  {
+    slug: "office-studios",
+    title: "Offices & studios",
+    label: "Workspace",
+    image: "/office_studios.png",
+    text: "Partitions, desks and storage that handle daily use, with matching plywood and hardware.",
+    href: "/inspiration/workspaces",
+    products: "Plywood · Veneers · Hardware",
+  },
+  {
+    slug: "hospitality",
+    title: "Hotels & shops",
+    label: "Commercial",
+    image: "/hospitality.png",
+    text: "Same look across many rooms, plywood, laminates and veneers together for hotels and stores.",
+    href: "/inspiration/hospitality",
+    products: "Plywood · Laminates · Veneers",
+  },
 ];
 
 export const audiences = [
@@ -360,7 +415,7 @@ export const inspiration = [
  slug: "modular-kitchens",
  title: "Modular kitchens",
  room: "Kitchen",
- image: images.kitchen,
+ image: "/modular_kitchen.png",
  excerpt: "BWR carcasses, BWP at the sink wall, block-board shutters that stay true in steam.",
  body: "A Pune kitchen is a humidity machine. We spec BWR for the run of carcasses, IS 710 at the wet wall and around the sink, and BWP block board for large shutters so they do not banana after the first monsoon. Laminate and hardware are your aesthetic; the sheet is the structure. Get the structure right and the kitchen still looks new when the trend has moved on.",
  products: ["bwr-plywood", "bwp-plywood", "bwp-block-board"],
@@ -369,7 +424,7 @@ export const inspiration = [
  slug: "wardrobes",
  title: "Wardrobes & lofts",
  room: "Bedroom",
- image: images.wardrobe,
+ image: "/wardrobes_lofts.png",
  excerpt: "Commercial or MR for dry bedrooms. Block board where doors are tall and unforgiving.",
  body: "Tall wardrobe doors are where cheap plywood confesses. Use commercial or MR ply for carcasses in dry rooms, and step up to block board for shutters over 600 mm. Calibrated faces take laminate cleanly; treated cores keep silverfish and borers out of the season’s clothes.",
  products: ["commercial-plywood", "mr-block-board", "bwp-block-board"],
@@ -378,16 +433,16 @@ export const inspiration = [
  slug: "living",
  title: "Living & media walls",
  room: "Living",
- image: images.living,
+ image: "/about_component_image.png",
  excerpt: "Panelling, TV units and display joinery that should feel architectural, not temporary.",
- body: "Living-room joinery is seen every evening. Commercial plywood, well-calibrated, takes veneer and laminate with a furniture-grade flatness. For floating media walls we recommend 18 mm carcass and 6–8 mm backing, with BWR if the wall sits against an exterior.",
+ body: "Living-room joinery is seen every evening. Commercial plywood, well-calibrated, takes veneer and laminate with a furniture-grade flatness. For floating media walls we recommend 18 mm carcass and 6-8 mm backing, with BWR if the wall sits against an exterior.",
  products: ["commercial-plywood", "bwr-plywood"],
  },
  {
  slug: "wet-areas",
  title: "Baths & wet cores",
  room: "Wet",
- image: images.wet,
+ image: "/baths_wet_cores.png",
  excerpt: "There is no almost-marine. If water is in the brief, the stamp should say 710.",
  body: "Vanity carcasses, bath panelling and utility wet walls are callback territory. Yashply BWP (IS 710) is boil-proof, not merely splash-resistant. Pair with proper edge-sealing and a competent carpenter, the sheet cannot compensate for an open edge in a shower.",
  products: ["bwp-plywood"],
@@ -396,7 +451,7 @@ export const inspiration = [
  slug: "workspaces",
  title: "Offices & studios",
  room: "Work",
- image: images.office,
+ image: "/office_studios.png",
  excerpt: "Partitions, worktops and storage that take daily abuse and still look specified.",
  body: "Commercial interiors cycle through tenants; the joinery should not. We supply consistent commercial and BWR lots for workstations, meeting-room panelling and storage banks, with flush doors that stay square through HVAC seasons.",
  products: ["commercial-plywood", "flush-doors", "bwr-plywood"],
@@ -405,7 +460,7 @@ export const inspiration = [
  slug: "hospitality",
  title: "Hospitality & retail",
  room: "Commercial",
- image: images.commercial,
+ image: "/hospitality.png",
  excerpt: "Volume, repeatability and a yard that can stage a floor plate without drama.",
  body: "Hotels, clinics and stores need sheets that match across lots. Yashply keeps deep ready stock so a 40-key renovation does not arrive in three shades of ‘almost’. BWP for F&B wet, commercial for guest rooms, flush doors throughout.",
  products: ["bwp-plywood", "commercial-plywood", "flush-doors"],
@@ -424,25 +479,25 @@ export const textures = [
 export const testimonials = [
  {
  quote:
- "We used Yashply for our full house interiors. Quality is very good and prices are reasonable. Highly recommend.",
+ "We used Yashply for our full house interiors. Quality is very good and prices are fair. Highly recommend.",
  name: "Deepak S.",
  role: "Homeowner, Pune",
  },
  {
  quote:
- "My civil contractor and carpenter are very happy with Yashply. Great quality, affordable pricing and great customer service.",
+ "My contractor and carpenter are very happy with Yashply. Good quality, fair price and good service.",
  name: "Aparna S.",
- role: "Residence project, Pune",
+ role: "Home project, Pune",
  },
  {
  quote:
- "Premium plywood at honest pricing. They stock materials suited to Pune’s climate, which makes users feel looked after, not sold to.",
+ "Good plywood at honest prices. They stock what works for Pune weather, so you feel looked after, not just sold to.",
  name: "Monish J.",
  role: "Interior project",
  },
  {
  quote:
- "We recommended Yashply for a colleague’s new house. The product and the service were so sound he now recommends Yashply to everyone he trusts.",
+ "We recommended Yashply for a colleague’s new house. The product and service were so good that he now recommends Yashply to everyone.",
  name: "Dr. Mrinal L.",
  role: "Referral client",
  },
@@ -491,7 +546,7 @@ export const guides = [
  },
  {
  h: "Ready stock is a quality signal",
- p: "A yard sitting on 3,000–4,000 sheets has to stand behind what it stocks. Transit-only traders can vanish after a bad lot. Walk the Pune yard. See the pile.",
+ p: "A yard sitting on 3,000-4,000 sheets has to stand behind what it stocks. Transit-only traders can vanish after a bad lot. Walk the Pune yard. See the pile.",
  },
  ],
  },
@@ -506,7 +561,7 @@ export const guides = [
  content: [
  {
  h: "A working rule",
- p: "A typical 10×12 L-shaped modular kitchen consumes 14–18 sheets of 18 mm for carcasses, 3–5 sheets of 6–8 mm for backers, and 6–10 sheets of 18–19 mm block board or ply for shutters, before wastage. Add 8–12% cutting loss. Use our calculator for a first pass, then confirm with your carpenter’s cut list.",
+ p: "A typical 10×12 L-shaped modular kitchen consumes 14-18 sheets of 18 mm for carcasses, 3-5 sheets of 6-8 mm for backers, and 6-10 sheets of 18-19 mm block board or ply for shutters, before wastage. Add 8-12% cutting loss. Use our calculator for a first pass, then confirm with your carpenter’s cut list.",
  },
  {
  h: "Do not down-gauge the carcass",
@@ -631,42 +686,42 @@ export const qualityPillars = [
 export const homeQuality = [
  {
  slug: "isi-certified",
- title: "ISI 303 & 710, stamped, tested, ready to verify",
+ title: "ISI 303 & 710, check the stamp yourself",
  category: "Certification",
  read: "Yard check",
- image: images.layers,
+ image: "/quality.png",
  excerpt:
- "Every grade we sell can be checked against the stamp. IS 303 for commercial and BWR, IS 710 for boiling waterproof, no ‘equivalent’ hedging.",
+ "Every grade we sell has a clear ISI stamp. IS 303 for commercial and BWR. IS 710 for waterproof (BWP). No confusion.",
  href: "/quality#stamps",
  },
  {
  slug: "core-and-glue",
- title: "Hardwood cores. Honest glue lines.",
+ title: "Strong core. Right glue for the job.",
  category: "Mill",
  read: "Process",
  image: images.workshop,
  excerpt:
- "Selected timber, gap-minimised cores, and glue matched to the room, UF for dry, phenolic where steam and boil matter.",
+ "Good timber inside, and glue matched to the room, normal glue for dry rooms, stronger glue where there is steam or water.",
  href: "/quality",
  },
  {
  slug: "borer-termite",
- title: "Treated through the core for Maharashtra",
+ title: "Treated against borers and termites",
  category: "Protection",
  read: "Standard",
  image: images.timber,
  excerpt:
- "Borer and termite treatment is not optional here. Every sheet is protected so joinery lasts past the first monsoon season.",
+ "In Maharashtra this is not optional. Every sheet is treated so your furniture lasts through the seasons.",
  href: "/quality",
  },
  {
  slug: "ready-stock",
- title: "3,000–4,000 sheets you can walk today",
+ title: "3,000-4,000 sheets you can see today",
  category: "Yard",
  read: "Pune",
  image: images.craftsman,
  excerpt:
- "Ready stock means you check faces, edges and stamps before you buy, and you are not waiting on a mill for the next lot.",
+ "Ready stock means you can check the sheet before you buy, and you don’t wait weeks for the next lot.",
  href: "/quality",
  },
 ];
@@ -690,7 +745,7 @@ export const gallery = [
  { src: "/hardware_page_hero.png", caption: "Hardware range" },
 ];
 
-/** Client plywood catalogue — Yash Ply & Hardware */
+/** Client plywood catalogue, Yash Ply & Hardware */
 export const plywoodCatalogue = [
   {
     slug: "alt-gurjan-commercial-ply",
@@ -723,7 +778,7 @@ export const plywoodCatalogue = [
       ["Thicknesses", "6 / 8 / 12 / 18 mm"],
       ["Finish ready", "Laminate · veneer · paint"],
     ],
-    note: "Confirm face grade and thickness against your carpenter’s cut list. Stock rotates — call the yard for today’s pile.",
+    note: "Confirm face grade and thickness against your carpenter’s cut list. Stock rotates, call the yard for today’s pile.",
   },
   {
     slug: "redcore-ply",
@@ -731,7 +786,7 @@ export const plywoodCatalogue = [
     eyebrow: "Gold grade performance",
     grade: "Gold Grade",
     summary:
-      "Higher-grade plywood with a denser feel and cleaner edges — built for furniture that sees daily use.",
+      "Higher-grade plywood with a denser feel and cleaner edges, built for furniture that sees daily use.",
     description:
       "Redcore Ply sits above commercial sheets for projects that need better screw holding, flatter panels and a more premium face. Use it where carcasses, shutters and long runs must stay aligned over years of opening and closing.",
     sizes: ["8 × 4", "7 × 4"],
@@ -763,7 +818,7 @@ export const plywoodCatalogue = [
     eyebrow: "Boiling water proof",
     grade: "Platinum Grade",
     summary:
-      "BWP-grade Redcore for wet and humid zones — kitchens, wash areas and exteriors that need a tougher bond.",
+      "BWP-grade Redcore for wet and humid zones, kitchens, wash areas and exteriors that need a tougher bond.",
     description:
       "Redcore BWP Ply is specified where moisture is part of the brief. The boiling-water-proof bond resists delamination in kitchens, utility rooms and semi-exposed work. Platinum grading keeps the face and core at a higher consistency for premium wet-area furniture.",
     sizes: ["8 × 4", "7 × 4"],
@@ -826,7 +881,7 @@ export const plywoodCatalogue = [
     eyebrow: "Precision thickness",
     grade: null,
     summary:
-      "Calibrated sheets held to a tight thickness tolerance — preferred for CNC, membrane presses and flush shutters.",
+      "Calibrated sheets held to a tight thickness tolerance, preferred for CNC, membrane presses and flush shutters.",
     description:
       "Calibrated Ply is sanded and checked for uniform thickness so machines and presses see a predictable panel. Spec it for high-gloss shutters, CNC nesting and any job where uneven thickness shows as telegraphing or glue-line issues.",
     sizes: ["8 × 4"],
@@ -848,7 +903,7 @@ export const plywoodCatalogue = [
       ["Tolerance", "Machine-ready flatness"],
       ["Best with", "Acrylic · PU · membrane presses"],
     ],
-    note: "Tell us if you need matching lots for a full shutter set — we can pull from the same pile.",
+    note: "Tell us if you need matching lots for a full shutter set, we can pull from the same pile.",
   },
   {
     slug: "truck-flooring-ply",
@@ -878,15 +933,15 @@ export const plywoodCatalogue = [
       ["Duty", "Heavy commercial"],
       ["Fixing", "Bolt / screw to chassis framing"],
     ],
-    note: "Share vehicle type and span — the desk will recommend thickness and edge treatment.",
+    note: "Share vehicle type and span, the desk will recommend thickness and edge treatment.",
   },
   {
     slug: "blockboard-double-core-pine",
-    name: "Blockboard — Double Core Pine",
+    name: "Blockboard, Double Core Pine",
     eyebrow: "Light & stable",
     grade: null,
     summary:
-      "Pine double-core blockboard for large flat panels — lighter than solid ply stacks, stable for tabletops and shutters.",
+      "Pine double-core blockboard for large flat panels, lighter than solid ply stacks, stable for tabletops and shutters.",
     description:
       "Double-core pine blockboard gives you wide, flat panels with less weight than equivalent solid plywood builds. Ideal for table tops, wardrobe sides and large shutters where warp control and screw holding along the edge matter.",
     sizes: ["8 × 4", "7 × 4", "7 × 3", "6 × 3"],
@@ -912,7 +967,7 @@ export const plywoodCatalogue = [
   },
   {
     slug: "blockboard-hardwood",
-    name: "Blockboard — Hardwood",
+    name: "Blockboard, Hardwood",
     eyebrow: "Dense core",
     grade: null,
     summary:
@@ -936,21 +991,21 @@ export const plywoodCatalogue = [
       ["Core", "Hardwood"],
       ["Sizes", "8 × 4 ft · 7 × 4 ft"],
       ["Thickness", "25 mm"],
-      ["Duty", "Medium–heavy furniture"],
+      ["Duty", "Medium-heavy furniture"],
     ],
     note: "Pair with calibrated faces when the top will take high-gloss laminate.",
   },
   {
     slug: "shuttering-ply-red-film",
-    name: "Shuttering Ply — Red Film Faced",
+    name: "Shuttering Ply, Red Film Faced",
     eyebrow: "Formwork",
     grade: null,
     summary:
-      "Red film-faced shuttering plywood for concrete formwork — reusable faces, consistent pours, site-ready weights.",
+      "Red film-faced shuttering plywood for concrete formwork, reusable faces, consistent pours, site-ready weights.",
     description:
       "Film-faced shuttering ply is built for formwork cycles. The red film face releases cleanly from concrete and stands up to repeated pours when handled and oiled correctly. Stocked in site-familiar weights so contractors can plan lifts and props.",
     sizes: ["8 × 4"],
-    thicknesses: ["12 mm — 24 kg, 30 kg, 34 kg", "18 mm — 45 kg"],
+    thicknesses: ["12 mm, 24 kg, 30 kg, 34 kg", "18 mm, 45 kg"],
     image: "/shuttering_ply.png",
     edge: "/shuttering_ply.png",
     gallery: ["/shuttering_ply.png"],
@@ -981,7 +1036,7 @@ export const plywoodCatalogue = [
     description:
       "Chequered Plywood adds a patterned, higher-grip face for floors and ramps. Common on commercial vehicle beds and industrial walkways where smooth ply would be too slippery when wet or dusty.",
     sizes: ["8 × 4"],
-    thicknesses: ["12 mm — 30 kg"],
+    thicknesses: ["12 mm, 30 kg"],
     image: "/chequered_ply.png",
     edge: "/chequered_ply.png",
     gallery: ["/chequered_ply.png"],
@@ -1010,9 +1065,9 @@ export const hardwareCatalogue = [
     eyebrow: "Cabinet motion",
     grade: "Soft-close & concealed",
     summary:
-      "Soft-close and concealed cabinet hinges from leading brands — smooth close, lasting alignment.",
+      "Soft-close and concealed cabinet hinges from leading brands, smooth close, lasting alignment.",
     description:
-      "We stock overlay, inset and specialty hinges for kitchens, wardrobes and commercial cabinets. Soft-close dampers protect shutters; concealed cups keep faces clean. Brands on the floor include Hettich, Häfele, Blum and more — matched to your shutter thickness and overlay.",
+      "We stock overlay, inset and specialty hinges for kitchens, wardrobes and commercial cabinets. Soft-close dampers protect shutters; concealed cups keep faces clean. Brands on the floor include Hettich, Häfele, Blum and more, matched to your shutter thickness and overlay.",
     sizes: [],
     thicknesses: [],
     options: ["Soft-close", "Concealed cup", "Overlay / inset", "Wide-angle", "Face-frame adapters"],
@@ -1033,7 +1088,7 @@ export const hardwareCatalogue = [
       ["Pair with", "18 / 16 mm shutters typical"],
       ["Finish", "Nickel / brand standard"],
     ],
-    note: "Bring shutter thickness and overlay preference — we will pick the right cup and plate set.",
+    note: "Bring shutter thickness and overlay preference, we will pick the right cup and plate set.",
   },
   {
     slug: "telescopic-channels",
@@ -1043,7 +1098,7 @@ export const hardwareCatalogue = [
     summary:
       "Full-extension runners built for everyday drawers, kitchens and storage that must glide true under load.",
     description:
-      "Telescopic channels and undermount runners cover soft-close drawers, pantry pull-outs and heavier storage. Load rating and length matter as much as brand — we help match channel length to carcass depth and weight to what the drawer will hold.",
+      "Telescopic channels and undermount runners cover soft-close drawers, pantry pull-outs and heavier storage. Load rating and length matter as much as brand, we help match channel length to carcass depth and weight to what the drawer will hold.",
     sizes: [],
     thicknesses: [],
     options: ["Full extension", "Soft-close", "Push-to-open", "Heavy-duty ratings", "Undermount systems"],
@@ -1072,7 +1127,7 @@ export const hardwareCatalogue = [
     eyebrow: "Wardrobe systems",
     grade: "Tracks & rollers",
     summary:
-      "Rollers, tracks and kits for quiet, true sliding wardrobes — from compact bedrooms to full wall runs.",
+      "Rollers, tracks and kits for quiet, true sliding wardrobes, from compact bedrooms to full wall runs.",
     description:
       "Sliding wardrobe fittings include top and bottom tracks, rollers, guides and soft-close kits. System choice depends on shutter material, weight and opening width. We stock kits and components so carpenters can build reliable sliding fronts without guesswork.",
     sizes: [],
@@ -1103,7 +1158,7 @@ export const hardwareCatalogue = [
     eyebrow: "Full hardware range",
     grade: "Ask the yard",
     summary:
-      "Handles, locks, connectors, stays, gas springs and specialised fittings — far beyond the four highlights on this page.",
+      "Handles, locks, connectors, stays, gas springs and specialised fittings, far beyond the four highlights on this page.",
     description:
       "The hardware floor covers handles and knobs, locks and cylinders, shelf connectors, flap stays, gas springs, basket systems, kitchen accessories and architectural fittings from brands we already deal in. If you can describe the mechanism, we can usually map it to stock or order it in.",
     sizes: [],
@@ -1125,15 +1180,384 @@ export const hardwareCatalogue = [
       ["Brands", "Full yard brand list available"],
       ["Best approach", "Send a fittings list or photos"],
     ],
-    note: "WhatsApp a photo or brand code — the sales desk will confirm availability and alternatives.",
+    note: "WhatsApp a photo or brand code, the sales desk will confirm availability and alternatives.",
     highlight: true,
   },
 ];
 
 export function getCatalogueProduct(category, slug) {
-  const list = category === "hardware" ? hardwareCatalogue : plywoodCatalogue;
-  return list.find((p) => p.slug === slug) || null;
+  const map = {
+    plywood: plywoodCatalogue,
+    hardware: hardwareCatalogue,
+    laminates: laminatesCatalogue,
+    veneers: veneersCatalogue,
+  };
+  return (map[category] || plywoodCatalogue).find((p) => p.slug === slug) || null;
 }
+
+export function getCatalogueList(category) {
+  const map = {
+    plywood: plywoodCatalogue,
+    hardware: hardwareCatalogue,
+    laminates: laminatesCatalogue,
+    veneers: veneersCatalogue,
+  };
+  return map[category] || [];
+}
+
+/** Laminates, categories for Yash Ply (brand catalogues used as reference only) */
+export const laminatesCatalogue = [
+  {
+    slug: "solid-colours",
+    name: "Solid Colours",
+    eyebrow: "Colour laminates",
+    grade: "Plain & uni tones",
+    summary:
+      "Clean solid and uni-colour laminates for kitchens, wardrobes, offices and retail, from soft neutrals to bold accent shades.",
+    description:
+      "Solid colour laminates give interiors a calm, even surface without grain distraction. At Yash Ply we help you shortlist shades across leading laminate brands so the colour matches your plywood carcass, edge band and hardware finish. Ask for matte, gloss or soft-touch options depending on the room.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["Whites & off-whites", "Greys", "Beiges", "Earth tones", "Bold accents"],
+    finishes: ["Matte", "Soft touch", "High gloss", "Suede"],
+    designs: ["Plain solids", "Uni-colour", "Soft pastel", "Deep accent"],
+    options: ["0.8 mm sheets", "1.0 mm sheets", "Post-forming grades on request"],
+    image: "/solid_laminate.png",
+    gallery: ["/solid_laminate.png", "/products/laminates.png"],
+    applications: ["Kitchen shutters", "Wardrobes", "Office furniture", "Retail fixtures", "Wall panelling"],
+    features: [
+      "Wide shade range across major brands",
+      "Pairs cleanly with edge banding",
+      "Matte and gloss finishes available",
+      "Ideal when colour, not woodgrain, leads the design",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Decorative laminates, solids"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+      ["Sheet size", "8 × 4 ft (confirm lot)"],
+      ["Finishes", "Matte · soft touch · gloss"],
+      ["Brands at yard", "Merino · Royale Touche · Greenlam · Century"],
+    ],
+    note: "Bring a colour swatch or room photo, we will map it to available shades and finishes in stock.",
+  },
+  {
+    slug: "woodgrains",
+    name: "Woodgrains",
+    eyebrow: "Timber look laminates",
+    grade: "Oak · walnut · teak looks",
+    summary:
+      "Woodgrain laminates that bring oak, walnut, teak and contemporary timber looks to furniture without solid-wood cost.",
+    description:
+      "Woodgrain laminates are the everyday choice for warm interiors. We stock and source popular timber looks, light oaks, mid walnuts, dark wenge-style grains, with finishes from natural matte to synchro texture. Use them on shutters, carcass faces and wall panels when you want wood character with laminate durability.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["Light oak", "Honey", "Walnut", "Wenge", "Ash / grey wood"],
+    finishes: ["Natural matte", "Synchro / embossed", "Soft touch", "Semi-gloss"],
+    designs: ["Linear grain", "Plank look", "Bookmatch style", "Rustic timber"],
+    options: ["Horizontal / vertical grain", "Matching edge bands on request"],
+    image: "/woodgrains_laminate.png",
+    gallery: ["/woodgrains_laminate.png", "/products/laminates.png"],
+    applications: ["Wardrobes", "TV units", "Bedroom sets", "Office desks", "Feature panels"],
+    features: [
+      "Realistic timber aesthetics",
+      "Textured and synchro options",
+      "Works over commercial and BWP ply",
+      "Easy to coordinate across rooms",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Decorative laminates, woodgrains"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+      ["Sheet size", "8 × 4 ft"],
+      ["Look families", "Oak · walnut · teak · ash · rustic"],
+      ["Best with", "Calibrated / commercial ply carcasses"],
+    ],
+    note: "For large shutter runs, ask us to pull matching lots so grain tone stays consistent.",
+  },
+  {
+    slug: "stone-marble",
+    name: "Stone & Marble",
+    eyebrow: "Mineral looks",
+    grade: "Marble · granite · concrete",
+    summary:
+      "Stone, marble and concrete-look laminates for vanity tops, feature walls and contemporary kitchen accents.",
+    description:
+      "Mineral-look laminates deliver marble veining, granite flecks and concrete softness without the weight of natural stone. Ideal for verticals and light-duty horizontals when the design needs drama. Pair with solid-colour cabinets for contrast, or use full-height as a feature wall.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["White marble", "Grey stone", "Black marble", "Concrete", "Warm travertine looks"],
+    finishes: ["High gloss", "Matte stone", "Soft mineral"],
+    designs: ["Calacatta-style veins", "Granite fleck", "Concrete wash", "Slate"],
+    options: ["Gloss for drama", "Matte for soft stone"],
+    image: "/marbel_laminate.png",
+    gallery: ["/marbel_laminate.png", "/products/laminates.png"],
+    applications: ["Vanity fronts", "Feature walls", "Reception desks", "Kitchen accents", "Table tops (light duty)"],
+    features: [
+      "High visual impact at laminate cost",
+      "Gloss and matte stone finishes",
+      "Lighter than natural stone slabs",
+      "Strong contrast with woodgrain cabinetry",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Decorative laminates, stone & marble"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+      ["Sheet size", "8 × 4 ft"],
+      ["Popular looks", "Marble · granite · concrete · slate"],
+    ],
+    note: "For wet countertops, confirm grade and edge detailing with the desk, not every laminate is kitchen-counter rated.",
+  },
+  {
+    slug: "textured-surfaces",
+    name: "Textured Surfaces",
+    eyebrow: "Feel & finish",
+    grade: "Embossed · fabric · synchro",
+    summary:
+      "Laminates with tactile depth, embossed wood, fabric, leather and synchro textures that catch light and feel premium.",
+    description:
+      "Textured laminates add a sensory layer to interiors. Synchro grains follow the print, fabric and leather looks suit offices and hospitality, and soft-touch surfaces reduce fingerprint glare. We help match texture to the room’s lighting and cleaning routine.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["Warm woods", "Cool greys", "Neutral fabrics", "Deep leathers"],
+    finishes: ["Synchro emboss", "Fabric texture", "Leather look", "Soft touch"],
+    designs: ["Deep grain", "Linen / fabric", "Suede", "Structured line"],
+    options: ["Low-fingerprint soft touch", "Deep emboss wood"],
+    image: "/textured_laminate.png",
+    gallery: ["/textured_laminate.png", "/products/laminates.png"],
+    applications: ["Premium kitchens", "Hotel furniture", "Office cabins", "Wardrobe shutters", "Doors"],
+    features: [
+      "Tactile finishes clients can feel in the yard",
+      "Hides minor fingerprints better than high gloss",
+      "Elevates mid-range carcasses",
+      "Available across major laminate brands",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Decorative laminates, textured"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+      ["Texture types", "Synchro · fabric · leather · soft touch"],
+      ["Sheet size", "8 × 4 ft"],
+    ],
+    note: "Touch samples at the yard before locking a full shutter set, texture reads differently under site lights.",
+  },
+  {
+    slug: "decorative-abstracts",
+    name: "Decorative & Abstracts",
+    eyebrow: "Pattern & print",
+    grade: "Abstract · metallic · digital",
+    summary:
+      "Statement laminates, abstracts, metallics and decorative prints for feature furniture, retail and creative interiors.",
+    description:
+      "When the brief needs a statement, decorative and abstract laminates step in. Metallics, geometric prints and digital designs work on feature shutters, boutique retail and kids’ furniture. We keep the selection practical, beautiful enough to wow, durable enough for daily use.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["Metallics", "Monochrome graphics", "Colour blocks", "Contemporary prints"],
+    finishes: ["Metallic", "High gloss", "Matte print", "Special effect"],
+    designs: ["Abstract", "Geometric", "Metallic foil looks", "Digital art patterns"],
+    options: ["Accent panels", "Full shutter statements"],
+    image: "/decorative_laminate.png",
+    gallery: ["/decorative_laminate.png", "/products/laminates.png"],
+    applications: ["Feature shutters", "Retail interiors", "Kids’ rooms", "Reception", "Accent walls"],
+    features: [
+      "High-impact design accents",
+      "Metallic and print options",
+      "Use sparingly for strongest effect",
+      "Coordinate with solid or woodgrain fields",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Decorative laminates, abstracts & specials"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+      ["Design types", "Abstract · metallic · digital · geometric"],
+      ["Sheet size", "8 × 4 ft"],
+    ],
+    note: "Share mood boards, we will shortlist 3-5 designs that suit the space and budget.",
+  },
+  {
+    slug: "gloss-matte-finishes",
+    name: "High Gloss & Matte",
+    eyebrow: "Finish families",
+    grade: "Gloss · matte · dual",
+    summary:
+      "Choose the sheen first, high-gloss drama or calm matte, then lock colour and design across your laminate set.",
+    description:
+      "Finish is often as important as colour. High gloss reflects light and feels premium in compact kitchens; matte and soft-touch keep large wardrobes calm and fingerprint-friendly. We help you decide sheen per zone so kitchens, bedrooms and offices each get the right surface.",
+    sizes: ["8 × 4"],
+    thicknesses: ["0.8 mm", "1.0 mm"],
+    colours: ["Any colour family, finish-led"],
+    finishes: ["High gloss", "Super matte", "Soft touch matte", "Semi-gloss"],
+    designs: ["Solids in gloss/matte", "Woodgrains in matte/synchro", "Stone in gloss"],
+    options: ["Mixed sheen schemes", "Matching edge options"],
+    image: "/solid_laminate.png",
+    gallery: ["/solid_laminate.png", "/woodgrains_laminate.png", "/products/laminates.png"],
+    applications: ["Modular kitchens", "Wardrobe shutters", "Bathroom vanities", "Showrooms"],
+    features: [
+      "Sheen-first selection advice",
+      "Gloss for compact bright spaces",
+      "Matte for large quiet surfaces",
+      "Available across brand collections",
+    ],
+    brands: ["Merino", "Royale Touche", "Greenlam", "CenturyLaminates"],
+    specs: [
+      ["Category", "Laminate finish families"],
+      ["Gloss", "High reflection · showroom look"],
+      ["Matte", "Soft · low glare · daily friendly"],
+      ["Typical thickness", "0.8 mm · 1.0 mm"],
+    ],
+    note: "Not sure between gloss and matte? Visit with your shutter size, we will show both under yard lighting.",
+  },
+];
+
+/** Veneers, categories for Yash Ply (CenturyVeneers collections used as reference) */
+export const veneersCatalogue = [
+  {
+    slug: "natural-veneers",
+    name: "Natural Veneers",
+    eyebrow: "Real wood slices",
+    grade: "Natural species",
+    summary:
+      "Natural veneers sliced from real timber, unique grain, rich character and a premium wood feel for furniture and panelling.",
+    description:
+      "Natural veneers celebrate real wood. Each flitch carries natural variation, so no two sheets read identically. Ideal for feature tables, wardrobe faces and wall panelling when clients want authentic timber character. At Yash Ply we help you select species and tone, then pair veneer with the right plywood substrate.",
+    sizes: ["8 × 4", "Specialty flitches"],
+    thicknesses: ["Standard veneer faces"],
+    colours: ["Light woods", "Medium browns", "Dark exotics", "Natural variation"],
+    finishes: ["Raw for polish", "Melamine / PU ready", "Open pore looks"],
+    designs: ["Crown cut", "Quarter cut", "Burls & specials", "Horizontal / vertical"],
+    options: ["Species selection", "Bookmatch guidance"],
+    image: "/natural_veneers.png",
+    gallery: ["/natural_veneers.png", "/products/veneers.png"],
+    applications: ["Feature furniture", "Wall panelling", "Doors", "Reception desks", "Premium wardrobes"],
+    features: [
+      "Authentic wood character",
+      "Natural grain variation",
+      "Premium interior statement",
+      "Pairs with calibrated plywood substrates",
+    ],
+    brands: ["CenturyVeneers"],
+    collections: ["Natzura Woods-style natural ranges", "Light · medium · dark · specials"],
+    specs: [
+      ["Category", "Natural wood veneers"],
+      ["Character", "Unique grain per flitch"],
+      ["Typical use", "Feature faces · panelling"],
+      ["Substrate", "Plywood / MDF as advised"],
+      ["Brand reference", "CenturyVeneers natural collections"],
+    ],
+    note: "Natural veneers vary, approve a face sample before full production runs.",
+  },
+  {
+    slug: "reconstituted-veneers",
+    name: "Reconstituted Veneers",
+    eyebrow: "Engineered consistency",
+    grade: "Recon / engineered",
+    summary:
+      "Reconstituted (engineered) veneers for consistent colour and pattern across large furniture runs and modular projects.",
+    description:
+      "Reconstituted veneers are real wood reformed for repeatable design, ideal when every shutter must match. Patterns and tones stay consistent across lots, which suits modular kitchens, hotel rooms and large wardrobe banks. We guide you on tone families and finishing so the install looks intentional, not patched.",
+    sizes: ["8 × 4"],
+    thicknesses: ["Standard veneer faces"],
+    colours: ["Teak families", "Wenge / ebony looks", "Smoked tones", "Contemporary dyed looks"],
+    finishes: ["For polish / PU", "Even tone faces"],
+    designs: ["Linear engineered grain", "Crown patterns", "Streaks & planks", "Symmetrical repeats"],
+    options: ["Matched multi-shutter sets", "Tone families"],
+    image: "/reconstituted_veneers.png",
+    gallery: ["/reconstituted_veneers.png", "/products/veneers.png"],
+    applications: ["Modular kitchens", "Hotel furniture", "Large wardrobes", "Office suites", "Retail fit-outs"],
+    features: [
+      "Consistent colour across sheets",
+      "Ideal for multi-unit projects",
+      "Real wood, engineered pattern",
+      "Easier matching than natural flitches",
+    ],
+    brands: ["CenturyVeneers"],
+    collections: ["Senzura Styles-style engineered ranges", "Teak · sophisticated · earthy · urbane looks"],
+    specs: [
+      ["Category", "Reconstituted / engineered veneers"],
+      ["Advantage", "Repeatable design"],
+      ["Typical use", "Modular & multi-shutter work"],
+      ["Brand reference", "CenturyVeneers engineered collections"],
+    ],
+    note: "Best choice when the carpenter needs every door to match in tone and grain.",
+  },
+  {
+    slug: "light-medium-tones",
+    name: "Light & Medium Tones",
+    eyebrow: "Bright interiors",
+    grade: "Soft · warm · airy",
+    summary:
+      "Light oaks, blondes and medium walnuts that keep rooms open and warm, popular for modern homes and offices.",
+    description:
+      "Light and medium veneers brighten interiors without looking washed out. Blonde streaks, pale oaks and honey walnuts suit Scandinavian and contemporary schemes. We help balance veneer tone with laminate accents and hardware finishes so the whole room feels coherent.",
+    sizes: ["8 × 4"],
+    thicknesses: ["Standard veneer faces"],
+    colours: ["Blonde", "Light oak", "Honey", "Medium walnut", "Soft ash"],
+    finishes: ["Natural matte polish", "Clear PU", "Light stain options"],
+    designs: ["Open grain", "Gentle streaks", "Quiet plank"],
+    options: ["Natural & recon options in light families"],
+    image: "/light_medium_tones_veneers.png",
+    gallery: ["/light_medium_tones_veneers.png", "/products/veneers.png"],
+    applications: ["Living rooms", "Bedrooms", "Study furniture", "Light kitchens", "Clinics & offices"],
+    features: [
+      "Opens up smaller rooms",
+      "Pairs with matte black or brass hardware",
+      "Soft, livable timber palette",
+      "Available in natural and recon",
+    ],
+    brands: ["CenturyVeneers"],
+    collections: ["Light & medium tone families"],
+    specs: [
+      ["Category", "Veneers, light & medium"],
+      ["Palette", "Blonde · oak · honey · walnut"],
+      ["Mood", "Warm · open · contemporary"],
+    ],
+    note: "Bring wall paint chips, veneer tone shifts against cool vs warm whites.",
+  },
+  {
+    slug: "dark-exotic-tones",
+    name: "Dark & Exotic Tones",
+    eyebrow: "Drama & depth",
+    grade: "Deep · rich · bold",
+    summary:
+      "Dark wenge, ebony and exotic tones for statement furniture, hospitality and dramatic feature walls.",
+    description:
+      "Dark and exotic veneers create depth and luxury. Use them on feature walls, headboards, reception desks and statement doors. Lighting matters, we advise on finish sheen so dark timber still reads texture under evening light.",
+    sizes: ["8 × 4"],
+    thicknesses: ["Standard veneer faces"],
+    colours: ["Wenge", "Ebony", "Smoked dark", "Deep walnut", "Exotic specials"],
+    finishes: ["Satin PU", "Open pore dark", "High-build polish"],
+    designs: ["Crown darks", "Linear dark grain", "Burls & specials"],
+    options: ["Natural exotic", "Recon dark families"],
+    image: "/dark_exotic_veneers.png",
+    gallery: ["/dark_exotic_veneers.png", "/products/veneers.png"],
+    applications: ["Feature walls", "Hospitality", "Executive cabins", "Statement doors", "Bar units"],
+    features: [
+      "Strong visual drama",
+      "Hospitality and executive favourite",
+      "Works with gold/brass accents",
+      "Natural and engineered dark options",
+    ],
+    brands: ["CenturyVeneers"],
+    collections: ["Dark · exotic · smoked families"],
+    specs: [
+      ["Category", "Veneers, dark & exotic"],
+      ["Palette", "Wenge · ebony · smoked · deep walnut"],
+      ["Mood", "Dramatic · premium · evening-friendly"],
+    ],
+    note: "Dark veneers show dust and fingerprints more, discuss finish and cleaning with the carpenter.",
+  },
+];
+
+export const laminateBrands = [
+  { name: "Merino", focus: "Decorative laminates, collections & special finishes", href: "/laminates" },
+  { name: "Royale Touche", focus: "Colour, texture and application-led laminate ranges", href: "/laminates" },
+  { name: "Greenlam", focus: "Laminate collections for furniture and interiors", href: "/laminates" },
+  { name: "CenturyLaminates", focus: "LookBook colours, textures and patterns", href: "/laminates" },
+];
+
+export const veneerBrands = [
+  { name: "CenturyVeneers", focus: "Natural and reconstituted veneer collections", href: "/veneers" },
+];
 
 export const hardwareBrands = [
   {

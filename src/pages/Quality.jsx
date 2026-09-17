@@ -11,7 +11,7 @@ const checks = [
  "Edge cores with minimal gaps, lift a sheet, do not just photograph a face.",
  "Treatment against borers and termites, not a surface spray story.",
  "Nailing that does not split. Ask a carpenter who already buys from us.",
- "Ready stock of 3,000–4,000 sheets, consistency across a lot.",
+ "Ready stock of 3,000-4,000 sheets, consistency across a lot.",
 ];
 
 const stamps = [

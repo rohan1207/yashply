@@ -41,17 +41,16 @@ export default function BrandRibbon() {
       <div className="yp-container text-center">
         <p className="eyebrow">Brands</p>
         <h2 className="mt-3 font-display text-[1.65rem] tracking-tight sm:text-2xl lg:text-3xl">
-          Leading Brands. Extensive Choice.
+          Top Brands. Wide Choice.
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-          We deal in a wide range of hardware products from leading brands including Hettich,
-          Häfele, EBCO, Blum, Godrej and more.
+          We stock hardware from leading brands like Hettich, Häfele, EBCO, Blum, Godrej and more.
         </p>
         <Link
           to="/brands"
-          className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition hover:text-yp-red"
+          className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-yp-espresso px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-gold transition hover:bg-yp-ink"
         >
-          View all brands
+          See All Brands
           <ArrowUpRight size={14} />
         </Link>
       </div>

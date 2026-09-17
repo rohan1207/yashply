@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yash Ply & Hardware | Website Handover Report</title>
+  <style>
+    @page { size: A4; margin: 16mm 15mm 18mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      font-size: 10.2pt;
+      line-height: 1.48;
+      color: #0C1623;
+      margin: 0;
+    }
+    .cover {
+      border: 2px solid #E4A823;
+      padding: 28px 26px;
+      margin-bottom: 22px;
+      background: linear-gradient(180deg, #0C1623 0%, #132033 100%);
+      color: #fff;
+      border-radius: 6px;
+    }
+    .cover .eyebrow {
+      font-size: 9.5pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #E4A823;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+    .cover h1 {
+      font-size: 22pt;
+      margin: 0 0 10px;
+      border: none;
+      padding: 0;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .cover p { margin: 0 0 6px; color: rgba(255,255,255,0.78); font-size: 10.5pt; }
+    .cover .meta { margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(228,168,35,0.35); font-size: 9.5pt; color: rgba(255,255,255,0.65); }
+    h1 {
+      font-size: 16pt;
+      margin: 0 0 8px;
+      color: #0C1623;
+      border-bottom: 3px solid #E4A823;
+      padding-bottom: 8px;
+    }
+    h2 {
+      font-size: 12.5pt;
+      margin: 20px 0 8px;
+      color: #0C1623;
+      page-break-after: avoid;
+      border-left: 4px solid #E4A823;
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 10.8pt;
+      margin: 14px 0 6px;
+      color: #0C1623;
+      page-break-after: avoid;
+    }
+    p { margin: 0 0 8px; }
+    ul, ol { margin: 4px 0 10px; padding-left: 18px; }
+    li { margin-bottom: 4px; }
+    .lead {
+      font-size: 11pt;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+    .callout {
+      background: #F7F3EA;
+      border: 1px solid #E8DFC8;
+      border-left: 4px solid #E4A823;
+      padding: 10px 12px;
+      margin: 12px 0 14px;
+      border-radius: 4px;
+    }
+    .callout strong { color: #0C1623; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #D6D3CD;
+      padding: 7px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #0C1623;
+      color: #fff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #FAFAF8; }
+    .tag {
+      display: inline-block;
+      background: #E4A823;
+      color: #0C1623;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-right: 6px;
+    }
+    .mono {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.8pt;
+      background: #F4F4F2;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #D6D3CD;
+      font-size: 9pt;
+      color: #64748B;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0 14px;
+    }
+    .card {
+      border: 1px solid #D6D3CD;
+      border-radius: 5px;
+      padding: 10px 11px;
+      background: #fff;
+      page-break-inside: avoid;
+    }
+    .card h4 {
+      margin: 0 0 6px;
+      font-size: 10.5pt;
+      color: #0C1623;
+    }
+    .card p { margin: 0; font-size: 9.5pt; color: #475569; }
+    pre.flow {
+      background: #0C1623;
+      color: #F7F3EA;
+      padding: 12px 14px;
+      border-radius: 5px;
+      font-size: 9pt;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <p class="eyebrow">Website Handover Report</p>
+    <h1>Yash Ply &amp; Hardware</h1>
+    <p>What we built, why the content is clearer, and how SEO helps more customers find you online.</p>
+    <p class="meta">
+      Prepared for client review<br />
+      Based on: Website Review &amp; Product Reference (client brief)<br />
+      Business: Yash Ply &amp; Hardware, Bhavani Peth, Pune
+    </p>
+  </div>
+
+  <p class="lead">
+    This report is a clear summary of the website update. It shows what changed from your review notes,
+    how we made the words easier to understand, and how we set up search (SEO) so people searching for
+    plywood, hardware, laminates and veneers in Pune can find Yashply.
+  </p>
+
+  <div class="callout">
+    <strong>In short:</strong> The site now has four full product lines, less repeated content, clearer buttons,
+    simpler English for customers, and strong search titles, descriptions and keywords on key pages.
+  </div>
+
+  <!-- 1 -->
+  <h2>1. Overall feedback from your review</h2>
+  <table>
+    <thead>
+      <tr><th>Your ask</th><th>What we did</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Keep a clean structure, make the site more informative</td>
+        <td>More product detail on all lines. Added full <strong>Laminates</strong> and <strong>Veneers</strong> sections.</td>
+      </tr>
+      <tr>
+        <td>Reduce repetition</td>
+        <td>Different images per section. Fresh trust-bar text. End-of-page CTAs change by page, not the same message everywhere.</td>
+      </tr>
+      <tr>
+        <td>More product detail / easier to explore</td>
+        <td>Category pages + detail pages with types, colours, finishes, uses and specs.</td>
+      </tr>
+      <tr>
+        <td>Section-specific CTAs</td>
+        <td>Buttons now match the page (Explore Plywood, Explore Hardware, Enquire Now, Help Me Choose, and so on).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 2 -->
+  <h2>2. Areas to improve: status</h2>
+
+  <h3>A. Avoid repeating the same images and information</h3>
+  <table>
+    <thead>
+      <tr><th>Issue</th><th>Change</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Same photo reused as kitchen, living, etc.</td>
+        <td>Kitchen, living, hardware, laminates and veneers now use <strong>different</strong> visuals.</td>
+      </tr>
+      <tr>
+        <td>Same quality / ready-stock messaging repeated</td>
+        <td>Trust bar rewritten. Final CTA band is <strong>page-aware</strong> (different headline, image and button per section).</td>
+      </tr>
+      <tr>
+        <td>Same “Get a Quote” everywhere</td>
+        <td>Product pages use <strong>Enquire Now</strong>, <strong>Explore…</strong>, <strong>View…</strong>, or <strong>Help Me Choose</strong> as needed.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>B. Add more product details</h3>
+  <p>On each product / category page (where it applies), visitors can now see:</p>
+  <ul>
+    <li>Available types / options</li>
+    <li>Colours / tones / designs</li>
+    <li>Finishes and textures</li>
+    <li>Where it can be used</li>
+    <li>Sizes / thicknesses</li>
+    <li>Key features and specifications</li>
+    <li>Brand references (for surfaces)</li>
+    <li>A clear enquire path</li>
+  </ul>
+  <p><strong>Plywood &amp; Hardware:</strong> existing catalogues kept, with dedicated detail pages.<br />
+  <strong>Laminates &amp; Veneers:</strong> new catalogues and pages (see sections 3 to 5).</p>
+
+  <h3>C. Section-specific CTAs</h3>
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Button on site</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Plywood</td><td><strong>Explore Plywood</strong></td></tr>
+      <tr><td>Hardware</td><td><strong>Explore Hardware</strong></td></tr>
+      <tr><td>Laminates</td><td><strong>Explore Laminates</strong></td></tr>
+      <tr><td>Veneers</td><td><strong>Explore Veneers</strong></td></tr>
+      <tr><td>Brands</td><td><strong>See All Brands / View Brands</strong></td></tr>
+      <tr><td>Product detail</td><td><strong>Enquire Now</strong></td></tr>
+      <tr><td>General requirement</td><td><strong>Get a Quote</strong></td></tr>
+      <tr><td>Need help choosing</td><td><strong>Help Me Choose</strong></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 3 -->
+  <h2>3. Laminates (new)</h2>
+  <p>Manufacturer catalogues were used <strong>only as references</strong> to structure content. Final text is written for Yash Ply &amp; Hardware.</p>
+
+  <h3>Brands referenced</h3>
+  <table>
+    <thead>
+      <tr><th>Brand</th><th>How we used it</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Merino</strong></td><td>Helped shape types and finishes language</td></tr>
+      <tr><td><strong>Royale Touche</strong></td><td>Helped shape categories, colours, textures and uses</td></tr>
+      <tr><td><strong>Greenlam</strong></td><td>Helped shape collection-style browsing and finish families</td></tr>
+      <tr><td><strong>CenturyLaminates</strong></td><td>Helped shape colour / texture / pattern presentation</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Laminate categories on the website</h3>
+  <ol>
+    <li>Solid Colours</li>
+    <li>Woodgrains</li>
+    <li>Stone &amp; Marble</li>
+    <li>Textured Surfaces</li>
+    <li>Decorative &amp; Abstracts</li>
+    <li>High Gloss &amp; Matte</li>
+  </ol>
+  <p>Each has: summary, description, colours, finishes, designs, sizes/thicknesses, applications, features, brands, specs, and enquire.</p>
+
+  <!-- 4 -->
+  <h2>4. Veneers (new)</h2>
+  <table>
+    <thead>
+      <tr><th>Brand</th><th>How we used it</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>CenturyVeneers</strong></td>
+        <td>Natural and reconstituted ranges used as <strong>references</strong> for types and tones</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Veneer categories on the website</h3>
+  <ol>
+    <li>Natural Veneers</li>
+    <li>Reconstituted Veneers</li>
+    <li>Light &amp; Medium Tones</li>
+    <li>Dark &amp; Exotic Tones</li>
+  </ol>
+  <p>Each has: colours/tones, finishes, designs, applications, features, collections note, specs, and enquire.</p>
+
+  <!-- 5 -->
+  <h2>5. How catalogue fields map to the site</h2>
+  <div class="two-col">
+    <div class="card">
+      <h4>Laminates</h4>
+      <p>Colour → colour chips<br />
+      Design → designs / patterns<br />
+      Finish → finishes &amp; textures<br />
+      Brand → brand + category copy<br />
+      Size / thickness → sizes &amp; thicknesses<br />
+      Use → “Where it works”</p>
+    </div>
+    <div class="card">
+      <h4>Veneers</h4>
+      <p>Type → natural / reconstituted pages<br />
+      Tone → light-medium / dark + colour chips<br />
+      Finish / grain → finishes &amp; designs<br />
+      Collection → collections note<br />
+      Use → “Where it works”</p>
+    </div>
+  </div>
+  <p><strong>Note:</strong> Individual manufacturer product codes are not listed as a full static catalogue (stock changes). Customers enquire for current shades and codes at the Pune yard.</p>
+
+  <!-- 6 -->
+  <h2>6. Product page structure (implemented)</h2>
+  <pre class="flow">Product Category  →  /plywood | /hardware | /laminates | /veneers
+        ↓
+Types / Options   →  category cards + nav menus
+        ↓
+Designs / Finishes→  detail page chip groups
+        ↓
+Applications      →  “Where it works”
+        ↓
+Product Details   →  specs, features, brands
+        ↓
+Enquire / Quote   →  Enquire Now + quote form + Help Me Choose</pre>
+  <p>Example (Laminates): Solid Colours → Woodgrains → Stone &amp; Marble → Textured → Decorative → Gloss/Matte. Each type has description, visual and enquire.</p>
+
+  <!-- 7 -->
+  <h2>7. Brief next steps: completed</h2>
+  <table>
+    <thead>
+      <tr><th>Next step from brief</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Review catalogues from brands listed</td><td>Done (used as reference for structure and language)</td></tr>
+      <tr><td>Shortlist categories relevant to Yash Ply</td><td>Done: 6 laminate types, 4 veneer types, plus plywood and hardware</td></tr>
+      <tr><td>Collect basic product information</td><td>Done: Yash Ply written summaries and specs</td></tr>
+      <tr><td>Make product sections more detailed</td><td>Done: list + detail templates</td></tr>
+      <tr><td>Replace repeated images</td><td>Done: per-section visuals / category art for surfaces</td></tr>
+      <tr><td>Keep CTAs specific</td><td>Done: see section 2C</td></tr>
+      <tr><td>Finalise content before design polish</td><td>Content updated and ready for client review</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 8 -->
+  <h2>8. New and updated URLs (for checking)</h2>
+  <table>
+    <thead>
+      <tr><th>URL</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="mono">/products</span></td><td>All four product lines with section CTAs</td></tr>
+      <tr><td><span class="mono">/plywood</span> · <span class="mono">/plywood/:slug</span></td><td>Plywood list + detail</td></tr>
+      <tr><td><span class="mono">/hardware</span> · <span class="mono">/hardware/:slug</span></td><td>Hardware list + detail</td></tr>
+      <tr><td><span class="mono">/laminates</span> · <span class="mono">/laminates/:slug</span></td><td><strong>New</strong> laminates list + detail</td></tr>
+      <tr><td><span class="mono">/veneers</span> · <span class="mono">/veneers/:slug</span></td><td><strong>New</strong> veneers list + detail</td></tr>
+      <tr><td><span class="mono">/brands</span></td><td>Hardware brands</td></tr>
+      <tr><td><span class="mono">/quote</span></td><td>Get a Quote</td></tr>
+      <tr><td><span class="mono">/contact</span></td><td>Contact, form, map, Help Me Choose</td></tr>
+      <tr><td><span class="mono">/about</span></td><td>About Yash Ply story and leadership</td></tr>
+    </tbody>
+  </table>
+  <p>Also updated: Home “Our Products” (4 lines), navbar (desktop + mobile), products mega menu, footer, search, and Final CTA band.</p>
+
+  <!-- 9 -->
+  <h2>9. Important note (honoured)</h2>
+  <div class="callout">
+    Manufacturer catalogues were used <strong>only as product references</strong>.
+    All customer-facing text is written for <strong>Yash Ply &amp; Hardware</strong>. It explains how the yard helps customers choose materials. It is not copied catalogue marketing.
+  </div>
+
+  <!-- 10 CONTENT -->
+  <h2>10. Content rewrite: simpler English that sells better</h2>
+  <p>
+    After building the structure, we reviewed the words on the main pages. A lot of the earlier copy used long,
+    “fancy” phrases. That can look polished to a designer, but it is hard for a busy customer, carpenter or
+    contractor to understand quickly.
+  </p>
+
+  <h3>Why we changed the content</h3>
+  <ul>
+    <li><strong>Customers decide fast.</strong> Clear words help them trust you and take the next step (call, enquire, visit).</li>
+    <li><strong>Your buyers are practical.</strong> They care about grade, size, brand and delivery, not poetic lines.</li>
+    <li><strong>Simple English ranks and converts.</strong> Search engines and people both prefer clear, useful text.</li>
+    <li><strong>One voice across the site.</strong> Home, About, Products, Plywood, Hardware, Laminates, Veneers, Brands and Contact now feel consistent.</li>
+  </ul>
+
+  <h3>What we changed (examples)</h3>
+  <table>
+    <thead>
+      <tr><th>Before (hard to read)</th><th>After (simple and clear)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“A Legacy Built on Trust. A Journey Driven by Relationships.”</td>
+        <td>“Trusted Since 1998. Built on Relationships.”</td>
+      </tr>
+      <tr>
+        <td>“Precision in Every Detail.” / “Natural Character. Matched Runs.”</td>
+        <td>“Fittings That Work Every Day.” / “Real Wood Look. Easy to Match.”</td>
+      </tr>
+      <tr>
+        <td>“Where our materials go to work.”</td>
+        <td>“Where our materials are used.”</td>
+      </tr>
+      <tr>
+        <td>“Eight reasons a carpenter sends the next client.”</td>
+        <td>“Eight reasons customers come back.”</td>
+      </tr>
+      <tr>
+        <td>Heavy em-dash style lines that felt AI-written</td>
+        <td>Removed. Sentences now use normal commas and full stops.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Where content was updated</h3>
+  <ul>
+    <li><strong>Home:</strong> hero support text, about teaser, product lines, plywood/hardware/laminates/veneers blocks, brands, why us, uses, reviews, quality, visit/quote</li>
+    <li><strong>About:</strong> hero, story chapters, founders, values, closing CTA</li>
+    <li><strong>Products hub + Plywood + Hardware + Laminates + Veneers:</strong> heroes, section intros, help CTAs</li>
+    <li><strong>Brands + Contact:</strong> heroes, partner copy, form intro, sales CTA</li>
+  </ul>
+  <p>
+    <strong>Impact:</strong> Visitors understand faster what you sell, where you are, and what to do next.
+    That reduces confusion and supports more enquiries.
+  </p>
+
+  <!-- 11 SEO -->
+  <h2>11. SEO: titles, meta descriptions, keywords and structured data</h2>
+  <p>
+    SEO means helping Google (and other search engines) understand your pages and show them when people search
+    for plywood, hardware, laminates or veneers in Pune. We did not add a separate plugin. We built a proper
+    SEO helper in the site that sets title, description, keywords, Open Graph tags, canonical URL and JSON-LD
+    for each important page.
+  </p>
+
+  <h3>Why this matters for Yashply</h3>
+  <ul>
+    <li>Local buyers search things like “plywood Pune”, “BWP plywood”, “hinges Pune”, “laminates Pune”.</li>
+    <li>A strong title and description improve click-through from search results.</li>
+    <li>LocalBusiness / ContactPage data helps Google connect phone, address and hours to your brand.</li>
+    <li>Product list pages tell Google what you sell, with clean URLs for each line.</li>
+  </ul>
+
+  <h3>What we set on each key page</h3>
+  <table>
+    <thead>
+      <tr><th>Tag / field</th><th>What it is</th><th>Why we use it</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Page title</strong></td>
+        <td>The blue link text in Google</td>
+        <td>Includes product + city + brand so the right searches match</td>
+      </tr>
+      <tr>
+        <td><strong>Meta description</strong></td>
+        <td>Short summary under the title</td>
+        <td>Explains the offer in one breath and invites the click</td>
+      </tr>
+      <tr>
+        <td><strong>Keywords</strong></td>
+        <td>Supporting keyword list</td>
+        <td>Covers local and product terms (plywood Pune, BWP, Hettich, Merino, etc.)</td>
+      </tr>
+      <tr>
+        <td><strong>Canonical URL</strong></td>
+        <td>Preferred page address</td>
+        <td>Avoids duplicate-page confusion</td>
+      </tr>
+      <tr>
+        <td><strong>Open Graph / Twitter</strong></td>
+        <td>Share preview title, text, image</td>
+        <td>Looks clean when shared on WhatsApp / social</td>
+      </tr>
+      <tr>
+        <td><strong>JSON-LD (schema)</strong></td>
+        <td>Machine-readable business / page data</td>
+        <td>Helps Google understand LocalBusiness, ContactPage, product lists and brands</td>
+      </tr>
+      <tr>
+        <td><strong>Image alt text</strong></td>
+        <td>Text for images</td>
+        <td>Accessibility + extra context for search</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Examples of titles and descriptions we use</h3>
+  <table>
+    <thead>
+      <tr><th>Page</th><th>Title (example)</th><th>Meta description focus</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Home</td>
+        <td>Plywood, Hardware, Laminates &amp; Veneers in Pune | Yashply</td>
+        <td>ISI plywood, hardware, laminates, veneers; Bhavani Peth; since 1998; ready stock; delivery</td>
+      </tr>
+      <tr>
+        <td>About</td>
+        <td>About Yash Ply &amp; Hardware | Plywood Dealer in Pune Since 1998</td>
+        <td>Founders, two generations, quality materials, on-time delivery</td>
+      </tr>
+      <tr>
+        <td>Products</td>
+        <td>Plywood, Hardware, Laminates &amp; Veneers | Products in Pune</td>
+        <td>Shop all four lines; commercial &amp; BWP; brands; ready stock</td>
+      </tr>
+      <tr>
+        <td>Plywood</td>
+        <td>Plywood in Pune | Commercial, BWP, Blockboard &amp; More</td>
+        <td>Buy plywood grades, sizes, thicknesses at Bhavani Peth</td>
+      </tr>
+      <tr>
+        <td>Hardware</td>
+        <td>Furniture Hardware in Pune | Hinges, Channels &amp; Sliding Fittings</td>
+        <td>Hettich, Häfele, EBCO, Blum, Godrej and more</td>
+      </tr>
+      <tr>
+        <td>Laminates</td>
+        <td>Laminates in Pune | Colours, Wood Looks, Gloss &amp; Matte</td>
+        <td>Merino, Royale Touche, Greenlam, Century</td>
+      </tr>
+      <tr>
+        <td>Veneers</td>
+        <td>Wood Veneers in Pune | Natural &amp; Reconstituted Veneers</td>
+        <td>Natural / reconstituted; light to dark; CenturyVeneers reference</td>
+      </tr>
+      <tr>
+        <td>Brands</td>
+        <td>Hardware Brands in Pune | Hettich, Häfele, EBCO, Blum &amp; More</td>
+        <td>Brand list + fittings under one roof</td>
+      </tr>
+      <tr>
+        <td>Contact</td>
+        <td>Contact Yash Ply &amp; Hardware Pune | Call, Visit or WhatsApp</td>
+        <td>Phone, New Timber Market address, hours, WhatsApp</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Keyword themes we cover</h3>
+  <p>
+    plywood Pune, plywood dealer Pune, BWP plywood, commercial plywood, ISI plywood, block board Pune,
+    furniture hardware Pune, hinges, telescopic channels, sliding wardrobe fittings, Hettich, Häfele, EBCO, Blum,
+    laminates Pune, Merino, Greenlam, Century laminates, wood veneers Pune, CenturyVeneers,
+    Yashply, Yash Ply &amp; Hardware, Bhavani Peth, New Timber Market.
+  </p>
+
+  <h3>Structured data (JSON-LD) by page type</h3>
+  <ul>
+    <li><strong>Home:</strong> LocalBusiness + WebSite + product-line ItemList</li>
+    <li><strong>About:</strong> AboutPage with founder / MD details</li>
+    <li><strong>Products / Plywood / Hardware / Laminates / Veneers / Brands:</strong> CollectionPage + ItemList</li>
+    <li><strong>Contact:</strong> ContactPage + LocalBusiness (phone, address, hours, geo)</li>
+  </ul>
+
+  <div class="callout">
+    <strong>SEO impact in plain words:</strong> When someone in Pune searches for the materials you sell, Google has a clearer title,
+    description, address and product list to show. That supports more visits and more calls from the right customers.
+  </div>
+
+  <p class="footer-note">
+    Prepared for client review with the updated Yash Ply &amp; Hardware website build.<br />
+    Document covers review items, content simplification, and SEO setup. No em-dash styling in customer copy.
+  </p>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mic, Search, X } from "lucide-react";
-import { guides, hardwareCatalogue, inspiration, plywoodCatalogue, products } from "../data/content";
+import { guides, hardwareCatalogue, inspiration, laminatesCatalogue, plywoodCatalogue, products, veneersCatalogue } from "../data/content";
 
 export default function HeaderSearch({ dark = false }) {
   const [q, setQ] = useState("");
@@ -27,6 +27,20 @@ export default function HeaderSearch({ dark = false }) {
           href: `/hardware/${p.slug}`,
           label: p.name,
           meta: "Hardware",
+        })),
+      ...laminatesCatalogue
+        .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary) || p.colours?.some(hit) || p.finishes?.some(hit))
+        .map((p) => ({
+          href: `/laminates/${p.slug}`,
+          label: p.name,
+          meta: "Laminates",
+        })),
+      ...veneersCatalogue
+        .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary))
+        .map((p) => ({
+          href: `/veneers/${p.slug}`,
+          label: p.name,
+          meta: "Veneers",
         })),
       ...products
         .filter((p) => hit(p.name) || hit(p.grade) || hit(p.summary))

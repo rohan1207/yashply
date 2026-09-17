@@ -15,15 +15,15 @@ export default function PlywoodHome() {
             <div className="max-w-2xl">
               <p className="eyebrow">Plywood</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-[1.12] tracking-tight sm:text-3xl lg:text-4xl">
-                Different Needs. Different Materials.
+                Different Jobs. Different Plywood.
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-yp-mist sm:mt-4 sm:text-[15px]">
-                Explore our range of plywood and boards for different applications, sizes and
-                thickness requirements.
+                See our plywood and boards for kitchens, furniture, packaging and more, in common
+                sizes and thicknesses.
               </p>
             </div>
             <Link to="/plywood" className="btn-ghost w-fit shrink-0">
-              View Plywood Range
+              Explore Plywood
               <ArrowUpRight size={15} />
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function PlywoodHome() {
 
         <div className="mt-6 flex justify-center sm:mt-8">
           <Link to="/plywood" className="btn-ghost w-fit">
-            View All
+            Explore Plywood
             <ArrowUpRight size={15} />
           </Link>
         </div>

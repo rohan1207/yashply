@@ -9,11 +9,11 @@ module.exports = {
       },
       colors: {
         yp: {
-          /* Navy — from YASH PLY logo */
+          /* Navy - from YASH PLY logo */
           espresso: "#0C1623",
           umber: "#152536",
           ink: "#081018",
-          /* Gold — primary brand accent */
+          /* Gold - primary brand accent */
           timber: "#E4A823",
           copper: "#E4A823",
           bronze: "#C48E14",

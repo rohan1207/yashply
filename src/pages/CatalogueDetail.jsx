@@ -4,18 +4,39 @@ import { ArrowLeft, ArrowUpRight, Phone } from "lucide-react";
 import SEO from "../components/SEO";
 import QuoteForm from "../components/QuoteForm";
 import CatalogueCard from "../components/CatalogueCard";
-import {
-  getCatalogueProduct,
-  hardwareCatalogue,
-  plywoodCatalogue,
-  site,
-} from "../data/content";
+import { getCatalogueList, getCatalogueProduct, site } from "../data/content";
 import NotFound from "./NotFound";
+
+function categoryFromPath(pathname) {
+  if (pathname.startsWith("/hardware")) return "hardware";
+  if (pathname.startsWith("/laminates")) return "laminates";
+  if (pathname.startsWith("/veneers")) return "veneers";
+  return "plywood";
+}
+
+function ChipGroup({ title, items }) {
+  if (!items?.length) return null;
+  return (
+    <div className="mt-5 sm:mt-6">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-yp-mist">{title}</p>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="rounded-full border border-yp-line bg-yp-sand/80 px-3 py-1.5 text-[11px] font-semibold text-yp-espresso sm:text-[12px]"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function CatalogueDetail() {
   const { slug } = useParams();
   const { pathname } = useLocation();
-  const category = pathname.startsWith("/hardware") ? "hardware" : "plywood";
+  const category = categoryFromPath(pathname);
   const product = getCatalogueProduct(category, slug);
 
   useEffect(() => {
@@ -24,33 +45,28 @@ export default function CatalogueDetail() {
 
   if (!product) return <NotFound />;
 
-  const list = category === "hardware" ? hardwareCatalogue : plywoodCatalogue;
-  const base = category === "hardware" ? "/hardware" : "/plywood";
+  const list = getCatalogueList(category);
+  const base = `/${category}`;
   const related = list.filter((p) => p.slug !== product.slug).slice(0, 4);
-  const chips = [
-    ...(product.sizes || []),
-    ...(product.thicknesses || []),
-    ...(product.options || []).slice(0, 4),
-  ];
+  const label = category.charAt(0).toUpperCase() + category.slice(1);
 
   return (
     <>
       <SEO title={product.name} description={product.summary} />
 
       <article className="bg-white pb-28 sm:pb-16">
-        {/* Top bar */}
         <div className="border-b border-yp-line bg-yp-sand/60">
           <div className="yp-container flex items-center gap-3 py-3 pt-[calc(var(--header-h)+0.65rem)] sm:py-4 sm:pt-[calc(var(--header-h)+0.85rem)]">
             <Link
               to={base}
               className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-yp-line bg-white text-yp-espresso transition hover:border-yp-espresso"
-              aria-label={`Back to ${category}`}
+              aria-label={`Back to ${label}`}
             >
               <ArrowLeft size={16} />
             </Link>
             <nav className="min-w-0 truncate text-[12px] text-yp-mist sm:text-[13px]">
-              <Link to={base} className="capitalize hover:text-yp-espresso">
-                {category}
+              <Link to={base} className="hover:text-yp-espresso">
+                {label}
               </Link>
               <span className="mx-1.5 text-yp-line">/</span>
               <span className="text-yp-espresso">{product.name}</span>
@@ -60,7 +76,6 @@ export default function CatalogueDetail() {
 
         <div className="yp-container">
           <div className="grid gap-8 pt-6 sm:gap-10 sm:pt-10 lg:grid-cols-12 lg:gap-12 lg:pt-12">
-            {/* Media */}
             <div className="lg:col-span-6">
               <div className="overflow-hidden rounded-[1.15rem] border border-yp-line bg-yp-sand sm:rounded-[1.5rem]">
                 <div className="flex aspect-square items-center justify-center p-6 sm:p-10 lg:aspect-[4/5] lg:p-12">
@@ -85,7 +100,6 @@ export default function CatalogueDetail() {
               ) : null}
             </div>
 
-            {/* Copy + specs */}
             <div className="lg:col-span-6">
               {product.eyebrow || product.grade ? (
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-yp-gold sm:text-[12px]">
@@ -99,26 +113,19 @@ export default function CatalogueDetail() {
                 {product.summary}
               </p>
 
-              {chips.length > 0 ? (
-                <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
-                  {chips.map((c) => (
-                    <span
-                      key={c}
-                      className="rounded-full border border-yp-line bg-yp-sand/80 px-3 py-1.5 text-[11px] font-semibold text-yp-espresso sm:text-[12px]"
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
+              <ChipGroup title="Colours / tones" items={product.colours} />
+              <ChipGroup title="Finishes & textures" items={product.finishes} />
+              <ChipGroup title="Designs / patterns" items={product.designs} />
+              <ChipGroup title="Options" items={product.options?.slice(0, 6)} />
+              <ChipGroup title="Sizes" items={product.sizes} />
+              <ChipGroup title="Thicknesses" items={product.thicknesses} />
 
-              {/* Desktop CTAs */}
               <div className="mt-7 hidden flex-wrap gap-3 sm:mt-8 sm:flex">
                 <Link
                   to={`/quote?product=${encodeURIComponent(product.name)}`}
                   className="btn-primary"
                 >
-                  Get a Quote
+                  Enquire Now
                   <ArrowUpRight size={15} />
                 </Link>
                 <a href={site.phoneHref} className="btn-ghost">
@@ -156,7 +163,7 @@ export default function CatalogueDetail() {
                   {product.features.map((f) => (
                     <li
                       key={f}
-                      className="rounded-xl border border-yp-line bg-yp-sand/50 px-3.5 py-3 text-[13px] leading-snug text-yp-espresso/85"
+                      className="rounded-xl border border-yp-line bg-yp-sand/50 px-3.5 py-3 text-[13px] leading-snug"
                     >
                       {f}
                     </li>
@@ -166,7 +173,6 @@ export default function CatalogueDetail() {
             </div>
           </div>
 
-          {/* Detail sections */}
           <div className="mt-10 grid gap-10 border-t border-yp-line pt-10 sm:mt-14 sm:gap-12 sm:pt-14 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h2 className="font-display text-2xl tracking-tight sm:text-3xl">About this product</h2>
@@ -181,7 +187,7 @@ export default function CatalogueDetail() {
                     {product.applications.map((a) => (
                       <li
                         key={a}
-                        className="rounded-full bg-yp-sand px-3.5 py-2 text-[12px] font-medium text-yp-espresso sm:text-[13px]"
+                        className="rounded-full bg-yp-sand px-3.5 py-2 text-[12px] font-medium sm:text-[13px]"
                       >
                         {a}
                       </li>
@@ -192,12 +198,12 @@ export default function CatalogueDetail() {
 
               {product.brands?.length ? (
                 <>
-                  <h3 className="mt-8 font-display text-xl sm:mt-10 sm:text-2xl">Brands we carry</h3>
+                  <h3 className="mt-8 font-display text-xl sm:mt-10 sm:text-2xl">Brands</h3>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {product.brands.map((b) => (
                       <li
                         key={b}
-                        className="rounded-full border border-yp-line px-3.5 py-2 text-[12px] font-semibold text-yp-espresso sm:text-[13px]"
+                        className="rounded-full border border-yp-line px-3.5 py-2 text-[12px] font-semibold sm:text-[13px]"
                       >
                         {b}
                       </li>
@@ -206,45 +212,19 @@ export default function CatalogueDetail() {
                 </>
               ) : null}
 
-              {(product.sizes?.length || product.thicknesses?.length) ? (
+              {product.collections?.length ? (
                 <>
-                  <h3 className="mt-8 font-display text-xl sm:mt-10 sm:text-2xl">
-                    Sizes & thicknesses
-                  </h3>
-                  {product.sizes?.length ? (
-                    <div className="mt-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-yp-mist">
-                        Sheet sizes
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {product.sizes.map((s) => (
-                          <span
-                            key={s}
-                            className="rounded-full border border-yp-espresso/15 bg-white px-3 py-1.5 text-[12px] font-semibold sm:text-[13px]"
-                          >
-                            {s} ft
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-                  {product.thicknesses?.length ? (
-                    <div className="mt-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-yp-mist">
-                        Thicknesses
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {product.thicknesses.map((t) => (
-                          <span
-                            key={t}
-                            className="rounded-full border border-yp-espresso/15 bg-white px-3 py-1.5 text-[12px] font-semibold sm:text-[13px]"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
+                  <h3 className="mt-8 font-display text-xl sm:mt-10 sm:text-2xl">Collections</h3>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {product.collections.map((c) => (
+                      <li
+                        key={c}
+                        className="rounded-full bg-yp-sand px-3.5 py-2 text-[12px] font-medium sm:text-[13px]"
+                      >
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
                 </>
               ) : null}
             </div>
@@ -256,18 +236,18 @@ export default function CatalogueDetail() {
                     Next step
                   </p>
                   <h2 className="mt-2 font-display text-[1.65rem] leading-tight sm:text-2xl">
-                    Check stock &amp; get a quote
+                    Enquire about this product
                   </h2>
                   <p className="mt-3 text-[13px] leading-relaxed text-white/55 sm:text-sm">
-                    Tell us the thickness, quantity and room. The Pune desk replies with availability
-                    and options.
+                    Share shade, finish, quantity or a photo. The Pune desk confirms what is available
+                    and what pairs with your sheet and fittings.
                   </p>
                   <div className="mt-5 flex flex-col gap-2.5 sm:mt-6">
                     <Link
                       to={`/quote?product=${encodeURIComponent(product.name)}`}
                       className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-yp-gold px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso"
                     >
-                      Get a Quote
+                      Enquire Now
                       <ArrowUpRight size={15} />
                     </Link>
                     <a
@@ -277,33 +257,20 @@ export default function CatalogueDetail() {
                       <Phone size={14} />
                       {site.phone}
                     </a>
-                    {site.whatsapp ? (
-                      <a
-                        href={site.whatsapp}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-white/85"
-                      >
-                        WhatsApp
-                        <ArrowUpRight size={14} />
-                      </a>
-                    ) : null}
+                    <Link
+                      to="/contact"
+                      className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-white/85"
+                    >
+                      Help Me Choose
+                      <ArrowUpRight size={14} />
+                    </Link>
                   </div>
-                  <p className="mt-5 text-[12px] text-white/40">
-                    {site.hours}
-                    <br />
-                    {site.address.city}
-                  </p>
                 </div>
               </div>
             </aside>
           </div>
 
-          {/* Enquiry form */}
-          <section
-            id="enquire"
-            className="mt-12 scroll-mt-[var(--header-h)] sm:mt-16 lg:mt-20"
-          >
+          <section id="enquire" className="mt-12 scroll-mt-[var(--header-h)] sm:mt-16 lg:mt-20">
             <div className="grid overflow-hidden rounded-[1.25rem] border border-yp-line bg-yp-sand/40 sm:rounded-[1.5rem] lg:grid-cols-12">
               <div className="px-5 py-8 sm:px-8 sm:py-10 lg:col-span-5 lg:px-10 lg:py-12">
                 <p className="eyebrow">Enquiry</p>
@@ -320,12 +287,11 @@ export default function CatalogueDetail() {
             </div>
           </section>
 
-          {/* Related */}
           {related.length > 0 ? (
             <section className="mt-12 pb-4 sm:mt-16 sm:pb-8">
-              <p className="eyebrow">Also in {category}</p>
+              <p className="eyebrow">Also in {label}</p>
               <h2 className="mt-2 font-display text-[1.65rem] leading-tight sm:text-3xl">
-                Related products
+                Related options
               </h2>
               <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-5 lg:grid-cols-4">
                 {related.map((p, i) => (
@@ -343,21 +309,19 @@ export default function CatalogueDetail() {
         </div>
       </article>
 
-      {/* Sticky mobile CTA */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-yp-line bg-white/95 px-4 py-3 backdrop-blur-md sm:hidden">
         <div className="mx-auto flex max-w-lg gap-2">
-          <a
-            href={site.phoneHref}
-            className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-yp-espresso bg-white text-[12px] font-semibold text-yp-espresso"
+          <Link
+            to="/contact"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-full border border-yp-espresso bg-white text-[11px] font-semibold uppercase tracking-[0.1em] text-yp-espresso"
           >
-            <Phone size={14} />
-            Call
-          </a>
+            Help Me Choose
+          </Link>
           <Link
             to={`/quote?product=${encodeURIComponent(product.name)}`}
-            className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-full bg-yp-gold text-[12px] font-semibold uppercase tracking-[0.12em] text-yp-espresso"
+            className="inline-flex h-11 flex-[1.35] items-center justify-center gap-1.5 rounded-full bg-yp-gold text-[11px] font-semibold uppercase tracking-[0.1em] text-yp-espresso"
           >
-            Get a Quote
+            Enquire Now
             <ArrowUpRight size={14} />
           </Link>
         </div>

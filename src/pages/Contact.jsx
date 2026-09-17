@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-reac
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
+import QuoteForm from "../components/QuoteForm";
 import { images, site } from "../data/content";
 
 const details = [
@@ -54,6 +55,49 @@ const details = [
   },
 ];
 
+const contactJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Yash Ply & Hardware Pune",
+    description:
+      "Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call, WhatsApp or visit our Bhavani Peth yard.",
+    url: "https://yashply.com/contact",
+    mainEntity: {
+      "@type": "LocalBusiness",
+      "@id": "https://yashply.com/#business",
+      name: "Yash Ply & Hardware",
+      alternateName: "Yashply",
+      telephone: ["+91-93710-40971", "+91-20-2644-3040"],
+      url: "https://yashply.com/",
+      image: "https://yashply.com/contact.png",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "86, New Timber Market, Near Ladkat Petrol Pump, Bhavani Peth",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        postalCode: "411042",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 18.5089,
+        longitude: 73.866,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "09:00",
+          closes: "19:00",
+        },
+      ],
+      areaServed: { "@type": "City", name: "Pune" },
+      priceRange: "₹₹",
+    },
+  },
+];
+
 function scrollToId(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -79,19 +123,19 @@ function DetailCard({ item, index }) {
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
-      <div className="mt-6">
+      <div className="mt-5">
         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-yp-red group-hover:text-yp-copper">
           {item.label}
         </p>
-        <p className="mt-2 whitespace-pre-line font-display text-xl leading-snug sm:text-2xl">
+        <p className="mt-2 whitespace-pre-line font-display text-lg leading-snug sm:text-xl lg:text-[1.35rem]">
           {item.value}
         </p>
-        <p className="mt-2 text-sm text-yp-mist group-hover:text-white/55">{item.note}</p>
+        <p className="mt-2 text-xs text-yp-mist group-hover:text-white/55 sm:text-sm">{item.note}</p>
       </div>
     </>
   );
 
-  const cls = `group flex h-full flex-col rounded-[1.25rem] border border-yp-line bg-white p-5 transition duration-300 hover:border-yp-espresso hover:bg-yp-espresso hover:text-yp-ivory sm:rounded-[1.5rem] sm:p-7 ${
+  const cls = `group flex h-full flex-col rounded-[1.1rem] border border-yp-line bg-white p-4 transition duration-300 hover:border-yp-espresso hover:bg-yp-espresso hover:text-yp-ivory sm:rounded-[1.35rem] sm:p-5 lg:p-6 ${
     item.href ? "" : "cursor-default"
   }`;
 
@@ -150,8 +194,12 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact us"
-        description="Let’s talk about your requirement. Call Yash Ply & Hardware in Pune, Maharashtra, or visit the yard for plywood and hardware guidance."
+        title="Contact Yash Ply & Hardware Pune | Call, Visit or WhatsApp"
+        description={`Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call ${site.phone}, visit 86 New Timber Market, Bhavani Peth, or send a WhatsApp message. Open Mon-Sat 9 AM-7 PM.`}
+        keywords="contact Yashply, Yash Ply & Hardware phone, plywood dealer Pune contact, Bhavani Peth plywood shop, New Timber Market Pune, plywood wholesale Pune contact, hardware shop Pune contact, Yashply WhatsApp"
+        image="/contact.png"
+        path="/contact"
+        jsonLd={contactJsonLd}
       />
 
       <section
@@ -161,10 +209,10 @@ export default function Contact() {
         className="relative isolate flex min-h-[78svh] overflow-hidden bg-yp-espresso text-yp-ivory sm:min-h-[88svh]"
       >
         <motion.img
-          src={images.about}
-          alt="Yash Ply & Hardware yard"
+          src="/contact.png"
+          alt="Contact Yash Ply & Hardware plywood and hardware shop in Pune"
           style={{ y: imgY, x: tilt.x, scale: 1.06 }}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-yp-espresso" />
         <div className="grain-overlay opacity-[0.12]" />
@@ -176,20 +224,20 @@ export default function Contact() {
             Contact us
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.3rem,6.8vw,5rem)] font-medium leading-[1.02] tracking-tight">
-            Let’s Talk About Your Requirement.
+            Tell Us What You Need.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            Whether you know exactly what you need or need help choosing the right material, our
-            team is here to help.
+            Whether you already know the product or need help choosing, our Pune team is here to
+            help.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={site.phoneHref} className="btn-primary w-full sm:w-auto">
               <Phone size={14} />
               Call Us
             </a>
-            <Link to="/quote" className="btn-ghost-light w-full sm:w-auto">
-              Get a Quote
-            </Link>
+            <a href="#message" className="btn-ghost-light w-full sm:w-auto">
+              Send a message
+            </a>
           </div>
           <a
             href="#details"
@@ -234,15 +282,19 @@ export default function Contact() {
             <div className="max-w-2xl">
               <p className="eyebrow">Contact Details</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                Reach the Yashply desk.
+                Reach our Pune team.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                Call, WhatsApp or walk in. Main and sales lines are listed below.
+                Call, WhatsApp or walk in. Main and sales numbers are listed below.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-4 lg:grid-cols-3">
+          <div
+            className={`mt-10 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-3 ${
+              details.length >= 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"
+            }`}
+          >
             {details.map((item, i) => (
               <DetailCard key={item.id} item={item} index={i} />
             ))}
@@ -250,7 +302,47 @@ export default function Contact() {
         </div>
       </section>
 
-      <section id="reach" className="border-y border-yp-line bg-yp-sand yp-section scroll-mt-[var(--header-h)]">
+      <section
+        id="message"
+        className="border-y border-yp-line bg-yp-sand yp-section scroll-mt-[var(--header-h)]"
+      >
+        <div className="yp-container">
+          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
+            <Reveal className="lg:col-span-5">
+              <p className="eyebrow">Contact form</p>
+              <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
+                Send a short message.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
+                Share your name, phone number and what you need, we will reply on WhatsApp within
+                one business day.
+              </p>
+              <div className="mt-6 space-y-2 text-sm text-yp-espresso/80">
+                <p>
+                  Prefer to call?{" "}
+                  <a href={site.phoneHref} className="font-semibold text-yp-red hover:underline">
+                    {site.phone}
+                  </a>
+                </p>
+                <p>
+                  Or request a full quote on the{" "}
+                  <Link to="/quote" className="font-semibold text-yp-red hover:underline">
+                    quote page
+                  </Link>
+                  .
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.06} className="lg:col-span-7">
+              <div className="rounded-[1.25rem] border border-yp-line bg-white p-5 sm:rounded-[1.75rem] sm:p-8">
+                <QuoteForm contact />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section id="reach" className="yp-section scroll-mt-[var(--header-h)]">
         <div className="yp-container">
           <Reveal>
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
@@ -278,7 +370,7 @@ export default function Contact() {
           <Reveal delay={0.06}>
             <div className="mt-8 overflow-hidden rounded-[1.25rem] border border-yp-line bg-white sm:mt-10 sm:rounded-[1.75rem]">
               <iframe
-                title="Yash Ply & Hardware, Pune"
+                title="Yash Ply & Hardware map, New Timber Market, Bhavani Peth, Pune"
                 className="h-[16rem] w-full border-0 sm:h-[22rem] lg:h-[28rem]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -296,7 +388,7 @@ export default function Contact() {
               <div className="relative min-h-[12rem] sm:min-h-[16rem] lg:col-span-5 lg:min-h-[24rem]">
                 <img
                   src={images.hardware}
-                  alt="Sales guidance at Yash Ply & Hardware"
+                  alt="Sales help for plywood and hardware at Yash Ply Pune"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-yp-espresso/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-yp-espresso/25" />
@@ -311,7 +403,7 @@ export default function Contact() {
                     Need help choosing the right material?
                   </h2>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:text-[15px]">
-                    Tell us the room, the grade you are considering, or the fittings you need. Our
+                    Tell us the room, the grade you are thinking of, or the fittings you need. Our
                     sales team will guide you to the right stock.
                   </p>
                   <div className="mt-8">

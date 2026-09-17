@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { hardwareCatalogue, images, plywoodCatalogue } from "../data/content";
+import { hardwareCatalogue, images, laminatesCatalogue, plywoodCatalogue, veneersCatalogue } from "../data/content";
 
-/** Products mega: Plywood (full catalogue) + Hardware (full catalogue) */
+/** Products mega: all four product lines */
 export const productsMegaColumns = [
   {
     title: "Plywood",
@@ -20,13 +20,37 @@ export const productsMegaColumns = [
   {
     title: "Hardware",
     href: "/hardware",
-    image: hardwareCatalogue[0]?.image || images.kitchen,
+    image: hardwareCatalogue[0]?.image || images.hinges,
     multiCol: false,
     items: hardwareCatalogue.map((h) => ({
       label: h.name,
       href: `/hardware/${h.slug}`,
       image: h.image,
       meta: null,
+    })),
+  },
+  {
+    title: "Laminates",
+    href: "/laminates",
+    image: laminatesCatalogue[1]?.image || images.laminatesHero,
+    multiCol: false,
+    items: laminatesCatalogue.map((l) => ({
+      label: l.name,
+      href: `/laminates/${l.slug}`,
+      image: l.image,
+      meta: l.grade || null,
+    })),
+  },
+  {
+    title: "Veneers",
+    href: "/veneers",
+    image: veneersCatalogue[0]?.image || images.veneersHero,
+    multiCol: false,
+    items: veneersCatalogue.map((v) => ({
+      label: v.name,
+      href: `/veneers/${v.slug}`,
+      image: v.image,
+      meta: v.grade || null,
     })),
   },
 ];
@@ -60,19 +84,18 @@ export default function ProductsMega({ onNavigate }) {
         ))}
       </div>
 
-      {/* Soft wash — navy + gold readable type */}
+      {/* Soft wash, navy + gold readable type */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-yp-espresso/70 via-yp-espresso/45 to-yp-espresso/30" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-yp-espresso/55 via-transparent to-yp-espresso/25" />
 
       <div className="relative z-10 flex h-full flex-col">
-        <div className="yp-container grid flex-1 grid-cols-1 content-start gap-10 pt-10 lg:grid-cols-12 lg:gap-12 lg:pt-12 xl:gap-16">
+        <div className="yp-container grid flex-1 grid-cols-1 content-start gap-8 overflow-y-auto pt-8 sm:pt-10 lg:grid-cols-4 lg:gap-8 lg:pt-12 xl:gap-10">
           {productsMegaColumns.map((col, ci) => {
             const colOn = active.col === ci;
-            const span = col.multiCol ? "lg:col-span-8" : "lg:col-span-4";
             return (
               <div
                 key={col.title}
-                className={`${span}`}
+                className="min-w-0"
                 onMouseEnter={() => setActive({ col: ci, item: -1 })}
               >
                 <Link
@@ -85,16 +108,10 @@ export default function ProductsMega({ onNavigate }) {
                   {col.title}
                 </Link>
                 <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50">
-                  {col.items.length} products
+                  {col.items.length} options
                 </p>
 
-                <ul
-                  className={`mt-5 ${
-                    col.multiCol
-                      ? "grid grid-cols-1 gap-x-8 sm:grid-cols-2"
-                      : "grid grid-cols-1"
-                  }`}
-                >
+                <ul className="mt-4 max-h-[min(52vh,28rem)] space-y-0 overflow-y-auto pr-1">
                   {col.items.map((row, ii) => {
                     const on = colOn && active.item === ii;
                     return (
@@ -103,7 +120,7 @@ export default function ProductsMega({ onNavigate }) {
                           to={row.href}
                           onClick={onNavigate}
                           onMouseEnter={() => setActive({ col: ci, item: ii })}
-                          className={`flex items-start gap-2 py-2.5 text-[14px] leading-snug transition ${
+                          className={`flex items-start gap-2 py-2.5 text-[13px] leading-snug transition xl:text-[14px] ${
                             on ? "font-semibold text-white" : "text-white/85 hover:text-white"
                           }`}
                         >

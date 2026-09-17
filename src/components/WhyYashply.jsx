@@ -25,7 +25,7 @@ export default function WhyYashply() {
         <div className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)] lg:col-span-5 lg:self-start">
           <p className="eyebrow">Why Yashply</p>
           <h2 className="mt-3 max-w-md font-display text-[1.85rem] leading-tight sm:text-4xl lg:text-5xl">
-            Eight reasons a carpenter sends the next client.
+            Eight reasons customers come back.
           </h2>
 
           <div className="mt-10 hidden lg:block">

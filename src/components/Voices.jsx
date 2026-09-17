@@ -23,9 +23,9 @@ export default function Voices() {
   return (
     <section className="overflow-hidden yp-section">
       <div className="yp-container">
-        <p className="eyebrow">Voice</p>
+        <p className="eyebrow">Customer Voices</p>
         <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-          What Pune already knows.
+          What our Pune customers say.
         </h2>
       </div>
 

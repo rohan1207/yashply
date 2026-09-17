@@ -7,6 +7,44 @@ import Reveal from "../components/Reveal";
 import CatalogueCard from "../components/CatalogueCard";
 import { plywoodCatalogue } from "../data/content";
 
+const plywoodJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Plywood in Pune | Commercial, BWP, Blockboard | Yashply",
+  description:
+    "Buy ISI certified plywood in Pune, commercial, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. Ready stock at Yash Ply & Hardware, Bhavani Peth.",
+  url: "https://yashply.com/plywood",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Yashply",
+    url: "https://yashply.com/",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Plywood products at Yashply",
+    numberOfItems: plywoodCatalogue.length,
+    itemListElement: plywoodCatalogue.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: p.name,
+      url: `https://yashply.com/plywood/${p.slug}`,
+      description: p.summary || p.grade || undefined,
+    })),
+  },
+  about: {
+    "@type": "LocalBusiness",
+    name: "Yash Ply & Hardware",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "86, New Timber Market, Bhavani Peth",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411042",
+      addressCountry: "IN",
+    },
+  },
+};
+
 export default function Plywood() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -41,8 +79,12 @@ export default function Plywood() {
   return (
     <>
       <SEO
-        title="Plywood"
-        description="Plywood for every requirement. Explore grades, sizes and thicknesses from Yash Ply & Hardware, Pune, Maharashtra."
+        title="Plywood in Pune | Commercial, BWP, Blockboard & More"
+        description="Buy plywood in Pune from Yash Ply & Hardware, commercial ply, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. ISI grades, sizes and thicknesses ready at Bhavani Peth."
+        keywords="plywood Pune, buy plywood Pune, commercial plywood Pune, BWP plywood Pune, waterproof plywood, marine plywood Pune, calibrated plywood, blockboard Pune, shuttering ply, truck flooring ply, packaging ply, ISI plywood, Yashply plywood, Yash Ply & Hardware, Bhavani Peth"
+        image="/plywood_page_hero.png"
+        path="/plywood"
+        jsonLd={plywoodJsonLd}
       />
 
       <section
@@ -51,7 +93,7 @@ export default function Plywood() {
       >
         <motion.img
           src="/plywood_page_hero.png"
-          alt="Plywood range at Yash Ply & Hardware"
+          alt="Plywood sheets for sale at Yash Ply & Hardware Pune"
           style={{ y: imgY, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -66,17 +108,17 @@ export default function Plywood() {
             Plywood
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.2rem)] font-medium leading-[1.02] tracking-tight">
-            Plywood for Every Requirement.
+            Plywood for Every Job.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            Explore our range of plywood and boards available in different grades, sizes and
-            thicknesses for varied applications.
+            See our plywood and boards in different grades, sizes and thicknesses, for furniture,
+            kitchens, packaging and more.
           </p>
           <a
             href="#range"
             className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
           >
-            Product range
+            See product range
             <ArrowDown size={14} className="animate-bounce" />
           </a>
         </motion.div>
@@ -112,8 +154,8 @@ export default function Plywood() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-yp-mist">
-                Mini catalogue cards — image, grade and availability. Best-for notes appear once
-                technical suitability is confirmed.
+                Each card shows the product image, grade and available sizes. Open a product for full
+                details.
               </p>
             </div>
           </Reveal>
@@ -159,7 +201,7 @@ export default function Plywood() {
                         : "border-yp-line bg-white text-yp-espresso"
                     }`}
                   >
-                    {p.name.replace(" — ", " · ")}
+                    {p.name}
                   </a>
                 ))}
               </div>
@@ -172,7 +214,7 @@ export default function Plywood() {
                     product={product}
                     index={i}
                     href={`/plywood/${product.slug}`}
-                    cta="View Details"
+                    cta="See Details"
                   />
                 ))}
               </div>
@@ -186,13 +228,16 @@ export default function Plywood() {
           <div className="overflow-hidden rounded-[1.35rem] bg-yp-espresso px-6 py-12 text-center text-yp-ivory sm:rounded-[1.75rem] sm:px-10 sm:py-16">
             <p className="eyebrow text-yp-copper">Not sure which grade?</p>
             <h2 className="mx-auto mt-3 max-w-lg font-display text-[clamp(1.6rem,4vw,2.6rem)] leading-tight">
-              Walk the pile at the Pune yard, or send us the room.
+              Visit our Pune yard, or tell us about your room.
             </h2>
+            <p className="mx-auto mt-4 max-w-md text-sm text-white/55">
+              We will help you pick the right plywood for your kitchen, wardrobe or project.
+            </p>
             <Link
-              to="/quote"
+              to="/contact"
               className="hero-cta-solid mt-8 inline-flex items-center justify-center gap-1"
             >
-              Get a Quote
+              Help Me Choose
               <ArrowUpRight size={16} />
             </Link>
           </div>

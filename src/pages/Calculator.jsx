@@ -66,8 +66,8 @@ export default function Calculator() {
  const product = products.find((p) => p.slug === grade);
  const split = [
  { k: "Carcass 18 mm", v: result.carcass, share: 0.55 },
- { k: "Shutters 18–19 mm", v: result.shutters, share: 0.3 },
- { k: "Backers 6–8 mm", v: result.backers, share: 0.15 },
+ { k: "Shutters 18-19 mm", v: result.shutters, share: 0.3 },
+ { k: "Backers 6-8 mm", v: result.backers, share: 0.15 },
  ];
 
  return (

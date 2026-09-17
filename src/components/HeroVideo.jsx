@@ -40,7 +40,7 @@ export default function HeroVideo() {
     };
 
     const onPause = () => {
-      // Keep looping while the page is visible — do not stay stopped.
+      // Keep looping while the page is visible, do not stay stopped.
       if (cancelled) return;
       if (document.visibilityState === "visible") playNow();
     };

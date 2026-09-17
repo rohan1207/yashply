@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
-import { images, inspiration } from "../data/content";
+import { inspiration } from "../data/content";
 
 export default function Inspiration() {
   return (
     <>
       <SEO
-        title="Inspiration"
-        description="Kitchens, wardrobes, wet areas and commercial interiors specified with Yashply grades."
+        title="Applications"
+        description="Modular kitchens, wardrobes, wet areas, offices and hospitality, where Yash Ply materials are used."
       />
       <PageHero
-        eyebrow="Rooms"
-        title="Specify the room. Then the sheet."
-        text="Inspiration in the CenturyPly sense, not moodboards for their own sake, but a map from space to grade."
-        image={images.living}
-        crumb="Inspiration"
+        eyebrow="Applications / Uses"
+        title="Where our materials go to work."
+        text="Real spaces, real specs, from modular kitchens to hospitality floors. Tap an application to see how plywood, hardware, laminates and veneers fit the brief."
+        image="/modular_kitchen.png"
+        crumb="Applications"
       />
       <section className="yp-section">
         <div className="yp-container grid gap-4 sm:gap-6 md:grid-cols-2">

@@ -8,8 +8,49 @@ import CatalogueCard from "../components/CatalogueCard";
 import {
   hardwareBrands,
   hardwareCatalogue,
-  images,
 } from "../data/content";
+
+const hardwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Furniture Hardware in Pune | Hinges, Channels, Sliding Fittings | Yashply",
+  description:
+    "Buy furniture hardware in Pune, hinges, telescopic channels, sliding wardrobe fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and other brands at Yash Ply & Hardware.",
+  url: "https://yashply.com/hardware",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Yashply",
+    url: "https://yashply.com/",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Hardware categories at Yashply",
+    numberOfItems: hardwareCatalogue.length,
+    itemListElement: hardwareCatalogue.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: `https://yashply.com/hardware/${item.slug}`,
+      description: item.summary || item.eyebrow || undefined,
+    })),
+  },
+  about: {
+    "@type": "LocalBusiness",
+    name: "Yash Ply & Hardware",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "86, New Timber Market, Bhavani Peth",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411042",
+      addressCountry: "IN",
+    },
+  },
+  brand: hardwareBrands.map((b) => ({
+    "@type": "Brand",
+    name: b.name,
+  })),
+};
 
 export default function Hardware() {
   const heroRef = useRef(null);
@@ -24,8 +65,12 @@ export default function Hardware() {
   return (
     <>
       <SEO
-        title="Hardware"
-        description="Hardware that completes the build. Hinges, channels, sliding fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and others at Yash Ply & Hardware."
+        title="Furniture Hardware in Pune | Hinges, Channels & Sliding Fittings"
+        description="Buy furniture hardware in Pune at Yash Ply & Hardware, hinges, telescopic channels, sliding wardrobe fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and other leading brands. Ready stock at Bhavani Peth."
+        keywords="furniture hardware Pune, hinges Pune, soft close hinges, telescopic channels Pune, drawer channels, sliding wardrobe fittings Pune, Hettich Pune, Häfele Pune, EBCO, Blum, Godrej hardware, kitchen hardware Pune, Yashply hardware, Yash Ply & Hardware"
+        image="/hardware_page_hero.png"
+        path="/hardware"
+        jsonLd={hardwareJsonLd}
       />
 
       <section
@@ -34,7 +79,7 @@ export default function Hardware() {
       >
         <motion.img
           src="/hardware_page_hero.png"
-          alt="Hardware fittings at Yash Ply & Hardware"
+          alt="Furniture hinges channels and fittings at Yash Ply & Hardware Pune"
           style={{ y: imgY, scale: 1.08 }}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -49,17 +94,17 @@ export default function Hardware() {
             Hardware
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.2rem)] font-medium leading-[1.02] tracking-tight">
-            Hardware That Completes the Build.
+            Hardware That Completes Your Furniture.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            From everyday furniture hardware to specialised fittings, Yash Ply & Hardware offers a
-            wide range of products from leading brands.
+            From everyday furniture fittings to special hardware, a wide range from trusted brands,
+            all under one roof.
           </p>
           <a
             href="#categories"
             className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
           >
-            Explore categories
+            See categories
             <ArrowDown size={14} className="animate-bounce" />
           </a>
         </motion.div>
@@ -71,11 +116,11 @@ export default function Hardware() {
             <div className="max-w-2xl">
               <p className="eyebrow">Common Categories</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                A sample of what the yard stocks.
+                Popular hardware we stock every day.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                These are the categories we highlight most often. The actual hardware range is much
-                larger. Tell us what you need and we will map it to the right brand and fitting.
+                These are the categories customers ask for most. Our full hardware range is much
+                larger, tell us what you need and we will match the right brand and fitting.
               </p>
             </div>
           </Reveal>
@@ -88,7 +133,7 @@ export default function Hardware() {
                 product={item}
                 index={i}
                 href={`/hardware/${item.slug}`}
-                cta="View Details"
+                cta="See Details"
               />
             ))}
           </div>
@@ -101,11 +146,11 @@ export default function Hardware() {
             <div id="brands" className="mx-auto max-w-2xl scroll-mt-[var(--header-h)] text-center">
               <p className="eyebrow">Brands</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                Leading names. Extensive choice.
+                Top brands. Wide choice.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                We deal in hardware from Hettich, Häfele, EBCO, Blum, Godrej and more, so the
-                fitting can match the sheet under one roof.
+                We stock hardware from Hettich, Häfele, EBCO, Blum, Godrej and more, so the fitting
+                can match your plywood, in one place.
               </p>
             </div>
           </Reveal>
@@ -123,7 +168,7 @@ export default function Hardware() {
               >
                 <img
                   src={brand.src}
-                  alt={brand.name}
+                  alt={`${brand.name} hardware at Yash Ply Pune`}
                   className="max-h-9 max-w-full object-contain sm:max-h-11"
                   loading="lazy"
                 />
@@ -135,48 +180,35 @@ export default function Hardware() {
               to="/brands"
               className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-yp-espresso transition hover:text-yp-red"
             >
-              View all brands
+              See All Brands
               <ArrowUpRight size={14} />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="yp-container py-14 sm:py-20 lg:py-24">
+      <section className="yp-container pb-16 sm:pb-24">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[1.35rem] border border-yp-brass/50 sm:rounded-[1.75rem]">
-            <div className="grid lg:grid-cols-12">
-              <div className="relative min-h-[12rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-[26rem]">
-                <img
-                  src={images.hardwareHero}
-                  alt="Hardware guidance at the Pune yard"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-yp-espresso/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-yp-espresso/25" />
-              </div>
-              <div className="relative bg-yp-espresso lg:col-span-7">
-                <div className="pointer-events-none absolute inset-4 rounded-[1rem] border border-yp-brass/40 sm:inset-6 sm:rounded-[1.25rem]" />
-                <div className="relative flex h-full flex-col justify-center px-6 py-12 sm:px-12 sm:py-16 lg:px-14">
-                  <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-yp-brass">
-                    Hardware desk
-                  </p>
-                  <h2 className="mt-3 max-w-[18ch] font-display text-[clamp(1.65rem,4.5vw,2.85rem)] font-medium leading-[1.1] text-yp-ivory">
-                    Looking for a specific hardware product?
-                  </h2>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:text-[15px]">
-                    Tell us what you need and our team will help you find it.
-                  </p>
-                  <div className="mt-8">
-                    <Link
-                      to="/quote"
-                      className="hero-cta-solid inline-flex w-full items-center justify-center gap-1 sm:w-auto"
-                    >
-                      Get a Quote
-                      <ArrowUpRight size={16} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+          <div className="overflow-hidden rounded-[1.35rem] bg-yp-espresso px-6 py-12 text-center text-yp-ivory sm:rounded-[1.75rem] sm:px-10 sm:py-16">
+            <p className="eyebrow text-yp-gold">Need help choosing?</p>
+            <h2 className="mx-auto mt-3 max-w-lg font-display text-[clamp(1.6rem,4vw,2.6rem)] leading-tight">
+              Not sure which fitting for your doors?
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-sm text-white/55">
+              Tell us the door type and thickness, we will suggest hinges, channels or sliding
+              kits.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                to="/contact"
+                className="hero-cta-solid inline-flex items-center justify-center gap-1"
+              >
+                Help Me Choose
+                <ArrowUpRight size={16} />
+              </Link>
+              <Link to="/quote" className="btn-ghost-light">
+                Get a Quote
+              </Link>
             </div>
           </div>
         </Reveal>

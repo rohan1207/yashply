@@ -6,6 +6,48 @@ import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
 import { hardwareBrands, images } from "../data/content";
 
+const brandNames = hardwareBrands.map((b) => b.name).join(", ");
+
+const brandsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Hardware Brands in Pune | Hettich, Häfele, EBCO, Blum & More | Yashply",
+  description: `Hardware brands stocked at Yash Ply & Hardware, Pune, ${brandNames}.`,
+  url: "https://yashply.com/brands",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Yashply",
+    url: "https://yashply.com/",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Hardware brands at Yashply",
+    numberOfItems: hardwareBrands.length,
+    itemListElement: hardwareBrands.map((brand, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: brand.name,
+      description: brand.focus || undefined,
+      item: {
+        "@type": "Brand",
+        name: brand.name,
+      },
+    })),
+  },
+  about: {
+    "@type": "LocalBusiness",
+    name: "Yash Ply & Hardware",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "86, New Timber Market, Bhavani Peth",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411042",
+      addressCountry: "IN",
+    },
+  },
+};
+
 export default function Brands() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -19,20 +61,35 @@ export default function Brands() {
   return (
     <>
       <SEO
-        title="Brands"
-        description="Hardware brands stocked at Yash Ply & Hardware, Pune — Hettich, Häfele, EBCO, Blum, Godrej, Ozone, Dorset, Grass, Enox and more."
+        title="Hardware Brands in Pune | Hettich, Häfele, EBCO, Blum & More"
+        description={`Buy hardware from top brands in Pune at Yash Ply & Hardware, ${brandNames}. Hinges, channels, sliding fittings and more at Bhavani Peth.`}
+        keywords={`hardware brands Pune, Hettich Pune, Häfele Pune, EBCO Pune, Blum Pune, Godrej hardware Pune, ${brandNames}, furniture fittings Pune, Yashply brands, Yash Ply & Hardware`}
+        image="/brands_page_desktop.png"
+        path="/brands"
+        jsonLd={brandsJsonLd}
       />
 
       <section
         ref={heroRef}
         className="relative isolate flex min-h-[88svh] overflow-hidden bg-yp-espresso text-yp-ivory sm:min-h-[92svh]"
       >
-        <motion.img
-          src="/hardware_page_hero.png"
-          alt="Hardware brands at Yash Ply & Hardware"
-          style={{ y: imgY, scale: 1.08 }}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            style={{ y: imgY }}
+            className="absolute inset-x-0 top-0 h-[118%] w-full origin-top will-change-transform"
+          >
+            <img
+              src="/brands_page_phone.png"
+              alt="Hardware brands at Yash Ply & Hardware Pune"
+              className="absolute inset-0 h-full w-full object-cover object-top md:hidden"
+            />
+            <img
+              src="/brands_page_desktop.png"
+              alt="Hardware brands at Yash Ply & Hardware Pune"
+              className="absolute inset-0 hidden h-full w-full object-cover object-top md:block"
+            />
+          </motion.div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-yp-espresso" />
         <div className="grain-overlay opacity-[0.1]" />
 
@@ -44,17 +101,17 @@ export default function Brands() {
             Brands
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,7vw,5.2rem)] font-medium leading-[1.02] tracking-tight">
-            Leading Names. Extensive Choice.
+            Top Brands. Wide Choice.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            We stock hardware from trusted brands so the fitting can match the sheet — under one
-            roof in Pune.
+            We stock hardware from trusted brands, so the fitting can match your plywood, all in
+            one place in Pune.
           </p>
           <a
             href="#brands"
             className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
           >
-            Browse brands
+            See brands
             <ArrowDown size={14} className="animate-bounce" />
           </a>
         </motion.div>
@@ -85,11 +142,11 @@ export default function Brands() {
             <div className="max-w-2xl">
               <p className="eyebrow">Our Partners</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                Brands we deal in every day.
+                Brands we stock every day.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                From kitchen motion systems to locks and glass hardware — ask the yard for the
-                exact series and finish you need.
+                From kitchen soft-close systems to locks and glass fittings, ask us for the exact
+                series and finish you need.
               </p>
             </div>
           </Reveal>
@@ -108,7 +165,7 @@ export default function Brands() {
                 <div className="flex aspect-square items-center justify-center bg-yp-sand px-4 transition group-hover:bg-white sm:aspect-[16/10] sm:px-8">
                   <img
                     src={brand.src}
-                    alt={brand.name}
+                    alt={`${brand.name} hardware at Yash Ply Pune`}
                     className="max-h-10 max-w-[75%] object-contain sm:max-h-16 sm:max-w-[70%]"
                     loading="lazy"
                   />
@@ -148,14 +205,14 @@ export default function Brands() {
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow">Hardware</p>
               <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-4xl">
-                Need a category, not only a brand?
+                Need a product type, not only a brand?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                Browse hinges, channels, sliding fittings and more — then we map the right brand to
-                your job.
+                Browse hinges, drawer channels, sliding fittings and more, then we match the right
+                brand to your job.
               </p>
               <Link to="/hardware" className="btn-ghost mt-8 inline-flex">
-                View Hardware
+                Explore Hardware
                 <ArrowUpRight size={15} />
               </Link>
             </div>
@@ -170,7 +227,7 @@ export default function Brands() {
               <div className="relative min-h-[12rem] sm:min-h-[18rem] lg:col-span-5 lg:min-h-[26rem]">
                 <img
                   src={images.hardwareHero}
-                  alt="Brand guidance at Yash Ply & Hardware"
+                  alt="Ask Yash Ply Pune for hardware brand and series help"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-yp-espresso/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-yp-espresso/25" />
@@ -185,16 +242,18 @@ export default function Brands() {
                     Looking for a specific brand or series?
                   </h2>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:text-[15px]">
-                    Tell us the fitting and finish. We will check stock and options at the Pune
-                    yard.
+                    Tell us the fitting and finish. We will check stock and options at our Pune yard.
                   </p>
-                  <div className="mt-8">
+                  <div className="mt-8 flex flex-wrap gap-3">
                     <Link
                       to="/quote"
                       className="hero-cta-solid inline-flex w-full items-center justify-center gap-1 sm:w-auto"
                     >
                       Get a Quote
                       <ArrowUpRight size={16} />
+                    </Link>
+                    <Link to="/contact" className="btn-ghost-light w-full sm:w-auto">
+                      Contact Us
                     </Link>
                   </div>
                 </div>

@@ -8,6 +8,8 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Plywood", href: "/plywood" },
   { label: "Hardware", href: "/hardware" },
+  { label: "Laminates", href: "/laminates" },
+  { label: "Veneers", href: "/veneers" },
   { label: "Brands", href: "/brands" },
   { label: "Get a Quote", href: "/quote" },
   { label: "Contact Us", href: "/contact" },
@@ -88,7 +90,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-yp-espresso pb-[calc(4.75rem+env(safe-area-inset-bottom))] text-yp-ivory lg:pb-0">
       <div className="grain-overlay opacity-[0.06]" />
       <div className="yp-container relative py-10 sm:py-16 lg:py-20 lg:pb-10">
-        {/* ——— Mobile layout ——— */}
+        {/* --- Mobile layout --- */}
         <div className="space-y-8 lg:hidden">
           <div className="text-center">
             <div className="flex justify-center">
@@ -188,7 +190,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ——— Desktop layout ——— */}
+        {/* --- Desktop layout --- */}
         <div className="hidden gap-12 lg:grid lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo />

@@ -43,7 +43,7 @@ export default function SheetTool() {
                   <ArrowRight className="h-4 w-4" strokeWidth={2} />
                 </Link>
                 <p className="text-xs leading-relaxed text-white/40 sm:max-w-[16rem]">
-                  A 10×12 L-kitchen is usually 14–18 sheets before the cut list.
+                  A 10×12 L-kitchen is usually 14-18 sheets before the cut list.
                 </p>
               </div>
             </div>
