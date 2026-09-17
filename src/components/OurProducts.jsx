@@ -29,7 +29,7 @@ const categories = [
   {
     id: "laminates",
     title: "Laminates",
-    image: "/solid_laminate.png",
+    image: "/products/laminates.png",
     alt: "Laminate sheets colours and woodgrains in Pune",
     text: "Plain colours, wood looks, stone looks, textures, gloss and matte, Merino, Royale Touche, Greenlam and Century.",
     href: "/laminates",
@@ -38,7 +38,7 @@ const categories = [
   {
     id: "veneers",
     title: "Veneers",
-    image: "/natural_veneers.png",
+    image: "/products/veneers.png",
     alt: "Natural wood veneers for furniture in Pune",
     text: "Natural and reconstituted veneers in light, medium and dark shades for furniture and wall panels.",
     href: "/veneers",
