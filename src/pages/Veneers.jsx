@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
 import CatalogueCard from "../components/CatalogueCard";
-import { veneersCatalogue } from "../data/content";
+import { veneerBrands, veneersCatalogue } from "../data/content";
 
 const veneersJsonLd = {
   "@context": "https://schema.org",
