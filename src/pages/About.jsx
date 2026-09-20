@@ -39,7 +39,7 @@ const founders = [
     name: "Mr. Yash Pancholi",
     role: "Managing Director",
     bio: "Joined in 2017 to take the business forward. With the same values and a fresh plan, he added hardware and veneers so we respond faster, solve problems better, and get the right material to site on time.",
-    image: images.plywoodHero,
+    image: "/yash.jpeg",
   },
 ];
 
@@ -323,9 +323,6 @@ export default function About() {
               </motion.article>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-center text-[12px] text-yp-mist sm:mt-8">
-            Photo for Mr. Yash Pancholi can be added when ready.
-          </p>
         </div>
       </section>
 
