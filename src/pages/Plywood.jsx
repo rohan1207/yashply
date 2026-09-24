@@ -12,7 +12,7 @@ const plywoodJsonLd = {
   "@type": "CollectionPage",
   name: "Plywood in Pune | Commercial, BWP, Blockboard | Yashply",
   description:
-    "Buy ISI certified plywood in Pune, commercial, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. Ready stock at Yash Ply & Hardware, Bhavani Peth.",
+    "Buy ISI certified plywood in Pune, commercial, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. Ready stock at Yash Ply & Hardware, Kothrud.",
   url: "https://yashply.com/plywood",
   isPartOf: {
     "@type": "WebSite",
@@ -36,10 +36,10 @@ const plywoodJsonLd = {
     name: "Yash Ply & Hardware",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
   },
@@ -80,8 +80,8 @@ export default function Plywood() {
     <>
       <SEO
         title="Plywood in Pune | Commercial, BWP, Blockboard & More"
-        description="Buy plywood in Pune from Yash Ply & Hardware, commercial ply, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. ISI grades, sizes and thicknesses ready at Bhavani Peth."
-        keywords="plywood Pune, buy plywood Pune, commercial plywood Pune, BWP plywood Pune, waterproof plywood, marine plywood Pune, calibrated plywood, blockboard Pune, shuttering ply, truck flooring ply, packaging ply, ISI plywood, Yashply plywood, Yash Ply & Hardware, Bhavani Peth"
+        description="Buy plywood in Pune from Yash Ply & Hardware, commercial ply, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. ISI grades, sizes and thicknesses ready at Kothrud."
+        keywords="plywood Pune, buy plywood Pune, commercial plywood Pune, BWP plywood Pune, waterproof plywood, marine plywood Pune, calibrated plywood, blockboard Pune, shuttering ply, truck flooring ply, packaging ply, ISI plywood, Yashply plywood, Yash Ply & Hardware, Kothrud"
         image="/plywood_page_hero.png"
         path="/plywood"
         jsonLd={plywoodJsonLd}

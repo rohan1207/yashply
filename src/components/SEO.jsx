@@ -5,9 +5,9 @@ const SITE_NAME = "Yash Ply & Hardware";
 const DEFAULT_TITLE =
   "Plywood, Hardware, Laminates & Veneers in Pune | Yashply";
 const DEFAULT_DESCRIPTION =
-  "Buy ISI certified plywood, furniture hardware, laminates and veneers in Pune. Yash Ply & Hardware, Bhavani Peth, since 1998. Ready stock, fair prices, home delivery.";
+  "Buy ISI certified plywood, furniture hardware, laminates and veneers in Pune. Yash Ply & Hardware, Kothrud, since 1998. Ready stock, fair prices, home delivery.";
 const DEFAULT_KEYWORDS =
-  "plywood Pune, plywood dealer Pune, BWP plywood Pune, commercial plywood, ISI plywood, furniture hardware Pune, hinges Pune, laminates Pune, veneers Pune, block board Pune, Yashply, Yash Ply & Hardware, Bhavani Peth, New Timber Market Pune, waterproof plywood, kitchen plywood, wardrobe plywood";
+  "plywood Pune, plywood dealer Pune, BWP plywood Pune, commercial plywood, ISI plywood, furniture hardware Pune, hinges Pune, laminates Pune, veneers Pune, block board Pune, Yashply, Yash Ply & Hardware, Kothrud, Paud Road Pune, waterproof plywood, kitchen plywood, wardrobe plywood";
 
 function upsertMeta(attr, key, content) {
   if (!content) return;

@@ -26,20 +26,21 @@ const homeJsonLd = [
     description:
       "Plywood, furniture hardware, laminates and veneers dealer in Pune. ISI certified sheets, ready stock since 1998.",
     url: "https://yashply.com/",
-    telephone: "+91-93710-40971",
+    telephone: "+91-86984-96699",
+    email: "yashpancholi1995@gmail.com",
     image: "https://yashply.com/logo.png",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Near Ladkat Petrol Pump, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 18.5089,
-      longitude: 73.866,
+      latitude: 18.5074,
+      longitude: 73.8077,
     },
     openingHoursSpecification: [
       {
@@ -85,8 +86,8 @@ export default function Home() {
     <>
       <SEO
         title="Plywood, Hardware, Laminates & Veneers in Pune | Yashply"
-        description="Buy ISI certified plywood, furniture hardware, laminates and veneers in Pune. Yash Ply & Hardware, Bhavani Peth, since 1998. Ready stock, fair prices, home delivery across Pune."
-        keywords="plywood Pune, plywood dealer Pune, BWP plywood, commercial plywood, ISI plywood Pune, furniture hardware Pune, hinges channels sliding fittings, laminates Pune, Merino Greenlam Century laminates, wood veneers Pune, block board Pune, Yashply, Yash Ply & Hardware, Bhavani Peth, New Timber Market"
+        description="Buy ISI certified plywood, furniture hardware, laminates and veneers in Pune. Yash Ply & Hardware, Kothrud, since 1998. Ready stock, fair prices, home delivery across Pune."
+        keywords="plywood Pune, plywood dealer Pune, BWP plywood, commercial plywood, ISI plywood Pune, furniture hardware Pune, hinges channels sliding fittings, laminates Pune, Merino Greenlam Century laminates, wood veneers Pune, block board Pune, Yashply, Yash Ply & Hardware, Kothrud, Paud Road"
         image="/contact.png"
         path="/"
         jsonLd={homeJsonLd}
@@ -107,7 +108,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 max-w-md text-[14px] font-normal leading-relaxed text-white/72 sm:mt-6 sm:max-w-lg sm:text-[16px]">
             ISI certified plywood, furniture hardware, laminates and veneers, ready stock at our
-            Bhavani Peth yard since 1998.
+            Kothrud shop since 1998.
           </p>
           <div className="mt-8 flex w-full max-w-sm flex-col items-stretch gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
             <Link to="/quote" className="hero-cta-solid w-full sm:w-auto">
@@ -149,7 +150,7 @@ export default function Home() {
           <div className="p-6 text-yp-ivory sm:p-8 lg:p-12">
             <p className="eyebrow text-yp-copper">Visit us</p>
             <h2 className="mt-3 font-display text-[1.85rem] leading-tight sm:text-3xl lg:text-4xl">
-              Bhavani Peth, Pune
+              Kothrud, Pune
             </h2>
             <p className="mt-4 text-sm text-white/65 sm:text-base">
               {site.address.line1}

@@ -39,10 +39,10 @@ const brandsJsonLd = {
     name: "Yash Ply & Hardware",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
   },
@@ -62,7 +62,7 @@ export default function Brands() {
     <>
       <SEO
         title="Hardware Brands in Pune | Hettich, Häfele, EBCO, Blum & More"
-        description={`Buy hardware from top brands in Pune at Yash Ply & Hardware, ${brandNames}. Hinges, channels, sliding fittings and more at Bhavani Peth.`}
+        description={`Buy hardware from top brands in Pune at Yash Ply & Hardware, ${brandNames}. Hinges, channels, sliding fittings and more at Kothrud.`}
         keywords={`hardware brands Pune, Hettich Pune, Häfele Pune, EBCO Pune, Blum Pune, Godrej hardware Pune, ${brandNames}, furniture fittings Pune, Yashply brands, Yash Ply & Hardware`}
         image="/brands_page_desktop.png"
         path="/brands"

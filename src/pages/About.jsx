@@ -89,13 +89,14 @@ const aboutJsonLd = {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Near Ladkat Petrol Pump, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
-    telephone: "+91-93710-40971",
+    telephone: "+91-86984-96699",
+    email: "yashpancholi1995@gmail.com",
   },
 };
 
@@ -148,8 +149,8 @@ export default function About() {
     <>
       <SEO
         title="About Yash Ply & Hardware | Plywood Dealer in Pune Since 1998"
-        description="Know Yash Ply & Hardware, Pune, plywood, hardware, laminates and veneers since 1998. Founded by Mr. Pankaj Pancholi, led by MD Mr. Yash Pancholi. Quality materials, on-time delivery and honest service at Bhavani Peth."
-        keywords="about Yashply, Yash Ply & Hardware Pune, plywood dealer Pune since 1998, Pankaj Pancholi, Yash Pancholi, Bhavani Peth plywood, New Timber Market Pune, hardware laminates veneers Pune"
+        description="Know Yash Ply & Hardware, Pune, plywood, hardware, laminates and veneers since 1998. Founded by Mr. Pankaj Pancholi, led by MD Mr. Yash Pancholi. Quality materials, on-time delivery and honest service at Kothrud."
+        keywords="about Yashply, Yash Ply & Hardware Pune, plywood dealer Pune since 1998, Pankaj Pancholi, Yash Pancholi, Kothrud plywood, Paud Road Pune, hardware laminates veneers Pune"
         image="/about_page_desktop.png"
         path="/about"
         jsonLd={aboutJsonLd}

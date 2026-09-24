@@ -169,7 +169,7 @@ export default function AboutHome() {
  />
  )}
  <p className="absolute bottom-4 left-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85 sm:bottom-5 sm:left-5">
- Bhavani Peth · Pune
+ Kothrud · Pune
  </p>
  </motion.div>
  </motion.div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Facebook, Instagram, Linkedin, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Logo from "./Logo";
 import { site } from "../data/content";
 
@@ -151,36 +151,34 @@ export default function Footer() {
                   </span>
                   <span>
                     <span className="block text-[14px] font-medium text-white">{site.phone}</span>
-                    <span className="mt-0.5 block text-[11px] text-white/35">Main</span>
+                    <span className="mt-0.5 block text-[11px] text-white/35">Call us</span>
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href={site.salesPhoneHref}
+                  href={site.emailHref}
                   className="flex items-start gap-3 text-white/80 transition active:text-white"
                 >
                   <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-yp-brass">
-                    <Phone size={15} strokeWidth={1.7} />
+                    <Mail size={15} strokeWidth={1.7} />
                   </span>
                   <span>
-                    <span className="block text-[14px] font-medium text-white">{site.salesPhone}</span>
-                    <span className="mt-0.5 block text-[11px] text-white/35">Sales</span>
+                    <span className="block break-all text-[14px] font-medium text-white">
+                      {site.email}
+                    </span>
+                    <span className="mt-0.5 block text-[11px] text-white/35">Sales enquiry</span>
                   </span>
                 </a>
               </li>
-              {site.email ? (
-                <li>
-                  <a href={site.emailHref} className="break-all text-[14px] text-white/70">
-                    {site.email}
-                  </a>
-                </li>
-              ) : null}
               <li className="flex items-start gap-3 text-[13px] leading-relaxed text-white/60">
                 <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-yp-brass">
                   <MapPin size={15} strokeWidth={1.7} />
                 </span>
                 <span>
+                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.14em] text-white/35">
+                    Visit us
+                  </span>
                   {site.address.line1}
                   <br />
                   {site.address.city}
@@ -228,22 +226,18 @@ export default function Footer() {
                   <a href={site.phoneHref} className="transition hover:text-white">
                     {site.phone}
                   </a>
-                  <span className="mt-0.5 block text-[11px] text-white/35">Main</span>
+                  <span className="mt-0.5 block text-[11px] text-white/35">Call us</span>
                 </li>
                 <li>
-                  <a href={site.salesPhoneHref} className="transition hover:text-white">
-                    {site.salesPhone}
+                  <a href={site.emailHref} className="break-all transition hover:text-white">
+                    {site.email}
                   </a>
-                  <span className="mt-0.5 block text-[11px] text-white/35">Sales</span>
+                  <span className="mt-0.5 block text-[11px] text-white/35">Sales enquiry</span>
                 </li>
-                {site.email ? (
-                  <li>
-                    <a href={site.emailHref} className="break-all transition hover:text-white">
-                      {site.email}
-                    </a>
-                  </li>
-                ) : null}
                 <li>
+                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.14em] text-white/35">
+                    Visit us
+                  </span>
                   {site.address.line1}
                   <br />
                   {site.address.city}

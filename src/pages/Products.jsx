@@ -182,7 +182,7 @@ export default function Products() {
     <>
       <SEO
         title="Plywood, Hardware, Laminates & Veneers | Products in Pune"
-        description="Shop plywood, furniture hardware, laminates and veneers in Pune at Yash Ply & Hardware. Commercial & BWP plywood, hinges, channels, Merino Greenlam Century laminates, wood veneers, ready stock at Bhavani Peth."
+        description="Shop plywood, furniture hardware, laminates and veneers in Pune at Yash Ply & Hardware. Commercial & BWP plywood, hinges, channels, Merino Greenlam Century laminates, wood veneers, ready stock at Kothrud."
         keywords="plywood products Pune, buy plywood Pune, furniture hardware Pune, laminates Pune, veneers Pune, BWP plywood, commercial plywood, blockboard, hinges channels sliding fittings, Merino laminates, Greenlam, Century laminates, Yashply products, Yash Ply & Hardware"
         image="/product_page_desktop.png"
         path="/products"

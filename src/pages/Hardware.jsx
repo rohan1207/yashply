@@ -39,10 +39,10 @@ const hardwareJsonLd = {
     name: "Yash Ply & Hardware",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
   },
@@ -66,7 +66,7 @@ export default function Hardware() {
     <>
       <SEO
         title="Furniture Hardware in Pune | Hinges, Channels & Sliding Fittings"
-        description="Buy furniture hardware in Pune at Yash Ply & Hardware, hinges, telescopic channels, sliding wardrobe fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and other leading brands. Ready stock at Bhavani Peth."
+        description="Buy furniture hardware in Pune at Yash Ply & Hardware, hinges, telescopic channels, sliding wardrobe fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and other leading brands. Ready stock at Kothrud."
         keywords="furniture hardware Pune, hinges Pune, soft close hinges, telescopic channels Pune, drawer channels, sliding wardrobe fittings Pune, Hettich Pune, Häfele Pune, EBCO, Blum, Godrej hardware, kitchen hardware Pune, Yashply hardware, Yash Ply & Hardware"
         image="/hardware_page_hero.png"
         path="/hardware"

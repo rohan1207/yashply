@@ -40,10 +40,10 @@ const veneersJsonLd = {
     name: "Yash Ply & Hardware",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "86, New Timber Market, Bhavani Peth",
+      streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
-      postalCode: "411042",
+      postalCode: "411038",
       addressCountry: "IN",
     },
   },

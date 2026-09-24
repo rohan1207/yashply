@@ -17,25 +17,13 @@ const details = [
     note: "Main contact",
   },
   {
-    id: "sales",
-    label: "Sales Enquiries",
-    value: site.salesPhone,
-    href: site.salesPhoneHref,
-    icon: Phone,
-    note: `Speak with ${site.contactPerson}`,
+    id: "email",
+    label: "Sales Enquiry",
+    value: site.email,
+    href: site.emailHref,
+    icon: Mail,
+    note: "We reply within one business day",
   },
-  ...(site.email
-    ? [
-        {
-          id: "email",
-          label: "Email",
-          value: site.email,
-          href: site.emailHref,
-          icon: Mail,
-          note: "We reply within one business day",
-        },
-      ]
-    : []),
   {
     id: "visit",
     label: "Visit Us",
@@ -51,7 +39,7 @@ const details = [
     value: `${site.hours}\n${site.hoursSunday}`,
     href: null,
     icon: Clock,
-    note: "Pune yard desk",
+    note: "Pune shop desk",
   },
 ];
 
@@ -61,28 +49,29 @@ const contactJsonLd = [
     "@type": "ContactPage",
     name: "Contact Yash Ply & Hardware Pune",
     description:
-      "Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call, WhatsApp or visit our Bhavani Peth yard.",
+      "Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call, WhatsApp or visit our Kothrud shop.",
     url: "https://yashply.com/contact",
     mainEntity: {
       "@type": "LocalBusiness",
       "@id": "https://yashply.com/#business",
       name: "Yash Ply & Hardware",
       alternateName: "Yashply",
-      telephone: ["+91-93710-40971", "+91-20-2644-3040"],
+      telephone: "+91-86984-96699",
+      email: "yashpancholi1995@gmail.com",
       url: "https://yashply.com/",
       image: "https://yashply.com/contact.png",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "86, New Timber Market, Near Ladkat Petrol Pump, Bhavani Peth",
+        streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
         addressLocality: "Pune",
         addressRegion: "Maharashtra",
-        postalCode: "411042",
+        postalCode: "411038",
         addressCountry: "IN",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 18.5089,
-        longitude: 73.866,
+        latitude: 18.5074,
+        longitude: 73.8077,
       },
       openingHoursSpecification: [
         {
@@ -195,8 +184,8 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Yash Ply & Hardware Pune | Call, Visit or WhatsApp"
-        description={`Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call ${site.phone}, visit 86 New Timber Market, Bhavani Peth, or send a WhatsApp message. Open Mon-Sat 9 AM-7 PM.`}
-        keywords="contact Yashply, Yash Ply & Hardware phone, plywood dealer Pune contact, Bhavani Peth plywood shop, New Timber Market Pune, plywood wholesale Pune contact, hardware shop Pune contact, Yashply WhatsApp"
+        description={`Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call ${site.phone}, email ${site.email}, or visit Shop no. 1 Seyash Aadya, Kothrud. Open Mon-Sat 9 AM-7 PM.`}
+        keywords="contact Yashply, Yash Ply & Hardware phone, plywood dealer Pune contact, Kothrud plywood shop, Paud Road Pune, plywood wholesale Pune contact, hardware shop Pune contact, Yashply WhatsApp"
         image="/contact.png"
         path="/contact"
         jsonLd={contactJsonLd}
@@ -265,7 +254,7 @@ export default function Contact() {
                   <span className="text-yp-red">·</span>
                 </>
               ) : null}
-              <span>Bhavani Peth, Pune</span>
+              <span>Kothrud, Pune</span>
               <span className="text-yp-red">·</span>
               <span>{site.hours}</span>
               <span className="text-yp-red">·</span>
@@ -285,7 +274,7 @@ export default function Contact() {
                 Reach our Pune team.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                Call, WhatsApp or walk in. Main and sales numbers are listed below.
+                Call, WhatsApp, email or walk in. Phone, sales email and shop address are listed below.
               </p>
             </div>
           </Reveal>
@@ -370,11 +359,11 @@ export default function Contact() {
           <Reveal delay={0.06}>
             <div className="mt-8 overflow-hidden rounded-[1.25rem] border border-yp-line bg-white sm:mt-10 sm:rounded-[1.75rem]">
               <iframe
-                title="Yash Ply & Hardware map, New Timber Market, Bhavani Peth, Pune"
+                title="Yash Ply & Hardware map, Seyash Aadya, Kothrud, Pune"
                 className="h-[16rem] w-full border-0 sm:h-[22rem] lg:h-[28rem]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://maps.google.com/maps?q=86+New+Timber+Market+Bhavani+Peth+Pune+411042&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Shop+no.+1+Seyash+Aadya+Paud+Road+Bhusari+Colony+Kothrud+Pune+411038&t=&z=15&ie=UTF8&iwloc=&output=embed"
               />
             </div>
           </Reveal>
