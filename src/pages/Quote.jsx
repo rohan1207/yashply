@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import SEO from "../components/SEO";
 import Reveal from "../components/Reveal";
 import { images, site } from "../data/content";
+import { isFormEndpointReady, submitEnquiry } from "../lib/submitEnquiry";
 
 const lookingFor = ["Plywood", "Hardware", "Plywood & Hardware", "Not Sure"];
 
@@ -29,6 +30,7 @@ const empty = {
   product: "",
   quantity: "",
   details: "",
+  website: "",
 };
 
 function FieldLabel({ children, htmlFor }) {
@@ -69,29 +71,38 @@ function ChoiceGroup({ label, options, value, onChange, name }) {
 function GetQuoteForm({ defaultProduct = "" }) {
   const [form, setForm] = useState({ ...empty, product: defaultProduct });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const ready = isFormEndpointReady();
 
   const set = (key, value) => setForm((f) => ({ ...f, [key]: value }));
   const update = (e) => set(e.target.name, e.target.value);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.phone.trim()) return;
-
-    const lines = [
-      `Yashply quote request from ${form.name}`,
-      `Mobile: ${form.phone}`,
-      form.email ? `Email: ${form.email}` : null,
-      form.looking ? `Looking for: ${form.looking}` : null,
-      form.project ? `Working on: ${form.project}` : null,
-      form.product ? `Product / requirement: ${form.product}` : null,
-      form.quantity ? `Quantity: ${form.quantity}` : null,
-      form.details ? `Details: ${form.details}` : null,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.open(`${site.whatsapp}?text=${encodeURIComponent(lines)}`, "_blank", "noopener");
-    setSent(true);
+    if (!form.name.trim() || !form.phone.trim() || sending) return;
+    setError("");
+    setSending(true);
+    try {
+      await submitEnquiry({
+        source: "quote",
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        product: form.product,
+        looking: form.looking,
+        project: form.project,
+        quantity: form.quantity,
+        details: form.details,
+        website: form.website,
+      });
+      setSent(true);
+      setForm({ ...empty, product: defaultProduct });
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   if (sent) {
@@ -126,6 +137,16 @@ function GetQuoteForm({ defaultProduct = "" }) {
 
   return (
     <form onSubmit={submit} className="space-y-7 sm:space-y-8">
+      <input
+        type="text"
+        name="website"
+        value={form.website}
+        onChange={update}
+        tabIndex={-1}
+        autoComplete="off"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        aria-hidden="true"
+      />
       <div className="grid gap-6 sm:grid-cols-2 sm:gap-7">
         <div>
           <FieldLabel htmlFor="quote-name">Full Name</FieldLabel>
@@ -221,16 +242,24 @@ function GetQuoteForm({ defaultProduct = "" }) {
         </div>
       </div>
 
+      {error ? <p className="text-sm text-yp-red">{error}</p> : null}
+      {!ready ? (
+        <p className="text-xs text-yp-mist">
+          Form endpoint not set yet. Add VITE_APPS_SCRIPT_URL after you deploy Apps Script.
+        </p>
+      ) : null}
+
       <div className="pt-1">
         <button
           type="submit"
-          className="group relative inline-flex h-12 w-full items-center justify-center rounded-full bg-yp-gold px-8 text-[12px] font-semibold uppercase tracking-[0.16em] text-yp-espresso transition hover:bg-yp-bronze sm:h-[3.25rem] sm:w-auto sm:min-w-[14rem] sm:text-[13px]"
+          disabled={sending || !ready}
+          className="group relative inline-flex h-12 w-full items-center justify-center rounded-full bg-yp-gold px-8 text-[12px] font-semibold uppercase tracking-[0.16em] text-yp-espresso transition hover:bg-yp-bronze disabled:cursor-not-allowed disabled:opacity-60 sm:h-[3.25rem] sm:w-auto sm:min-w-[14rem] sm:text-[13px]"
         >
           <span
             aria-hidden
             className="pointer-events-none absolute inset-[3px] rounded-full border border-yp-brass/80 transition group-hover:border-yp-brass"
           />
-          <span className="relative">Get My Quote</span>
+          <span className="relative">{sending ? "Sending…" : "Get My Quote"}</span>
         </button>
         <p className="mt-4 text-xs leading-relaxed text-yp-mist">
           We reply within one business day. Prefer a call?{" "}

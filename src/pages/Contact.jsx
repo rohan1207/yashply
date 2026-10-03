@@ -303,7 +303,7 @@ export default function Contact() {
                 Send a short message.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-yp-mist sm:text-[15px]">
-                Share your name, phone number and what you need, we will reply on WhatsApp within
+                Share your name, phone number and what you need. We will reply within
                 one business day.
               </p>
               <div className="mt-6 space-y-2 text-sm text-yp-espresso/80">

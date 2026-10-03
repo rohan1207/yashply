@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { products, site } from "../data/content";
+import { isFormEndpointReady, submitEnquiry } from "../lib/submitEnquiry";
 
 const defaultForm = {
   name: "",
@@ -7,6 +8,7 @@ const defaultForm = {
   email: "",
   product: "",
   message: "",
+  website: "",
 };
 
 export default function QuoteForm({
@@ -17,7 +19,10 @@ export default function QuoteForm({
 }) {
   const [form, setForm] = useState({ ...defaultForm, product: defaultProduct });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const short = compact || contact;
+  const ready = isFormEndpointReady();
 
   useEffect(() => {
     setForm((f) => ({ ...f, product: defaultProduct }));
@@ -25,29 +30,37 @@ export default function QuoteForm({
 
   const update = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.phone.trim()) return;
-    const lines = [
-      contact ? `Yashply contact from ${form.name}` : `Yashply enquiry from ${form.name}`,
-      `Phone: ${form.phone}`,
-      form.email ? `Email: ${form.email}` : null,
-      !contact && form.product ? `Product: ${form.product}` : null,
-      form.message ? `${contact ? "Message" : "Need"}: ${form.message}` : null,
-    ]
-      .filter(Boolean)
-      .join("\n");
-    window.open(`${site.whatsapp}?text=${encodeURIComponent(lines)}`, "_blank", "noopener");
-    setSent(true);
-    onSent?.();
+    if (!form.name.trim() || !form.phone.trim() || sending) return;
+    setError("");
+    setSending(true);
+    try {
+      await submitEnquiry({
+        source: contact ? "contact" : "enquiry",
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        product: contact ? "" : form.product,
+        message: form.message,
+        website: form.website,
+      });
+      setSent(true);
+      setForm({ ...defaultForm, product: defaultProduct });
+      onSent?.();
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   if (sent) {
     return (
       <div className="rounded-3xl border border-yp-timber/20 bg-yp-sand/50 p-8 text-center">
-        <p className="font-display text-2xl">WhatsApp is opening.</p>
+        <p className="font-display text-2xl">Thank you. We got your message.</p>
         <p className="mt-2 text-sm text-yp-mist">
-          If it did not, call {site.phone}
+          Our team will reply within one business day. Prefer a call? {site.phone}
           {site.email ? ` or write to ${site.email}` : ""}.
         </p>
         <button type="button" className="btn-ghost mt-6" onClick={() => setSent(false)}>
@@ -59,6 +72,17 @@ export default function QuoteForm({
 
   return (
     <form onSubmit={submit} className="space-y-3">
+      {/* Honeypot — hidden from real users */}
+      <input
+        type="text"
+        name="website"
+        value={form.website}
+        onChange={update}
+        tabIndex={-1}
+        autoComplete="off"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        aria-hidden="true"
+      />
       <div className={short ? "space-y-3" : "grid gap-3 sm:grid-cols-2"}>
         <input
           className="field"
@@ -67,6 +91,7 @@ export default function QuoteForm({
           value={form.name}
           onChange={update}
           required
+          autoComplete="name"
         />
         <input
           className="field"
@@ -75,8 +100,9 @@ export default function QuoteForm({
           value={form.phone}
           onChange={update}
           required
+          autoComplete="tel"
         />
-        {!short && (
+        {(contact || !short) && (
           <input
             className="field sm:col-span-2"
             name="email"
@@ -84,10 +110,16 @@ export default function QuoteForm({
             placeholder="Email"
             value={form.email}
             onChange={update}
+            autoComplete="email"
           />
         )}
         {!contact && (
-          <select className="field sm:col-span-2" name="product" value={form.product} onChange={update}>
+          <select
+            className="field sm:col-span-2"
+            name="product"
+            value={form.product}
+            onChange={update}
+          >
             <option value="">Product of interest</option>
             {products.map((p) => (
               <option key={p.slug} value={p.name}>
@@ -105,11 +137,17 @@ export default function QuoteForm({
           onChange={update}
         />
       </div>
-      <button type="submit" className="btn-copper w-full sm:w-auto">
-        {contact ? "Send message" : "Send via WhatsApp"}
+      {error ? <p className="text-sm text-yp-red">{error}</p> : null}
+      {!ready ? (
+        <p className="text-xs text-yp-mist">
+          Form endpoint not set yet. Add VITE_APPS_SCRIPT_URL after you deploy Apps Script.
+        </p>
+      ) : null}
+      <button type="submit" className="btn-copper w-full sm:w-auto" disabled={sending || !ready}>
+        {sending ? "Sending…" : contact ? "Send message" : "Send enquiry"}
       </button>
       <p className="text-xs text-yp-mist/90">
-        Opens WhatsApp. We reply within one business day. Prefer a call? {site.phone}
+        We reply within one business day. Prefer a call? {site.phone}
       </p>
     </form>
   );
