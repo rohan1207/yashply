@@ -13,11 +13,11 @@ const laminatesJsonLd = {
   name: "Laminates in Pune | Colours, Wood Looks & Finishes | Yashply",
   description:
     "Buy laminates in Pune, plain colours, wood looks, stone looks, textures, gloss and matte from Merino, Royale Touche, Greenlam and Century at Yash Ply & Hardware.",
-  url: "https://yashply.com/laminates",
+  url: "https://yashply.in/laminates",
   isPartOf: {
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
   },
   mainEntity: {
     "@type": "ItemList",
@@ -27,7 +27,7 @@ const laminatesJsonLd = {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      url: `https://yashply.com/laminates/${item.slug}`,
+      url: `https://yashply.in/laminates/${item.slug}`,
       description: item.summary || item.eyebrow || undefined,
     })),
   },

@@ -20,15 +20,15 @@ const homeJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://yashply.com/#business",
+    "@id": "https://yashply.in/#business",
     name: "Yash Ply & Hardware",
     alternateName: ["Yashply", "Yash Ply"],
     description:
       "Plywood, furniture hardware, laminates and veneers dealer in Pune. ISI certified sheets, ready stock since 1998.",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
     telephone: "+91-86984-96699",
     email: "yashpancholi1995@gmail.com",
-    image: "https://yashply.com/logo.png",
+    image: "https://yashply.in/logo.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
@@ -61,10 +61,10 @@ const homeJsonLd = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://yashply.com/products?q={search_term_string}",
+      target: "https://yashply.in/products?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   },
@@ -73,10 +73,10 @@ const homeJsonLd = [
     "@type": "ItemList",
     name: "Yashply product lines",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Plywood", url: "https://yashply.com/plywood" },
-      { "@type": "ListItem", position: 2, name: "Hardware", url: "https://yashply.com/hardware" },
-      { "@type": "ListItem", position: 3, name: "Laminates", url: "https://yashply.com/laminates" },
-      { "@type": "ListItem", position: 4, name: "Veneers", url: "https://yashply.com/veneers" },
+      { "@type": "ListItem", position: 1, name: "Plywood", url: "https://yashply.in/plywood" },
+      { "@type": "ListItem", position: 2, name: "Hardware", url: "https://yashply.in/hardware" },
+      { "@type": "ListItem", position: 3, name: "Laminates", url: "https://yashply.in/laminates" },
+      { "@type": "ListItem", position: 4, name: "Veneers", url: "https://yashply.in/veneers" },
     ],
   },
 ];

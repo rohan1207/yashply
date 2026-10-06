@@ -8,6 +8,7 @@ import FaqHome from "./FaqHome";
 import Preloader from "./Preloader";
 import FloatingDock from "./FloatingDock";
 import SmoothScroll from "./SmoothScroll";
+import Analytics from "./Analytics";
 
 export default function Layout() {
   const { pathname } = useLocation();
@@ -43,6 +44,7 @@ export default function Layout() {
 
   return (
     <SmoothScroll>
+      <Analytics />
       <AnimatePresence>{booting && <Preloader key="boot" />}</AnimatePresence>
       <Navbar />
       <main className="min-h-screen pb-[calc(5.75rem+env(safe-area-inset-bottom))] lg:pb-0">

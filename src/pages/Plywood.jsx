@@ -13,11 +13,11 @@ const plywoodJsonLd = {
   name: "Plywood in Pune | Commercial, BWP, Blockboard | Yashply",
   description:
     "Buy ISI certified plywood in Pune, commercial, BWP waterproof, calibrated, packaging, truck flooring, blockboard and shuttering. Ready stock at Yash Ply & Hardware, Kothrud.",
-  url: "https://yashply.com/plywood",
+  url: "https://yashply.in/plywood",
   isPartOf: {
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
   },
   mainEntity: {
     "@type": "ItemList",
@@ -27,7 +27,7 @@ const plywoodJsonLd = {
       "@type": "ListItem",
       position: i + 1,
       name: p.name,
-      url: `https://yashply.com/plywood/${p.slug}`,
+      url: `https://yashply.in/plywood/${p.slug}`,
       description: p.summary || p.grade || undefined,
     })),
   },

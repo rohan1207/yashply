@@ -13,11 +13,11 @@ const veneersJsonLd = {
   name: "Wood Veneers in Pune | Natural & Reconstituted | Yashply",
   description:
     "Buy wood veneers in Pune, natural and reconstituted veneers in light, medium and dark tones for furniture and panelling. CenturyVeneers reference ranges at Yash Ply & Hardware.",
-  url: "https://yashply.com/veneers",
+  url: "https://yashply.in/veneers",
   isPartOf: {
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
   },
   mainEntity: {
     "@type": "ItemList",
@@ -27,7 +27,7 @@ const veneersJsonLd = {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      url: `https://yashply.com/veneers/${item.slug}`,
+      url: `https://yashply.in/veneers/${item.slug}`,
       description: item.summary || item.eyebrow || undefined,
     })),
   },

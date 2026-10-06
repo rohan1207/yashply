@@ -72,7 +72,7 @@ const aboutJsonLd = {
   name: "About Yash Ply & Hardware",
   description:
     "Yash Ply & Hardware, Pune, plywood, hardware, laminates and veneers dealer since 1998. Founded by Mr. Pankaj Pancholi, led by MD Mr. Yash Pancholi.",
-  url: "https://yashply.com/about",
+  url: "https://yashply.in/about",
   mainEntity: {
     "@type": "LocalBusiness",
     name: "Yash Ply & Hardware",

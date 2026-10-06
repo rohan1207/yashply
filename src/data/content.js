@@ -1,6 +1,7 @@
 export const site = {
  name: "Yashply",
  legal: "Yash Ply & Hardware",
+ url: "https://yashply.in",
  tagline: "Plywood, hardware, laminates and veneers for your home and projects.",
  short: "Quality plywood, hardware, laminates and veneers in Pune. ISI certified sheets, ready stock and friendly service since 1998.",
  phone: "8698496699",

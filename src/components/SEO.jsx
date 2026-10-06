@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { site } from "../data/content";
 
 const SITE_NAME = "Yash Ply & Hardware";
+const SITE_URL = site.url || "https://yashply.in";
 const DEFAULT_TITLE =
   "Plywood, Hardware, Laminates & Veneers in Pune | Yashply";
 const DEFAULT_DESCRIPTION =
@@ -58,7 +60,10 @@ export default function SEO({
 }) {
   const { pathname } = useLocation();
   const pagePath = path ?? pathname;
-  const origin = typeof window !== "undefined" ? window.location.origin : "https://yashply.com";
+  const origin =
+    typeof window !== "undefined" && window.location?.origin?.includes("yashply")
+      ? window.location.origin
+      : SITE_URL;
   const url = `${origin}${pagePath === "/" ? "" : pagePath}`;
   const fullTitle = title
     ? title.includes("Yash")
@@ -101,4 +106,4 @@ export default function SEO({
   return null;
 }
 
-export { DEFAULT_DESCRIPTION, DEFAULT_KEYWORDS, DEFAULT_TITLE, SITE_NAME };
+export { DEFAULT_DESCRIPTION, DEFAULT_KEYWORDS, DEFAULT_TITLE, SITE_NAME, SITE_URL };

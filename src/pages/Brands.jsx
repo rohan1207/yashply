@@ -13,11 +13,11 @@ const brandsJsonLd = {
   "@type": "CollectionPage",
   name: "Hardware Brands in Pune | Hettich, Häfele, EBCO, Blum & More | Yashply",
   description: `Hardware brands stocked at Yash Ply & Hardware, Pune, ${brandNames}.`,
-  url: "https://yashply.com/brands",
+  url: "https://yashply.in/brands",
   isPartOf: {
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
   },
   mainEntity: {
     "@type": "ItemList",

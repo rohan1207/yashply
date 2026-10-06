@@ -16,11 +16,11 @@ const hardwareJsonLd = {
   name: "Furniture Hardware in Pune | Hinges, Channels, Sliding Fittings | Yashply",
   description:
     "Buy furniture hardware in Pune, hinges, telescopic channels, sliding wardrobe fittings and more from Hettich, Häfele, EBCO, Blum, Godrej and other brands at Yash Ply & Hardware.",
-  url: "https://yashply.com/hardware",
+  url: "https://yashply.in/hardware",
   isPartOf: {
     "@type": "WebSite",
     name: "Yashply",
-    url: "https://yashply.com/",
+    url: "https://yashply.in/",
   },
   mainEntity: {
     "@type": "ItemList",
@@ -30,7 +30,7 @@ const hardwareJsonLd = {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      url: `https://yashply.com/hardware/${item.slug}`,
+      url: `https://yashply.in/hardware/${item.slug}`,
       description: item.summary || item.eyebrow || undefined,
     })),
   },

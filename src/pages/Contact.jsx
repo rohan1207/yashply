@@ -50,16 +50,16 @@ const contactJsonLd = [
     name: "Contact Yash Ply & Hardware Pune",
     description:
       "Contact Yash Ply & Hardware in Pune for plywood, hardware, laminates and veneers. Call, WhatsApp or visit our Kothrud shop.",
-    url: "https://yashply.com/contact",
+    url: "https://yashply.in/contact",
     mainEntity: {
       "@type": "LocalBusiness",
-      "@id": "https://yashply.com/#business",
+      "@id": "https://yashply.in/#business",
       name: "Yash Ply & Hardware",
       alternateName: "Yashply",
       telephone: "+91-86984-96699",
       email: "yashpancholi1995@gmail.com",
-      url: "https://yashply.com/",
-      image: "https://yashply.com/contact.png",
+      url: "https://yashply.in/",
+      image: "https://yashply.in/contact.png",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Shop no. 1 Seyash Aadya, Paud Road, Bhusari Colony, Kothrud",
